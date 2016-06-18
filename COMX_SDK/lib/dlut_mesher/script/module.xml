@@ -1,0 +1,9 @@
+<?xml version  = "1.0"?>
+<module_list>
+  <debug>
+    <item>mesher_dlut_d.kpi</item>
+  </debug>
+  <release>
+    <item>mesher_dlut.kpi</item>
+	</release>
+</module_list>

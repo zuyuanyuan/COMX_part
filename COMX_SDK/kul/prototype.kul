@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui" name="prototype">
+    <property name="id">0x61b1e081-0x40f7-0x4df0-0x8f-0xa5-0xde-0xc9-0x97-0xe0-0x59-0x28</property>
+    <widget type="form" name="prototype_dialog">
+        <property name="id">0x31252479-0x890a-0x45de-0xbd-0x93-0x29-0x8e-0x19-0xc6-0xc4-0x35</property>
+        <property name="title">KUL|Prototype</property>
+        <property name="titlebar">true</property>
+        <property name="maximum_box">true</property>
+        <property name="resize">true</property>
+        <property name="center">center</property>
+        <property name="toolwindow">true</property>
+        <property name="icon">kmas</property>
+        <property name="show">max</property>
+        <property name="style">popup</property>
+        <property name="app_window">true</property>
+        <widget type="vbox">
+            <widget type="hbox">
+                <property name="adjust">horizontal</property>
+                <widget type="vbox">
+                    <property name="margin">0</property>
+                    <widget type="label">
+                        <property name="id">1025</property>
+                        <property name="text">这是一个KUL演示程序.</property>
+                        <property name="adjust">horizontal</property>
+                    </widget>
+                </widget>
+                <widget type="bitmap">
+                    <property name="id">1026</property>
+                    <property name="width">16</property>
+                    <property name="height">15</property>
+                    <property name="transparent_background">true</property>
+                    <property name="picture">kmas.bmp</property>
+                </widget>
+            </widget>
+            <widget type="hbox">
+                <widget type="tree">
+                    <property name="id">5044</property>
+                    <property name="adjust">vertical</property>
+                    <property name="data">
+                        <subitem label="root" bitmap="new" bitmap_selected="arrow" id="auto">
+                            <subitem label="item1" bitmap="new" bitmap_selected="arrow" id="auto" />
+                            <subitem label="item2" bitmap="new" bitmap_selected="arrow" id="auto" />
+                            <subitem label="item3" bitmap="new" bitmap_selected="arrow" id="auto">
+                                <subitem label="item31" bitmap="new" bitmap_selected="arrow" id="auto" />
+                                <subitem label="item32" bitmap="new" bitmap_selected="arrow" id="auto" />
+                            </subitem>
+                            <subitem label="item4" bitmap="new" bitmap_selected="arrow" id="auto" />
+                        </subitem>
+                    </property>
+                </widget>
+                <!--widget type="edit" name="text">
+                    <property name="id">1028</property>
+                    <property name="width">300</property>
+                    <property name="height">200</property>
+                    <property name="multiline">true</property>
+                    <property name="adjust">auto</property>
+                    <property name="data">Hello,World!</property>
+                </widget-->
+                <widget type="list">
+					<property name="width">300</property>
+                    <property name="height">200</property>
+					<property name="adjust">auto</property>
+					<property name="type">report</property>
+                </widget>
+            </widget>
+            <widget type="separator">
+                <property name="id">1029</property>
+            </widget>
+            <widget type="hbox">
+                <property name="adjust">horizontal</property>
+                <widget type="checkbutton">
+                    <property name="label">是否自动更新数据</property>
+                    <property name="id">1037</property>
+                    <property name="width">100</property>
+                </widget>
+                <widget type="checkbutton">
+                    <property name="label">是否有提示信息</property>
+                    <property name="id">1038</property>
+                    <property name="width">100</property>
+                    <property name="check">true</property>
+                </widget>
+                <widget type="space" />
+                <widget type="radiobutton">
+                    <property name="label">Red</property>
+                    <property name="id">1039</property>
+                </widget>
+                <widget type="radiobutton">
+                    <property name="label">Green</property>
+                    <property name="id">1040</property>
+                </widget>
+                <widget type="radiobutton">
+                    <property name="label">Blue</property>
+                    <property name="id">5041</property>
+                    <property name="group_id">2</property>
+                    <property name="default_group_item">true</property>
+                </widget>
+                <widget type="radiobutton">
+                    <property name="label">Alpha</property>
+                    <property name="id">5042</property>
+                    <property name="group_id">2</property>
+                    <property name="default_group_item">true</property>
+                </widget>
+            </widget>
+            <widget type="space">
+                <property name="size">1</property>
+            </widget>
+            <widget type="hbox">
+                <property name="margin">0</property>
+                <property name="adjust">horizontal</property>
+                <widget type="combobox">
+                    <property name="id">5043</property>
+                    <property name="data">条目4,条目2,条目3</property>
+                </widget>
+                <widget type="space">
+                    <property name="size">3</property>
+                </widget>
+                <widget type="spin">
+                    <property name="id">5045</property>
+                    <property name="adjust">horizontal</property>
+                    <property name="data">0,1000,500</property>
+                </widget>
+                <widget type="space">
+                    <property name="size">3</property>
+                </widget>
+                <widget type="pushbutton" name="okay">
+                    <property name="label">上一步</property>
+                    <property name="bitmap">back.bmp</property>
+                    <property name="id">1030</property>
+                    <property name="default">true</property>
+                </widget>
+                <widget type="pushbutton" name="cancel">
+                    <property name="label">下一步</property>
+                    <property name="bitmap">next.bmp</property>
+                    <property name="id">1031</property>
+                    <property name="gray">true</property>
+                    <property name="bitmap_align">right</property>
+                </widget>
+                <widget type="separator">
+                    <property name="id">1032</property>
+                </widget>
+                <widget type="pushbutton" name="cancel">
+                    <property name="label">应用</property>
+                    <property name="bitmap">ok.bmp</property>
+                    <property name="id">1033</property>
+                </widget>
+                <widget type="pushbutton" name="cancel">
+                    <property name="label">关闭</property>
+                    <property name="bitmap">cancel.bmp</property>
+                    <property name="id">1034</property>
+                </widget>
+                <widget type="separator">
+                    <property name="id">1035</property>
+                </widget>
+                <widget type="pushbutton" name="cancel">
+                    <property name="label">帮助</property>
+                    <property name="bitmap">help.bmp</property>
+                    <property name="id">1036</property>
+                </widget>
+            </widget>
+            <widget type="space">
+                <property name="size">2</property>
+            </widget>
+        </widget>
+    </widget>
+</kul_pkg>

@@ -1,0 +1,15 @@
+*** Beginning Leak Dump ***
+C:\build\acisr16\NTS\SPAkern\kernel_kerndata_bulletin.m\src\bulletin.cpp(4692) : {0000000156} at 0x0EFC29A0 64 Bytes Type: 1 Call: 20
+C:\build\acisr16\NTS\SPAkern\kernel_kerndata_bulletin.m\src\bulletin.cpp(257) : {0000000155} at 0x0EFC16B0 88 Bytes Type: 1 Call: 20
+C:\build\acisr16\NTS\SPAkern\kernel_kerndata_bulletin.m\src\bulletin.cpp(3762) : {0000000158} at 0x0EFC13B0 60 Bytes Type: 1 Call: 20
+C:\build\acisr16\NTS\SPAkern\kernel_kerndata_bulletin.m\src\bulletin.cpp(3757) : {0000000157} at 0x0EFC0690 64 Bytes Type: 1 Call: 20
+
+*** Statistics ***
+Leaks: 276 Bytes
+159 allocations for 306803 Bytes
+155 deletes for 306527 Bytes
+High-water-mark: 303091 Bytes
+Bad delete pointers: 0
+Mismatched caller pointers: 39
+Stack high-water-mark: 1348 Bytes
+Elapsed seconds: 279.718

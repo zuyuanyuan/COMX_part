@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui" name="switch_unit_pane" xmlns="http://www.kingmesh.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kingmesh.com kul.xsd">
+    <property name="id">0x12421f12-0xd0cf-0x40e0-0x8e-0xc3-0x29-0x2d-0xb0-0x5b-0x50-0x56</property>
+    <widget type="form" name="switch_unit_pane_pane">
+        <property name="id">0xc6b915bd-0x85d5-0x41be-0x9d-0xb1-0x62-0x05-0x6b-0x7c-0xd2-0xa2</property>
+        <property name="title">COMX Unit Switch Tool</property>
+        <property name="titlebar">true</property>
+        <property name="maximum_box">false</property>
+        <property name="minimum_box">false</property>
+        <property name="close_box">false</property>
+        <property name="border">true</property>
+        <property name="bkcolor">gray</property>
+        <property name="resize">false</property>
+        <property name="center">none</property>
+        <property name="toolwindow">false</property>
+        <property name="icon">kmas</property>
+        <property name="width">auto</property>
+        <property name="height">auto</property>
+        <property name="font">Microsoft Sans Serif</property>
+        <property name="font_size">10</property>
+        <property name="margin">1</property>
+        <property name="style">popup</property>
+        <property name="show">normal</property>
+        <property name="embed">false</property>
+        <property name="app_window">true</property>
+        <property name="attachment">none</property>
+        <property name="attachment_size">5</property>
+        <property name="javascript">switch_unit_pane_pane.js</property>
+        <property name="js_lib">/js/class/widget_wrap.js;/js/socket.io/socket.io.js</property>
+        <property name="default_hot_key">901,ctrl_shift,g;902,ctrl_shift,b;903,ctrl_shift,n;904,ctrl_shift,e;905,ctrl_shift,d</property>
+        <property name="hot_key">1001,ctrl,q</property>
+        <property name="onHotKey">OnHotKey(id);</property>
+        <property name="alpha">255</property>
+        <property name="topmost">false</property>
+        <widget type="vbox">
+            <property name="margin">1</property>
+            <property name="adjust">auto</property>
+            <widget type="listbox">
+                <property name="id_alias">nil</property>
+                <property name="width">90</property>
+                <property name="height">100</property>
+                <property name="gray">false</property>
+                <property name="visible">true</property>
+                <property name="adjust">fixed</property>
+                <property name="selection">single</property>
+                <property name="sort">false</property>
+                <property name="data">item1, item2, item3</property>
+                <property name="simple_bind">unit_name</property>
+                <property name="list_bind">unit_list</property>
+                <property name="index1_bind">unit_index</property>
+                <property name="enable_bind" />
+                <property name="visible_bind" />
+                <property name="onChange" />
+                <property name="onDoubleClick">OnGo();</property>
+                <property name="handle_bind" />
+            </widget>
+            <widget type="pushbutton">
+                <property name="label">Switch</property>
+                <property name="bitmap" />
+                <property name="id_alias">nil</property>
+                <property name="width">90</property>
+                <property name="height">14</property>
+                <property name="default">true</property>
+                <property name="gray">false</property>
+                <property name="visible">true</property>
+                <property name="adjust">fixed</property>
+                <property name="bitmap_align">left</property>
+                <property name="flat">false</property>
+                <property name="shadow">false</property>
+                <property name="shadow_type">noise</property>
+                <property name="color">auto</property>
+                <property name="can_check">false</property>
+                <property name="onClick">OnGo();</property>
+                <property name="enable_bind" />
+                <property name="simple_bind" />
+                <property name="valid_bind" />
+                <property name="visible_bind" />
+                <property name="handle_bind" />
+                <property name="tip" />
+            </widget>
+            <widget type="pushbutton">
+                <property name="label">Close</property>
+                <property name="bitmap">nil</property>
+                <property name="id_alias">nil</property>
+                <property name="width">90</property>
+                <property name="height">14</property>
+                <property name="default">false</property>
+                <property name="gray">false</property>
+                <property name="visible">true</property>
+                <property name="adjust">fixed</property>
+                <property name="bitmap_align">left</property>
+                <property name="flat">false</property>
+                <property name="shadow">false</property>
+                <property name="shadow_type">soft</property>
+                <property name="color">auto</property>
+                <property name="can_check">false</property>
+                <property name="onClick">pane.Close();</property>
+                <property name="enable_bind" />
+                <property name="simple_bind" />
+                <property name="valid_bind" />
+                <property name="visible_bind" />
+                <property name="handle_bind" />
+                <property name="tip" />
+            </widget>
+        </widget>
+    </widget>
+</kul_pkg>

@@ -1,0 +1,8 @@
+<module_list>
+<debug>
+<item>tag_pool_d.kpi</item>
+</debug>
+<release>
+<item>tag_pool.kpi</item>
+</release>
+</module_list>

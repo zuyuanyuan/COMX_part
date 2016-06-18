@@ -1,0 +1,74 @@
+/*HEAD gl_plot.hxx COMX_COMPONENT_MODULE */
+/*==============================================================================
+
+  Copyright 2006 Jilin Kingmesh Corp.
+  All rights reserved
+  
+	================================================================================ 
+	File description:
+	
+	-- Please append file description informations here --
+	  
+	================================================================================
+	Date            Name            Description of Change
+	
+  
+	$HISTORY$
+	================================================================================
+*/
+
+#ifndef _KMAS_COMX_GL_PLOT_HEAD_HXX
+#define _KMAS_COMX_GL_PLOT_HEAD_HXX
+
+#include "base/root.hxx"
+#include "gl/gl_base.hxx"
+#include "gl/gl_window.hxx"
+#include "gl/gl_plot_shape.hxx"
+
+namespace KMAS
+{
+namespace Die_maker
+{
+namespace comx
+{
+
+// {D71299A5-2B83-4094-99A2-8CC1DD4EB82A}
+const MUID IID_IGlPlot = 
+{ 0xd71299a5, 0x2b83, 0x4094, { 0x99, 0xa2, 0x8c, 0xc1, 0xdd, 0x4e, 0xb8, 0x2a } };
+
+interface IGlPlot : public IRoot
+{
+     virtual TStatus STDCALL Create(const int x, const int y, const int cx, const int cy) = 0;
+     virtual TStatus STDCALL SetFrame(const double ox, const double oy, const double rx, const double ry) = 0;
+     virtual TStatus STDCALL EnableCaptureLine(const bool &flag) = 0;
+     virtual TStatus STDCALL EnableScaleLine(const bool &flag) = 0;
+     virtual TStatus STDCALL SetTitle(const char* xtitle, const char* ytitle, const char *title) = 0;
+     virtual TStatus STDCALL SetUnit(const double ux, const double uy) = 0;
+     virtual TStatus STDCALL SetVisible(const bool &flag) = 0;
+     virtual TStatus STDCALL Center() = 0;
+};
+
+// {D4D6D1FC-3730-4b0d-8888-0675EEB07355}
+const MUID IID_IGlPlotShapManager = 
+{ 0xd4d6d1fc, 0x3730, 0x4b0d, { 0x88, 0x88, 0x6, 0x75, 0xee, 0xb0, 0x73, 0x55 } };
+
+interface IGlPlotShapManager : public IRoot
+{
+     virtual TStatus STDCALL AppendCurve(const char*name,IGlPlotShape *ptr) = 0;
+	virtual TStatus STDCALL DeleteCurve(const char*name) = 0;
+	virtual TStatus STDCALL RenameCurve(const char*name,const char*new_name) = 0;
+	virtual TStatus STDCALL GetCurve(const char*name, IGlPlotShape *&) = 0;
+	virtual TStatus STDCALL GetCurveName(const int &index, char *) = 0;
+     virtual TStatus STDCALL GetCurveCount(int &count) = 0;
+	virtual TStatus STDCALL EnableInteractive(const bool &flag) = 0;
+};
+
+// {EADEAA5E-67B8-48ae-AFCC-7B0D424893E8}
+const MUID CLSID_IGlPlot = 
+{ 0xeadeaa5e, 0x67b8, 0x48ae, { 0xaf, 0xcc, 0x7b, 0xd, 0x42, 0x48, 0x93, 0xe8 } };
+ 
+}//namespace comx
+}//namespace Die_maker
+}//namespace KMAS
+
+#endif

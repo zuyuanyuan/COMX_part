@@ -1,0 +1,9 @@
+[
+{"file":"startup.gif","name":"Lesson-1: Simple Calculator"},
+{"file":"block.gif","name":"Lesson-2: Block Widget"},
+{"file":"js_ext_sample.gif","name":"Lesson-3: JS.EXT Sample"},
+{"file":"ws_sample.gif","name":"Lesson-4: Websocket API Sample"},
+{"file":"cp_plus_merge.gif","name":"Lesson-5: Node.JS Child Process"},
+{"file":"cp_plus_json_cache.gif","name":"Lesson-6: jsoncpp Sample"},
+{"file":"sandbox.gif","name":"Lesson-7: Sandbox Sample"}
+]

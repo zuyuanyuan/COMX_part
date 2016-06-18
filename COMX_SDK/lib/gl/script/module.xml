@@ -1,0 +1,52 @@
+<?xml version  = "1.0"?>
+<module_list>
+    <debug>
+        <item>gl_background_d.kpi</item>
+        <item>gl_color_manager_d.kpi</item>
+        <item>gl_common_display_d.kpi</item>
+        <item>gl_content_d.kpi</item>
+        <item>gl_legend_d.kpi</item>
+        <item>gl_legend_manual_d.kpi</item>
+        <item>gl_light_d.kpi</item>
+        <item>gl_material_d.kpi</item>
+        <item>gl_pickup_d.kpi</item>
+        <item>gl_plot_d.kpi</item>
+        <item>gl_sensor_d.kpi</item>
+        <item>gl_wcs_d.kpi</item>
+        <item>gl_window_d.kpi</item>
+        <item>gl_window_manager_d.kpi</item>
+        
+        <item>gl_plot_pointset_d.kpi</item>
+        <item>gl_fld_point_color_rule_d.kpi</item>
+        <item>gl_capture_screen_d.kpi</item>
+        <item>gl_capture_screen_d.kpi</item>    
+        <item>gl_drag_d.kpi</item>
+        <item>gl_data_base_d.kpi</item>
+        <item>gl_toolkit_d.kpi</item>
+        <item>gl_sensor_hook_d.kpi</item>
+    </debug>
+    <release>
+        <item>gl_background.kpi</item>
+        <item>gl_color_manager.kpi</item>
+        <item>gl_common_display.kpi</item>
+        <item>gl_content.kpi</item>
+        <item>gl_legend.kpi</item>
+        <item>gl_legend_manual.kpi</item>
+        <item>gl_light.kpi</item>
+        <item>gl_material.kpi</item>
+        <item>gl_pickup.kpi</item>
+        <item>gl_plot.kpi</item>
+        <item>gl_sensor.kpi</item>
+        <item>gl_wcs.kpi</item>
+        <item>gl_window.kpi</item>
+        <item>gl_window_manager.kpi</item>
+    
+      	<item>gl_plot_pointset.kpi</item>
+        <item>gl_fld_point_color_rule.kpi</item>
+        <item>gl_capture_screen.kpi</item>
+        <item>gl_drag.kpi</item>
+        <item>gl_data_base.kpi</item>
+        <item>gl_toolkit.kpi</item>
+        <item>gl_sensor_hook.kpi</item>
+    </release>
+</module_list>

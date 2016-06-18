@@ -1,0 +1,57 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AutoSaveJS	kul_editor.js	/^function AutoSaveJS()$/;"	f
+AutoSaveKUL	kul_editor.js	/^function AutoSaveKUL()$/;"	f
+ClearJSDocDirtyFlag	kul_editor.js	/^function ClearJSDocDirtyFlag()$/;"	f
+ClearKULDocDirtyFlag	kul_editor.js	/^function ClearKULDocDirtyFlag()$/;"	f
+GetIdFromKulFilename	kul_editor.js	/^function GetIdFromKulFilename(kul_filename, callback)$/;"	f
+GetRegexFuncPatternCacheFilePath	kul_editor.js	/^function GetRegexFuncPatternCacheFilePath()$/;"	f
+GetRegexFuncSrcCacheFilePath	kul_editor.js	/^function GetRegexFuncSrcCacheFilePath()$/;"	f
+IsBlockPackage	kul_editor.js	/^function IsBlockPackage(kul_fname)$/;"	f
+IsJSFile	kul_editor.js	/^function IsJSFile(filename)$/;"	f
+IsKULFile	kul_editor.js	/^function IsKULFile(filename)$/;"	f
+OnBeautify	kul_editor.js	/^function OnBeautify()$/;"	f
+OnBind	kul_editor.js	/^function OnBind()$/;"	f
+OnCloseForm	kul_editor.js	/^function OnCloseForm()$/;"	f
+OnCopy	kul_editor.js	/^function OnCopy()$/;"	f
+OnCut	kul_editor.js	/^function OnCut()$/;"	f
+OnEvent	kul_editor.js	/^function OnEvent()$/;"	f
+OnExecute	kul_editor.js	/^function OnExecute()$/;"	f
+OnGlobal	kul_editor.js	/^function OnGlobal()$/;"	f
+OnHotKey	kul_editor.js	/^function OnHotKey(id)$/;"	f
+OnInitializeData	kul_editor.js	/^function OnInitializeData()$/;"	f
+OnKulValidate	kul_editor.js	/^function OnKulValidate()$/;"	f
+OnModeChange	kul_editor.js	/^function OnModeChange()$/;"	f
+OnNamespace	kul_editor.js	/^function OnNamespace()$/;"	f
+OnNewDocument	kul_editor.js	/^function OnNewDocument()$/;"	f
+OnNewDocumentNew	kul_editor.js	/^function OnNewDocumentNew()$/;"	f
+OnNewFrame	kul_editor.js	/^function OnNewFrame()$/;"	f
+OnOpen	kul_editor.js	/^function OnOpen()$/;"	f
+OnOpenByNewDlg	kul_editor.js	/^function OnOpenByNewDlg()$/;"	f
+OnPaste	kul_editor.js	/^function OnPaste()$/;"	f
+OnPkgToolkit	kul_editor.js	/^function OnPkgToolkit()$/;"	f
+OnPreviewBlock	kul_editor.js	/^function OnPreviewBlock()$/;"	f
+OnRedo	kul_editor.js	/^function OnRedo()$/;"	f
+OnRegister	kul_editor.js	/^function OnRegister()$/;"	f
+OnSave	kul_editor.js	/^function OnSave()$/;"	f
+OnSaveAs	kul_editor.js	/^function OnSaveAs()$/;"	f
+OnSimpleMode	kul_editor.js	/^function OnSimpleMode()$/;"	f
+OnSwitchDoc	kul_editor.js	/^function OnSwitchDoc()$/;"	f
+OnUndo	kul_editor.js	/^function OnUndo()$/;"	f
+OnUnitToolkit	kul_editor.js	/^function OnUnitToolkit()$/;"	f
+RegisterKUL	kul_editor.js	/^function RegisterKUL(unit_name, kul_filepath)$/;"	f
+SaveJSDocTo	kul_editor.js	/^function SaveJSDocTo(filename)$/;"	f
+SaveJSFuncRegexInfoToCache	kul_editor.js	/^function SaveJSFuncRegexInfoToCache()$/;"	f
+TransFilePathToUnixFmt	kul_editor.js	/^function TransFilePathToUnixFmt(filepath)$/;"	f
+err_msg	kul_editor.js	/^    var err_msg = comx.shell.kul_validate(binding.kul_doc_filename);$/;"	v
+func_list	kul_editor.js	/^    var func_list = '';$/;"	v
+is_pass	kul_editor.js	/^	var is_pass = comx.shell.is_kul_validate_pass(err_msg);$/;"	v
+js_doc_first_visible_line	kul_editor.js	/^var js_doc_first_visible_line = 0;$/;"	v
+js_doc_position	kul_editor.js	/^var js_doc_position = 0;$/;"	v
+kul_doc_first_visible_line	kul_editor.js	/^var kul_doc_first_visible_line = 0;$/;"	v
+kul_doc_position	kul_editor.js	/^var kul_doc_position = 0;$/;"	v
+kul_editor_cfg_file	kul_editor.js	/^	var kul_editor_cfg_file = "y:\\\\comx_sdk\\\\kul\\\\kul_editor_cfg.json";$/;"	v

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui" name="namespace_browser" xmlns="http://www.kingmesh.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kingmesh.com kul.xsd">
+    <property name="id">0x43e3e4a6-0x96fe-0x44ef-0xbd-0xf6-0x34-0x37-0x0c-0x43-0x2b-0xa5</property>
+    <widget type="form" name="namespace_browser_pane">
+        <property name="id">0x9888725c-0xa5d4-0x4ba8-0xa5-0xb6-0x5a-0x17-0x73-0x62-0x34-0x83</property>
+        <property name="title">Namespace Browser (Ctrl-Shift-n)</property>
+        <property name="titlebar">true</property>
+        <property name="maximum_box">false</property>
+        <property name="minimum_box">false</property>
+        <property name="border">true</property>
+        <property name="bkcolor">gray</property>
+        <property name="resize">false</property>
+        <property name="center">center</property>
+        <property name="toolwindow">true</property>
+        <property name="icon">nil</property>
+        <property name="width">auto</property>
+        <property name="height">auto</property>
+        <property name="font">Microsoft Sans Serif</property>
+        <property name="font_size">10</property>
+        <property name="margin">1</property>
+        <property name="style">popup</property>
+        <property name="show">normal</property>
+        <property name="embed">false</property>
+        <property name="app_window">false</property>
+        <property name="attachment">none</property>
+        <property name="attachment_size">5</property>
+        <property name="javascript">namespace_browser.js</property>
+        <property name="js_lib">/js/class/widget_wrap.js</property>
+        <property name="default_hot_key">901,ctrl_shift,g;902,ctrl_shift,b;904,ctrl_shift,e;905,ctrl_shift,d</property>
+        <property name="hot_key">1001,ctrl,c;1002,ctrl,q</property>
+        <property name="onHotKey">OnHotKey(hot_key_id);</property>
+        <property name="alpha">255</property>
+        <widget type="vbox">
+            <property name="margin">1</property>
+            <property name="adjust">auto</property>
+            <widget type="hbox">
+                <property name="margin">1</property>
+                <property name="adjust">auto</property>
+                <widget type="label">
+                    <property name="id">1025</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">19</property>
+                    <property name="auto_width">true</property>
+                    <property name="height">8</property>
+                    <property name="border">false</property>
+                    <property name="text">please select a namespace:</property>
+                    <property name="align">left</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="handle_bind" />
+                    <property name="visible_bind" />
+                </widget>
+                <widget type="combobox">
+                    <property name="id">1026</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">64</property>
+                    <property name="height">12</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="type">list</property>
+                    <property name="sort">false</property>
+                    <property name="data">comx, unit, pane</property>
+                    <property name="simple_bind">current_namespace</property>
+                    <property name="list_bind">top_ns_list</property>
+                    <property name="index1_bind" />
+                    <property name="enable_bind" />
+                    <property name="visible_bind" />
+                    <property name="onChange">OnChange();</property>
+                    <property name="handle_bind" />
+                </widget>
+                <widget type="combobox">
+                    <property name="id">1033</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">64</property>
+                    <property name="height">12</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="type">list</property>
+                    <property name="sort">false</property>
+                    <property name="data" />
+                    <property name="simple_bind">comx_sub_ns</property>
+                    <property name="list_bind">comx_sub_ns_list</property>
+                    <property name="index1_bind">comx_sub_ns_index</property>
+                    <property name="enable_bind" />
+                    <property name="visible_bind">comx_sub_ns_visible</property>
+                    <property name="onChange">OnComxSubNSChanged();</property>
+                    <property name="handle_bind" />
+                </widget>
+                <widget type="space">
+                    <property name="size">auto</property>
+                </widget>
+            </widget>
+            <widget type="list">
+                <property name="id">1027</property>
+                <property name="id_alias">nil</property>
+                <property name="width">360</property>
+                <property name="height">150</property>
+                <property name="gray">false</property>
+                <property name="visible">true</property>
+                <property name="adjust">fixed</property>
+                <property name="type">report</property>
+                <property name="align">top</property>
+                <property name="sort">none</property>
+                <property name="single_selection">false</property>
+                <property name="auto_arrange">false</property>
+                <property name="no_label_wrap">false</property>
+                <property name="edit_labels">false</property>
+                <property name="show_selection_always">false</property>
+                <property name="owner_data">false</property>
+                <property name="simple_bind">var_name</property>
+                <property name="table_bind">content_table</property>
+                <property name="index2_bind" />
+                <property name="enable_bind" />
+                <property name="visible_bind" />
+                <property name="data">
+                    <header>
+                        <item label="Name" width="240" />
+                        <item label="Type" width="100" />
+                        <item label="Value/Comments/Path" width="1450" />
+                    </header>
+                    <image_list>var,new,func</image_list>
+                    <content></content>
+                </property>
+                <property name="onClick" />
+                <property name="onDoubleClick">OnCopyToClipboard();pane.Close();</property>
+                <property name="onHeaderClick">OnListHeaderClick(item);</property>
+                <property name="handle_bind" />
+            </widget>
+            <widget type="separator">
+                <property name="id">1028</property>
+                <property name="id_alias">nil</property>
+                <property name="gray">false</property>
+                <property name="visible">true</property>
+                <property name="margin">2</property>
+            </widget>
+            <widget type="hbox">
+                <property name="margin">1</property>
+                <property name="adjust">auto</property>
+                <widget type="bitmap">
+                    <property name="id">1029</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">12</property>
+                    <property name="height">11</property>
+                    <property name="fit_origin_size">false</property>
+                    <property name="transparent_background">trye</property>
+                    <property name="background_color">255,255,255</property>
+                    <property name="bkcolor">gray</property>
+                    <property name="border">false</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="picture">help.bmp</property>
+                    <property name="simple_bind" />
+                    <property name="handle_bind" />
+                    <property name="onLButtonDown" />
+                    <property name="onLButtonUp" />
+                    <property name="onMButtonDown" />
+                    <property name="onMButtonUp" />
+                    <property name="onRButtonDown" />
+                    <property name="onRButtonUp" />
+                    <property name="onMouseMove" />
+                    <property name="onResize" />
+                </widget>
+                <widget type="label">
+                    <property name="id">1032</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">19</property>
+                    <property name="auto_width">true</property>
+                    <property name="height">8</property>
+                    <property name="border">false</property>
+                    <property name="text"> hot key: ctrl-c -&gt; copy to clipboard; ctrl-q -&gt; close browser.</property>
+                    <property name="align">left</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="handle_bind" />
+                    <property name="visible_bind" />
+                </widget>
+                <widget type="space">
+                    <property name="size">auto</property>
+                </widget>
+                <widget type="pushbutton">
+                    <property name="label">Copy To Clipboard</property>
+                    <property name="bitmap">copy.bmp</property>
+                    <property name="id">1030</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">80</property>
+                    <property name="height">14</property>
+                    <property name="default">false</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="bitmap_align">left</property>
+                    <property name="flat">false</property>
+                    <property name="shadow">false</property>
+                    <property name="shadow_type">soft</property>
+                    <property name="color">auto</property>
+                    <property name="can_check">false</property>
+                    <property name="onClick">OnCopyToClipboard();</property>
+                    <property name="enable_bind" />
+                    <property name="simple_bind" />
+                    <property name="valid_bind" />
+                    <property name="visible_bind" />
+                    <property name="handle_bind" />
+                </widget>
+                <widget type="pushbutton">
+                    <property name="label">Close Browser</property>
+                    <property name="bitmap">close.bmp</property>
+                    <property name="id">1031</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">80</property>
+                    <property name="height">14</property>
+                    <property name="default">false</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="bitmap_align">left</property>
+                    <property name="flat">false</property>
+                    <property name="shadow">false</property>
+                    <property name="shadow_type">soft</property>
+                    <property name="color">auto</property>
+                    <property name="can_check">false</property>
+                    <property name="onClick">OnClose();</property>
+                    <property name="enable_bind" />
+                    <property name="simple_bind" />
+                    <property name="valid_bind" />
+                    <property name="visible_bind" />
+                    <property name="handle_bind" />
+                </widget>
+            </widget>
+        </widget>
+    </widget>
+</kul_pkg>

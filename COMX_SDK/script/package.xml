@@ -1,0 +1,21 @@
+<package clsname="CLSID_ICOMXPackage" clsid="0xf51ae882-0x477a-0x499d-0xa9-0xb5-0x4a-0xcb-0x79-0x11-0x31-0xae">
+  <uiconfig title="KMAS|Demo Application Ver4.0" max="yes" lockbar="yes" enable_view2d="no" enable_console="no">
+    <toolbar name="Common" dock="top" hide="no" newline="yes"></toolbar>
+    <toolbar name="Transform" dock="top" hide="no" newline="no"></toolbar>
+    <toolbar name="Stdview" dock="top" hide="no" newline="no"></toolbar>
+    <toolbar name="Ui:Appearance" dock="top" hide="no" newline="no"></toolbar>
+    <toolbarInitList>
+    </toolbarInitList>
+  </uiconfig>
+  <functions>
+    <addPropertys>
+    </addPropertys>
+    <educePropertys>
+    </educePropertys>
+    <addServices>
+    </addServices>
+    <addConnects>
+    </addConnects>
+  </functions>
+</package>
+

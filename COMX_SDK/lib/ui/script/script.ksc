@@ -1,0 +1,10 @@
+<?xml version  = "1.0"?>
+<script_cfg>
+	<include_paths>
+		<path>"Y:\COMX_SDK\include\ui\"</path>
+	</include_paths>
+	<module_paths>
+		<path>"Y:\COMX_SDK\lib\ui\"</path>
+ 	</module_paths>
+	<script_path>"Y:\COMX_SDK\lib\ui\script\"</script_path>
+</script_cfg>

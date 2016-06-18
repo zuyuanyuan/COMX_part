@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui" name="main" xmlns="http://www.kingmesh.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kingmesh.com kul.xsd">
+    <property name="id">0xe4e0c838-0x5460-0x4368-0x89-0x97-0x98-0x19-0x17-0x73-0x2f-0xec</property>
+    <widget type="form" name="main_pane">
+        <property name="id">0x5871bc8b-0x64d6-0x45c1-0x98-0x65-0x30-0xc3-0xfc-0x95-0x24-0x3d</property>
+        <property name="title">COMX Websocket守护进程</property>
+        <property name="maximum_box">true</property>
+        <property name="minimum_box">true</property>
+        <property name="close_box">true</property>
+        <property name="resize">true</property>
+        <property name="center">center</property>
+        <property name="toolwindow">false</property>
+        <property name="icon">kmas</property>
+        <property name="show">minimize</property>
+        <property name="app_window">true</property>
+        <property name="javascript">main_pane.js</property>
+        <widget type="block" refname="ui_block" refid="0x11607d9f-0xaf58-0x4cae-0xa6-0x7b-0x4f-0xf7-0xf7-0x1a-0xe0-0xbd">
+            <event name="#evtExit">OnExit();</event>
+            <event name="#evtHide">OnHide();</event>
+            <binding name="#varConnectNum">connect_num</binding>
+            <binding name="#varHdr">hdr</binding>
+            <binding name="#varName">name</binding>
+            <binding name="#varPort">port_no</binding>
+        </widget>
+    </widget>
+</kul_pkg>

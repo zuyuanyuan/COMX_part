@@ -1,0 +1,23 @@
+<setup>
+	<dir_list>      
+		<item value = "bin"/>   
+		<item value = "distribute"/>
+		<item value = "data"/>
+		<item value = "common"/>
+		<item value = "include"/>
+		<item value = "lib"/>
+		<item value = "pic"/>
+		<item value = "picture"/>
+		<item value = "wtl75"/>
+		<item value = "template"/>
+		<item value = "manual"/>
+		<item value = "kul"/>
+                <item value = "widget.addin"/>
+                <item value = "fop"/>
+                <item value = "js"/>
+                <item value = "js.ext"/>
+        </dir_list>
+	<file_list>
+		<item value = "readme.txt"/>
+	</file_list>
+</setup>

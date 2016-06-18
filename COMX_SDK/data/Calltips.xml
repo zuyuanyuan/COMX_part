@@ -1,0 +1,27 @@
+<Call_tips>
+    <function name="CreateWindow" type="HWND">
+    <tipword>LPCTSTR lpClassName</tipword>
+    <tipword>LPCTSTR lpWindowName</tipword>
+    <tipword>DWORD dwStyle</tipword>
+    <tipword>int x</tipword>
+    <tipword>int y</tipword>
+    <tipword>int nWidth</tipword>
+    <tipword>int nHeight</tipword>
+    <tipword>HWND hWndParent</tipword>
+    <tipword>HMENU hMenu</tipword>
+    <tipword>HANDLE hInstance</tipword>
+    <tipword>PVOID lpParam</tipword>
+	</function>
+	
+	<function name="MoveWindow" type="BOOL">
+    <tipword>HWND hWnd</tipword>
+    <tipword>int X</tipword>
+    <tipword>int Y</tipword>
+    <tipword>int nWidth</tipword>
+    <tipword>int nHeight</tipword>
+    <tipword>BOOL bRepaint</tipword>
+	</function>
+ 
+
+	
+</Call_tips>

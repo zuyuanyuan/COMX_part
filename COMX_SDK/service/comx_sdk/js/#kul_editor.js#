@@ -1,0 +1,732 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// Import external javascript module by reqire function.
+
+var websocket = require('socket.io/comx.websocket.js');
+
+function AutoSaveKUL()
+{
+	if(binding.kul_doc_filename != "")
+	{
+		 var sci_kul_wnd = new TScintillaWnd(binding.kul_doc_hdr);
+		 if(sci_kul_wnd.IsDirty() == true)
+		 {
+			if(comx.ui.CallYesNoDialog("KUL document has been modified, do you want to save it?", "Notify"))
+			{
+				SaveKULDocTo(binding.kul_doc_filename);
+			}
+		 }
+	}
+}
+
+function OpenKULDocFrom(filename)
+{
+	 AutoSaveKUL();
+     comx.sys.CreateFileHandler("kul_doc", filename);
+     binding.kul_doc = comx.file.kul_doc;
+     comx.sys.CloseFileHandler("kul_doc");
+	 binding.kul_doc_filename = filename;
+
+	 //binding.preview_window_enable = IsBlockPackage(binding.kul_doc_filename);
+}
+
+function AutoSaveJS()
+{
+	 if(binding.js_doc_filename != "")
+	 {
+		 var sci_js_wnd = new TScintillaWnd(binding.js_doc_hdr);
+		 if(sci_js_wnd.IsDirty() == true)
+		 {
+			if(comx.ui.CallYesNoDialog("JavaScript document has been modified, do you want to save it?", "Notify"))
+			{
+				SaveJSDocTo(binding.js_doc_filename);
+			}
+		 }
+	 }
+}
+
+function OpenJSDocFrom(filename)
+{
+	 AutoSaveJS();
+     comx.sys.CreateFileHandler("js_doc", filename);
+     binding.js_doc = comx.file.js_doc;
+     comx.sys.CloseFileHandler("js_doc");
+ 	 binding.js_doc_filename = filename;
+}
+
+function IsKULFile(filename)
+{
+	return (filename.indexOf(".kul") != -1);
+}
+
+function IsJSFile(filename)
+{
+	return (filename.indexOf(".js") != -1);
+}
+
+function OnOpen()
+{	
+	OnOpenByNewDlg();
+	return;
+
+	var filter = new Array();
+    if(binding.tabctrl_index == 0)
+    {
+        filter[0] = "KUL Files(*.kul)";
+        filter[1] = "JavaScript Files(*.js)";
+    }
+    
+    if(binding.tabctrl_index == 1)
+    {
+        filter[0] = "JavaScript Files(*.js)";
+        filter[1] = "KUL Files(*.kul)";
+    }
+
+	var filename = comx.ui.CallOpenFileDialog(filter);
+	if(filename == "")
+		return;
+
+	if(IsKULFile(filename))
+	{
+		OpenKULDocFrom(filename);
+		ClearKULDocDirtyFlag();
+
+		kul_doc_first_visible_line = 0;
+		kul_doc_position = 0;
+
+		binding.tabctrl_index = 0;
+	}
+
+	if(IsJSFile(filename))
+	{
+		OpenJSDocFrom(filename);
+		ClearJSDocDirtyFlag();
+		binding.tabctrl_index = 1;
+	}
+}
+
+function ClearJSDocDirtyFlag()
+{
+	var sci_wnd = new TScintillaWnd(binding.js_doc_hdr);
+    sci_wnd.ClearDirtyFlag();
+}
+
+function SaveJSDocTo(filename)
+{
+    comx.sys.CreateFileHandler("js_doc", filename);
+    comx.file.js_doc = binding.js_doc;
+    comx.sys.CloseFileHandler("js_doc");
+    binding.js_doc_filename = filename;
+    ClearJSDocDirtyFlag();
+}
+
+function ClearKULDocDirtyFlag()
+{
+	var sci_wnd = new TScintillaWnd(binding.kul_doc_hdr);
+    sci_wnd.ClearDirtyFlag();
+}
+
+function RegisterKUL(unit_name, kul_filepath)
+{
+	comx.shell.kulreg(unit_name, kul_filepath);
+	comx.shell.run("y:\\comx_sdk\\nodejs\\node.exe y:\\comx_sdk\\nodejs\\entry.x2js.js " + unit_name, true);
+	//comx.shell.run("y:\\comx_sdk\\nodejs\\node.exe y:\\comx_sdk\\nodejs\\package.x2js.js " + unit_name, true);
+}
+
+function SaveKULDocTo(filename)
+{
+    comx.sys.CreateFileHandler("kul_doc", filename);
+    comx.file.kul_doc = binding.kul_doc;
+    comx.sys.CloseFileHandler("kul_doc");
+    binding.kul_doc_filename = filename;
+    ClearKULDocDirtyFlag();
+
+    //binding.preview_window_enable = IsBlockPackage(binding.kul_doc_filename);
+
+    var err_msg = comx.shell.kul_validate(binding.kul_doc_filename);
+	binding.validate_info = comx.shell.kul_validate_err_msg(err_msg);
+
+	var is_pass = comx.shell.is_kul_validate_pass(err_msg);
+
+	if(is_pass == "false")
+	{
+		binding.top_menu_index = 1;
+		var err_line = comx.shell.kul_validate_err_line(err_msg);
+		if(err_line != "-1")
+		{
+			binding.tabctrl_index = 0;
+			binding.kul_doc_index.index1 = parseInt(err_line) - 1;
+		}
+
+		return false;
+	}
+	else
+	{
+		binding.top_menu_index = 0;
+		
+		if(IsBlockPackage(binding.kul_doc_filename))
+		{
+			RegisterKUL(comx.gf.kul_editor_current_unit_name, binding.kul_doc_filename);
+		}
+
+		return true;
+	}
+
+}
+
+function OnSaveAs()
+{
+    if(binding.tabctrl_index == 0)
+    {
+        var filter = new Array();
+        filter[0] = "KUL Files(*.kul)";
+        filter[1] = "All Files(*.*)";
+        
+        var filename = comx.ui.CallSaveFileDialog(filter);
+        if(filename != "")
+        {
+            SaveKULDocTo(filename);
+        }
+    }
+
+    if(binding.tabctrl_index == 1)
+    {
+        var filter = new Array();
+        filter[0] = "JavaScript Files(*.js)";
+        filter[1] = "All Files(*.*)";
+        
+        var filename = comx.ui.CallSaveFileDialog(filter);
+        if(filename != "")
+        {
+            SaveJSDocTo(filename);
+        }
+    }
+}
+
+function OnSave()
+{
+    if(binding.tabctrl_index == 0 && binding.kul_doc_filename != "")
+    {
+        SaveKULDocTo(binding.kul_doc_filename);
+        return;
+    }
+
+    if(binding.tabctrl_index == 1 && binding.js_doc_filename != "")
+    {
+        SaveJSDocTo(binding.js_doc_filename);
+        return;
+    }
+
+    //OnSaveAs();
+}
+
+function OnOpenByNewDlg()
+{
+	comx.ui.PopupSystemModalForm("0x3ac8d876-0x6cec-0x46a7-0x9a-0x5d-0x56-0x46-0xe2-0x07-0xdc-0x1e");
+
+	var page_index = 0;
+
+	if(comx.gf.kul_editor_open_file_dlg_valid == "true")
+	{
+		var ret_obj = JSON.parse(comx.gf.kul_editor_open_dlg_ret);
+
+		var is_auto_load = false;
+		if(ret_obj.kul_filepath != undefined)
+		{
+			page_index = 0;
+			is_auto_load = true;
+
+			OpenKULDocFrom(ret_obj.kul_filepath);
+			ClearKULDocDirtyFlag();
+
+			kul_doc_first_visible_line = 0;
+			kul_doc_position = 0;
+		}
+
+		if(ret_obj.js_filepath != undefined)
+		{
+			if(is_auto_load == false)
+			{
+				page_index = 1;
+			}
+
+			OpenJSDocFrom(ret_obj.js_filepath);
+			ClearJSDocDirtyFlag();
+		}
+
+		binding.tabctrl_index = page_index;
+	}
+}
+
+function OnHotKey(id)
+{
+	if(id == 1002)
+	{
+		OnSave();
+	}
+
+	if(id == 1001)
+	{
+		OnOpenByNewDlg();
+	}
+
+	if(id == 1003)
+	{
+		if(binding.tabctrl_index == 0)
+		{
+			comx.gf.kul_search_target_hdr = binding.kul_doc_hdr;
+		}
+		else
+		{
+			comx.gf.kul_search_target_hdr = binding.js_doc_hdr;
+		}
+
+		comx.ui.PopupSystemModalForm("0xeb3d74cc-0xee2e-0x47c3-0x9c-0xaa-0xb2-0x0f-0x64-0x70-0xfd-0xa7");
+	}
+
+	if(id == 1004)
+	{
+		OnNewDocumentNew();
+	}
+
+	if(id == 1005)
+	{
+		OnPreviewBlock();
+	}
+
+	if(id == 1006)
+	{
+		OnUnitToolkit();
+	}
+
+	if(id == 1007)
+	{
+		OnPkgToolkit();
+	}
+
+	if(id == 1008)
+	{
+		pane.Close();
+	}
+}
+
+var kul_doc_first_visible_line = 0;
+var kul_doc_position = 0;
+
+var js_doc_first_visible_line = 0;
+var js_doc_position = 0;
+
+function OnSwitchDoc()
+{
+	if(comx.gf.tabctrl_index == 0)
+	{
+		widget.scintilla.SetPosition(binding.kul_doc_hdr, kul_doc_position);
+		widget.scintilla.SetFirstVisibleLine(binding.kul_doc_hdr, kul_doc_first_visible_line);
+
+		js_doc_position = widget.scintilla.GetPosition(binding.js_doc_hdr);
+		js_doc_first_visible_line = widget.scintilla.GetFirstVisibleLine(binding.js_doc_hdr);
+	}
+	else
+	{
+		kul_doc_position = widget.scintilla.GetPosition(binding.kul_doc_hdr);
+		kul_doc_first_visible_line = widget.scintilla.GetFirstVisibleLine(binding.kul_doc_hdr);
+
+		widget.scintilla.SetPosition(binding.js_doc_hdr, js_doc_position);
+		widget.scintilla.SetFirstVisibleLine(binding.js_doc_hdr, js_doc_first_visible_line);
+	}
+}
+
+function OnCloseForm()
+{
+	websocket.Stop();
+
+	SaveConfig();
+
+	AutoSaveKUL();
+	AutoSaveJS();
+}
+
+function OnAddWidget()
+{
+	if(binding.kul_doc_filename == "")
+	{
+		return;
+	}
+
+	comx.gf.kul_doc_file = binding.kul_doc_filename;
+	comx.ui.PopupSystemModalForm("0x94a39440-0xaddb-0x4a60-0x9b-0xc4-0xdf-0x29-0xca-0x5f-0xef-0xad");
+	if(comx.gf.insert_to_document == "true" && comx.gf.add_widget_okay == "true")
+	{
+		binding.tabctrl_index = 0;
+		var sci_wnd = new TScintillaWnd(binding.kul_doc_hdr);
+		sci_wnd.Paste();
+		OnBeautify();
+	}
+}
+
+function OnBeautify()
+{
+	if(binding.kul_doc_filename == "")
+	{
+		return;
+	}
+
+	while(binding.kul_doc_filename == "")
+	{
+		OnSaveAs();
+	}
+	if(binding.kul_doc_filename != "")
+	{
+		var index = binding.kul_doc_index.index1;
+		
+        if(SaveKULDocTo(binding.kul_doc_filename) == false)
+			return;
+
+		comx.shell.beautify_xml(binding.kul_doc_filename);
+		OpenKULDocFrom(binding.kul_doc_filename);
+		binding.kul_doc_index.index1 = index;
+	}
+}
+
+function OnSimpleMode()
+{
+	if(binding.kul_doc_filename == "")
+	{
+		return;
+	}
+
+	while(binding.kul_doc_filename == "")
+	{
+		OnSaveAs();
+	}
+
+	if(SaveKULDocTo(binding.kul_doc_filename) == false) 
+		return;
+
+	comx.shell.kulprop(binding.kul_doc_filename, 1);
+	OpenKULDocFrom(binding.kul_doc_filename);
+}
+
+function OnFullMode()
+{
+	if(binding.kul_doc_filename == "")
+	{
+		return;
+	}
+
+	while(binding.kul_doc_filename == "")
+	{
+		OnSaveAs();
+	}
+
+	if(SaveKULDocTo(binding.kul_doc_filename)== false)
+		return;
+
+	comx.shell.kulprop(binding.kul_doc_filename, 2);
+	OpenKULDocFrom(binding.kul_doc_filename);
+}
+
+function OnRegister()
+{
+	if(binding.kul_doc_filename != "")
+	{
+		if(SaveKULDocTo(binding.kul_doc_filename) == false)
+			return;
+
+		comx.gf.g_kul_filename = binding.kul_doc_filename;
+		comx.ui.PopupSystemModalForm("0x2b76e4d2-0xfdc9-0x4b30-0xbf-0x77-0xe7-0x12-0x70-0xca-0xf8-0x2f");
+
+		if(binding.kul_doc_filename != comx.gf.g_kul_filename)
+			OpenKULDocFrom(comx.gf.g_kul_filename);
+		//OnBeautify();
+	}
+}
+
+function OnExecute()
+{
+	comx.ui.PopupSystemModalForm("0xa5b43ef4-0x7f7a-0x4992-0x8c-0x0e-0xbe-0x77-0x1c-0xa8-0x2a-0x0e");
+}
+
+function OnNewDocument()
+{
+	OnNewDocumentNew();
+	return;
+	if(binding.tabctrl_index == 0)
+	{
+		if(binding.kul_doc_filename != "")
+			AutoSaveKUL();
+		binding.kul_doc = "";
+		binding.kul_doc_filename = "";
+	}
+	if(binding.tabctrl_index == 1)
+	{
+		if(binding.js_doc_filename != "")
+			AutoSaveJS();
+		binding.js_doc = "";
+		binding.js_doc_filename = "";
+	}
+
+	//binding.preview_window_enable = false;
+}
+
+function OnNewDocumentNew()
+{
+	comx.ui.PopupSystemModalForm("0x7f3c409a-0x7093-0x40c5-0xa4-0xbd-0x0e-0x1f-0x06-0x7a-0x06-0x76");
+
+	if(comx.gf.kul_editor_open_file_dlg_valid == "true")
+	{
+		var ret_obj = JSON.parse(comx.gf.kul_editor_open_dlg_ret);
+
+		if(ret_obj.kul_filepath != undefined)
+		{
+			OpenKULDocFrom(ret_obj.kul_filepath);
+			ClearKULDocDirtyFlag();
+
+			kul_doc_first_visible_line = 0;
+			kul_doc_position = 0;
+
+			OnBeautify();
+		}
+
+		if(ret_obj.js_filepath != undefined)
+		{
+			OpenJSDocFrom(ret_obj.js_filepath);
+			ClearJSDocDirtyFlag();
+		}
+
+		binding.tabctrl_index = 0;
+	}
+}
+
+function OnModeChange()
+{
+	if(binding.kul_mode_index == 0)
+		OnSimpleMode();
+	if(binding.kul_mode_index == 1)
+		OnFullMode();
+}
+
+function OnInitializeData()
+{
+	websocket.Startup(true/*debug_mode*/);
+
+	binding.copyright_info = "Warning: This computer program is protected by copyright law and international treaties.Unauthorized reproduction or distribution of this program, or any portion of it, may result in severe civil and criminal penalties,and will be prosecuted under the law.";
+	comx.gf.unit_index = 0;
+	//binding.preview_window_enable = false;
+
+	var kul_editor_cfg_file = "y:\\comx_sdk\\kul\\kul_editor_cfg.json";
+	if(comx.sys.IsFileExist(kul_editor_cfg_file))
+	{
+		comx.sys.CreateFileHandler("keditor_cfg", kul_editor_cfg_file);
+		var keditor_cfg_obj = JSON.parse(comx.file.keditor_cfg);
+		comx.sys.CloseFileHandler("keditor_cfg");
+
+		comx.gf.kul_editor_current_unit_name = keditor_cfg_obj.current_unit_name;
+	}
+	else
+	{
+		comx.gf.kul_editor_current_unit_name = "comx_sdk";
+	}
+}
+
+function SaveConfig()
+{
+	if(comx.gf.kul_editor_current_unit_name == undefined)
+	{
+		return;
+	}
+
+	var kul_editor_cfg_file = "y:\\comx_sdk\\kul\\kul_editor_cfg.json";
+
+	comx.sys.CreateFileHandler("keditor_cfg", kul_editor_cfg_file);
+	comx.file.keditor_cfg = JSON.stringify({"current_unit_name" : comx.gf.kul_editor_current_unit_name});
+	comx.sys.CloseFileHandler("keditor_cfg");
+}
+
+function OnBind()
+{
+	comx.dev.CallBindingBrowser();
+}
+
+function OnEvent()
+{
+    comx.dev.CallEventBrowser();
+}
+
+function OnGlobal()
+{
+    comx.dev.CallGlobalFieldBrowser();
+}
+
+function OnNamespace()
+{
+    comx.dev.CallNamespaceBrowser();
+}
+
+function OnCopy()
+{
+	if(binding.tabctrl_index == 0)
+	{
+		var sci_wnd = new TScintillaWnd(binding.kul_doc_hdr);
+		sci_wnd.Copy();
+	}
+	else
+	{
+		var sci_wnd = new TScintillaWnd(binding.js_doc_hdr);
+		sci_wnd.Copy();
+	}
+}
+
+function OnCut()
+{
+	if(binding.tabctrl_index == 0)
+	{
+		var sci_wnd = new TScintillaWnd(binding.kul_doc_hdr);
+		sci_wnd.Cut();
+	}
+	else
+	{
+		var sci_wnd = new TScintillaWnd(binding.js_doc_hdr);
+		sci_wnd.Cut();
+	}
+}
+
+function OnPaste()
+{
+	if(binding.tabctrl_index == 0)
+	{
+		var sci_wnd = new TScintillaWnd(binding.kul_doc_hdr);
+		sci_wnd.Paste();
+	}
+	else
+	{
+		var sci_wnd = new TScintillaWnd(binding.js_doc_hdr);
+		sci_wnd.Paste();
+	}
+}
+
+function OnUndo()
+{
+	if(binding.tabctrl_index == 0)
+	{
+		var sci_wnd = new TScintillaWnd(binding.kul_doc_hdr);
+		sci_wnd.Undo();
+	}
+	else
+	{
+		var sci_wnd = new TScintillaWnd(binding.js_doc_hdr);
+		sci_wnd.Undo();
+	}
+}
+
+function OnRedo()
+{
+	if(binding.tabctrl_index == 0)
+	{
+		var sci_wnd = new TScintillaWnd(binding.kul_doc_hdr);
+		sci_wnd.Redo();
+	}
+	else
+	{
+		var sci_wnd = new TScintillaWnd(binding.js_doc_hdr);
+		sci_wnd.Redo();
+	}
+}
+
+function OnKulValidate()
+{
+	if(binding.kul_doc_filename == "")
+		return;
+
+	comx.sys.CreateFileHandler("kul_doc", binding.kul_doc_filename);
+    comx.file.kul_doc = binding.kul_doc;
+    comx.sys.CloseFileHandler("kul_doc");
+    ClearKULDocDirtyFlag();
+
+	var err_msg = comx.shell.kul_validate(binding.kul_doc_filename);
+	binding.validate_info = comx.shell.kul_validate_err_msg(err_msg);
+
+	var is_pass = comx.shell.is_kul_validate_pass(err_msg);
+
+	if(is_pass == "false")
+	{
+		var err_line = comx.shell.kul_validate_err_line(err_msg);
+		if(err_line != "-1")
+		{
+			binding.tabctrl_index = 0;
+			binding.kul_doc_index.index1 = parseInt(err_line) - 1;
+		}
+	}
+}
+
+function OnUnitToolkit()
+{
+	var cmd = "y:\\comx_sdk\\distribute\\KUnitApp.exe";
+	comx.shell.run(cmd, true);
+}
+
+function OnPkgToolkit()
+{
+	comx.ui.PopupSystemModalessForm(unit.FORMID_IPkgMgrEntry);
+}
+
+function OnNewFrame()
+{
+	SaveConfig();
+
+	var cmd = "y:\\comx_sdk\\bin\\kdesktop.exe -e 0x2f10d808-0x266b-0x4207-0xb3-0x25-0x2a-0xc6-0xec-0xb3-0xd8-0xcb -ucomx_sdk";
+	comx.shell.run(cmd, false);
+}
+
+function IsBlockPackage(kul_fname)
+{
+	return (comx.shell.IsBlockPackage(kul_fname) == "true");
+}
+
+function OnPreviewBlock()
+{
+	if(binding.kul_doc_filename == "")
+	{
+		return;
+	}
+
+	if(IsBlockPackage(binding.kul_doc_filename))
+	{
+		comx.shell.RefreshBlockPreviewBy(binding.kul_doc_filename);
+		comx.shell.run_ex("y:\\comx_sdk\\nodejs\\node.exe y:\\comx_sdk\\nodejs\\block_preview.x2js.js", true, true);
+		comx.ui.PopupSystemModalessForm(comx.entry.FORMID_IKulBlockPreviewPane);
+	}
+	else
+	{
+		if(comx.shell.IsNullKulFile(binding.kul_doc_filename) == "true")
+		{
+			comx.ui.InformationBox("The current KUL file don't include any subctrl!");
+			return;
+		}
+
+		var unit_name = comx.shell.GetUnitNameOfKUL(binding.kul_doc_filename);
+		var formid = GetIdFromKulFilename(binding.kul_doc_filename);
+
+		var cmd = "y:\\comx_sdk\\bin\\kdesktop.exe -u " + unit_name + " -e " + formid;
+		//comx.ui.InformationBox(cmd);
+		comx.shell.run(cmd, false);
+	}
+}
+
+function GetIdFromKulFilename(kul_filename)
+{
+	var unit_name = comx.shell.GetUnitNameOfKUL(binding.kul_doc_filename);
+	comx.sys.CreateFileHandler("kul_entry", "y:\\" + unit_name + "\\kul\\kul.entry.json");
+    var json_obj = JSON.parse(comx.file.kul_entry);
+    comx.sys.CloseFileHandler("kul_entry");
+
+	for(var loop = 0; loop < json_obj.length; ++loop)
+	{
+		if(json_obj[loop].kul_filepath == kul_filename)
+		{
+			return json_obj[loop].id;
+		}
+	}
+
+	return "";
+}
+

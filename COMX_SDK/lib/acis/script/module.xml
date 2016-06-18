@@ -1,0 +1,17 @@
+<?xml version  = "1.0"?>
+<module_list>
+  <debug>
+    <item>acis_core_d.kpi</item>
+    <item>acis_render_d.kpi</item>
+    <item>acis_serialize_d.kpi</item>
+    <item>acis_function_wrap_d.kpi</item>
+    <item>brep_interface_wrap_d.kpi</item>
+  </debug>
+  <release>
+		<item>acis_core.kpi</item>
+    <item>acis_render.kpi</item>
+    <item>acis_serialize.kpi</item>
+    <item>acis_function_wrap.kpi</item>
+    <item>brep_interface_wrap.kpi</item>
+	</release>
+</module_list>

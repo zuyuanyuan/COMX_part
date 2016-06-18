@@ -1,0 +1,26 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// Please don't modified the following codes at any time.
+
+var port = parseInt(process.argv[2]);
+var debug = JSON.parse(process.argv[3]);
+var home_dir = process.argv[4];
+var root_dir = process.env['COMX_SDK'];
+
+process.chdir(home_dir + 'js/');
+
+var websocket = require(root_dir + 'js/socket.io/websocket.common.js');
+
+websocket.start(port, debug);
+
+websocket.on("exit", function(data){
+    process.exit();
+});
+
+process.on('uncaughtException', function (err) {
+    console.error(err.stack);
+    //console.log("Node NOT Exiting...");
+    websocket.Invoke('error', {"message" : err.message});
+});
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// Append your codes here please.

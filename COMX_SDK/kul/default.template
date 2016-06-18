@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="gb2312"?>
+
+<kul_pkg type="template" name="default">
+  <template type="property">
+    <widget type="form">
+      <property name="id">auto</property>
+      <property name="title">Form</property>
+      <property name="titlebar">true|false</property>
+      <property name="maximum_box">false|true</property>
+      <property name="minimum_box">false|true</property>
+      <property name="close_box">false|true</property>
+      <property name="border">true|false</property>
+      <property name="bkcolor">gray|white</property>
+      <property name="resize">false|true</property>
+      <property name="center">none|center|mouse_center</property>
+      <property name="toolwindow">true|false</property>
+      <property name="icon">nil</property>
+      <property name="width">auto</property>
+      <property name="height">auto</property>
+      <property name="font">Microsoft Sans Serif</property>
+      <property name="font_size">10</property>
+      <property name="margin">1</property>
+      <property name="style">popup|child</property>
+      <property name="show">normal|maximize|minimize|hide</property>
+      <property name="embed">false|true</property>
+      <property name="app_window">false|true</property>
+      <property name="attachment">none|left_top|left_bottom|right_top|right_bottom</property>
+      <property name="attachment_size">5</property>
+      <property name="javascript"></property>
+      <property name="js_lib">/js/class/widget_wrap.js;/js/socket.io/socket.io.js</property>
+      <property name="default_hot_key">901,ctrl_shift,g;902,ctrl_shift,b;903,ctrl_shift,n;904,ctrl_shift,e;905,ctrl_shift,d</property>
+      <property name="hot_key"></property>
+      <property name="onHotKey"/>
+      <property name="alpha">255</property>
+      <property name="topmost">false|true</property>
+	  <property name="is_service">false|true</property>
+    </widget>
+    <widget type="vbox">
+      <property name="margin">1</property>
+      <property name="adjust">auto|fixed|horizontal|vertical</property>
+    </widget> 
+    <widget type="hbox">
+      <property name="margin">1</property>
+      <property name="adjust">auto|fixed|horizontal|vertical</property>
+    </widget>
+    <widget type="stack">
+      <property name="margin">3</property>
+      <property name="adjust">fixed|auto|horizontal|vertical</property>
+      <property name="index1_bind"></property>
+      <property name="id">auto</property>
+      <property name="border">flat|group|3d|none</property>
+      <property name="label">Group Box</property>
+    </widget>
+    <widget type="subform">
+      <property name="ref">nil</property>
+      <property name="event_inherit">false|true</property>
+      <property name="block_id">nil</property>
+    </widget>
+    <widget type="tabctrl">
+      <property name="fixed_width">false|true</property>
+      <property name="position">top|bottom|left|right</property>
+      <property name="id">auto</property>
+      <property name="gray">false|true</property>
+      <property name="bkcolor">gray|white</property>
+      <property name="visible">true|false</property>
+	  <property name="type">3d|flat</property>
+      <property name="adjust">auto|horizontal|vertical|fixed</property>
+      <property name="margin">1</property>
+      <property name="data">Page1,nil,Page2,nil,Page3,nil</property>
+      <property name="width">150</property>
+      <property name="height">120</property>
+      <property name="simple_bind"></property>
+      <property name="index1_bind"></property>
+      <property name="handle_bind"></property>
+      <property name="onSwitch"></property>
+    </widget>
+    <widget type="space">
+      <property name="size">auto</property>
+    </widget>
+    <widget type="pushbutton">
+      <property name="label">button</property>
+      <property name="bitmap">nil</property>
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">50</property>
+      <property name="height">14</property>
+      <property name="default">false|true</property>
+      <property name="gray">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="adjust">fixed|auto|horizontal|vertical</property>
+      <property name="bitmap_align">left|right</property>
+      <property name="flat">false|true</property>
+      <property name="shadow">false|true</property>
+      <property name="shadow_type">soft|noise|metal|vshade|hard|vbump|hshade|hbump|diagonal|simple</property>
+      <property name="color">auto</property>
+      <property name="can_check">false|true</property>
+      <property name="onClick"></property>
+      <property name="enable_bind"></property>
+      <property name="simple_bind"></property>
+      <property name="valid_bind"></property>
+      <property name="visible_bind"></property>
+      <property name="handle_bind"></property>
+      <property name="tip"></property>
+    </widget>
+    <widget type="checkbutton">
+      <property name="label">Check</property>
+      <property name="bitmap">nil</property>
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">39</property>
+      <property name="height">10</property>
+      <property name="gray">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="adjust">fixed|auto|horizontal|vertical</property>
+      <property name="push_like">false|true</property>
+      <property name="auto">true|false</property>
+      <property name="check">false|true</property>
+      <property name="simple_bind"></property>
+      <property name="valid_bind"></property>
+      <property name="enable_bind"></property>
+      <property name="visible_bind"></property>
+      <property name="onClick"></property>
+      <property name="handle_bind"></property>
+    </widget>
+    <widget type="radiobutton">
+      <property name="label">Radio</property>
+      <property name="bitmap">nil</property>
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">50</property>
+      <property name="height">10</property>
+      <property name="gray">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="adjust">fixed|auto|horizontal|vertical</property>
+      <property name="push_like">false|true</property>
+      <property name="auto">true|false</property>
+      <property name="group_id">1</property>
+      <property name="default_group_item">false|true</property>
+      <property name="enable_bind"></property>
+      <property name="visible_bind"></property>
+      <property name="onClick"></property>
+      <property name="handle_bind"></property>
+    </widget>
+    <widget type="edit" name="text">
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">40</property>
+      <property name="height">12</property>
+      <property name="gray">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="align">left|center|right</property>
+      <property name="multiline">false|true</property>
+      <property name="password">false|true</property>
+      <property name="adjust">fixed|auto|horizontal|vertical</property>
+      <property name="wrap">true|false</property>
+      <property name="data"></property>
+      <property name="readonly">false|true</property>
+      <property name="valid_check">false|true</property>
+      <property name="valid_okay">.*</property>
+      <property name="valid_warning">.*</property>
+      <property name="simple_bind"></property>
+      <property name="valid_bind"></property>
+      <property name="enable_bind"></property>
+      <property name="visible_bind"></property>
+      <property name="onChange"></property>
+      <property name="handle_bind"></property>
+    </widget>
+    <widget type="scintilla">
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">120</property>
+      <property name="height">80</property>
+      <property name="gray">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="adjust">fixed|auto|horizontal|vertical</property>
+      <property name="high_light">javascript|cpp|kul|none</property>
+      <property name="line_number">false|true</property>
+      <property name="enable_bind"></property>
+      <property name="visible_bind"></property>
+      <property name="simple_bind"></property>
+      <property name="index2_bind"></property>
+      <property name="handle_bind"></property>
+      <property name="auto_completion">data\Autocompletion.xml</property>
+      <property name="call_tips">data\Calltips.xml</property>
+      <property name="highlight_xml">data\Highlight.xml</property>
+      <property name="onChange"></property>
+      <property name="onAutoComplete"></property>
+      <property name="onAutoCompleteSelect"></property>
+      <property name="onCallTip"></property>
+    </widget>
+    <widget type="label">
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">19</property>
+      <property name="auto_width">true|false</property>
+      <property name="height">8</property>
+      <property name="border">false|true</property>
+      <property name="text">label</property>
+      <property name="align">left|center|right</property>
+      <property name="gray">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="adjust">fixed|auto|horizontal|vertical</property>
+      <property name="handle_bind"></property>
+      <property name="visible_bind"></property>
+    </widget>
+    <widget type="separator">
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="gray">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="margin">2</property>
+    </widget>
+    <widget type="bitmap">
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">80</property>
+      <property name="height">80</property>
+      <property name="fit_origin_size">false|true</property><!--no support in version 1.0-->
+      <property name="transparent_background">false|true</property>
+      <property name="background_color">255,255,255</property>
+      <property name="bkcolor">gray|white</property>
+      <property name="border">false|true</property>
+      <property name="gray">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="adjust">fixed|auto|horizontal|vertical</property>
+      <property name="picture">default.bmp</property>
+      <property name="simple_bind"></property>
+      <property name="handle_bind"></property>
+      <property name="onLButtonDown"></property>
+      <property name="onLButtonUp"></property>
+      <property name="onMButtonDown"></property>
+      <property name="onMButtonUp"></property>
+      <property name="onRButtonDown"></property>
+      <property name="onRButtonUp"></property>
+      <property name="onMouseMove"></property>
+      <property name="onResize"></property>
+	  <property name="autoPlay">false|true</property>
+	  <property name="playMode">copy|zoom|scale</property>
+    </widget>
+    <widget type="glcanvas">
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">80</property>
+      <property name="height">80</property>
+      <property name="border">true|false</property>
+      <property name="gray">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="adjust">auto|fixed|horizontal|vertical</property>
+      <property name="simple_bind"></property>
+      <property name="handle_bind"></property>
+      <property name="onPickup"></property>
+      <property name="onLButtonDown"></property>
+      <property name="onLButtonUp"></property>
+      <property name="onMButtonDown"></property>
+      <property name="onMButtonUp"></property>
+      <property name="onRButtonDown"></property>
+      <property name="onRButtonUp"></property>
+      <property name="onMouseMove"></property>
+      <property name="onResize"></property>
+      <property name="onPickupNotify"></property>
+    </widget>
+    <widget type="combobox">
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">64</property>
+      <property name="height">12</property>
+      <property name="gray">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="adjust">fixed|auto|horizontal|vertical</property>
+      <property name="type">down|list</property>
+      <property name="sort">false|true</property>
+      <property name="data">item1, item2, item3</property>
+      <property name="simple_bind"></property>
+      <property name="list_bind"></property>
+      <property name="index1_bind"></property>
+      <property name="enable_bind"></property>
+      <property name="visible_bind"></property>
+      <property name="onChange"></property>
+      <property name="handle_bind"></property>
+    </widget>
+    <widget type="listbox">
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">72</property>
+      <property name="height">48</property>
+      <property name="gray">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="adjust">fixed|auto|horizontal|vertical</property>
+      <property name="selection">single|multiple</property>
+      <property name="sort">false|true</property>
+      <property name="data">item1, item2, item3</property>
+      <property name="simple_bind"></property>
+      <property name="list_bind"></property>
+      <property name="index1_bind"></property>
+      <property name="enable_bind"></property>
+      <property name="visible_bind"></property>
+      <property name="onChange"></property>
+      <property name="onDoubleClick"></property>
+      <property name="handle_bind"></property>
+    </widget>
+    <widget type="hprogbar">
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">80</property>
+      <property name="height">10</property>
+      <property name="gray">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="adjust">fixed|auto|horizontal|vertical</property>
+      <property name="data">0, 100, 0</property>
+      <property name="border">true|false</property>
+      <property name="smooth">false|true</property>
+      <property name="simple_bind"></property>
+      <property name="enable_bind"></property>
+      <property name="visible_bind"></property>
+      <property name="range_bind"></property>
+      <property name="handle_bind"></property>
+    </widget>
+    <widget type="vprogbar">
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">10</property>
+      <property name="height">80</property>
+      <property name="gray">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="adjust">fixed|auto|horizontal|vertical</property>
+      <property name="data">0, 100, 0</property>
+      <property name="border">true|false</property>
+      <property name="smooth">false|true</property>
+      <property name="simple_bind"></property>
+      <property name="enable_bind"></property>
+      <property name="visible_bind"></property>
+      <property name="range_bind"></property>
+      <property name="handle_bind"></property>
+    </widget>
+    <widget type="hslider">
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">100</property>
+      <property name="height">15</property>
+      <property name="gray">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="adjust">fixed|auto|horizontal|vertical</property>
+      <property name="data">0, 100, 50</property>
+      <property name="border">false|true</property>
+      <property name="point">both|top_left|bottom_right</property>
+      <property name="tick_marks">false|true</property>
+      <property name="auto_ticks">false|true</property>
+      <property name="section">false|true</property>
+      <property name="simple_bind"></property>
+      <property name="range_bind"></property>
+      <property name="enable_bind"></property>
+      <property name="visible_bind"></property>
+      <property name="onChange"></property>
+      <property name="handle_bind"></property>
+    </widget>
+    <widget type="vslider">
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">15</property>
+      <property name="height">100</property>
+      <property name="gray">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="adjust">fixed|auto|horizontal|vertical</property>
+      <property name="data">0, 100, 50</property>
+      <property name="border">false|true</property>
+      <property name="point">both|top_left|bottom_right</property>
+      <property name="tick_marks">false|true</property>
+      <property name="auto_ticks">false|true</property>
+      <property name="section">false|true</property>
+      <property name="simple_bind"></property>
+      <property name="range_bind"></property>
+      <property name="enable_bind"></property>
+      <property name="visible_bind"></property>
+      <property name="onChange"></property>
+      <property name="handle_bind"></property>
+    </widget>
+    <widget type="spin">
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">51</property>
+      <property name="height">14</property>
+      <property name="associate_width">11</property>
+      <property name="gray">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="adjust">fixed|auto|horizontal|vertical</property>
+      <property name="data">0, 100, 50</property>
+      <property name="readonly">false|true</property>
+      <property name="simple_bind"></property>
+      <property name="range_bind"></property>
+      <property name="enable_bind"></property>
+      <property name="visible_bind"></property>
+      <property name="onChange"></property>
+      <property name="handle_bind"></property>
+    </widget>
+    <widget type="tree">
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">100</property>
+      <property name="height">150</property>
+      <property name="gray">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="adjust">fixed|auto|horizontal|vertical</property>
+      <property name="has_button">true|false</property>
+      <property name="has_line">true|false</property>
+      <property name="single_expand">false|true</property>
+      <property name="check_box">false|true</property>
+      <property name="edit_label">false|true</property>
+      <property name="data">
+        <subitem label="root" bitmap="new" bitmap_selected = "arrow" id="auto">
+          <subitem label="item1" bitmap="new" bitmap_selected = "arrow" id="auto"/>
+          <subitem label="item2" bitmap="new" bitmap_selected = "arrow" id="auto"/>
+          <subitem label="item3" bitmap="new" bitmap_selected = "arrow" id="auto">
+            <subitem label="item31" bitmap="new" bitmap_selected = "arrow" id="auto"/>
+            <subitem label="item32" bitmap="new" bitmap_selected = "arrow" id="auto"/>
+          </subitem>
+          <subitem label="item4" bitmap="new" bitmap_selected = "arrow" id="auto"/>
+        </subitem>
+      </property>
+      <property name="enable_bind"></property>
+      <property name="visible_bind"></property>
+      <property name="handle_bind"></property>
+    </widget>
+    <widget type="list">
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">180</property>
+      <property name="height">90</property>
+      <property name="gray">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="adjust">fixed|auto|horizontal|vertical</property>
+      <property name="type">icon|small_icon|list|report</property>
+      <property name="align">top|left</property>
+      <property name="sort">none|ascending|descending</property>
+      <property name="single_selection">true|false</property>
+      <property name="auto_arrange">false|true</property>
+      <property name="no_label_wrap">false|true</property>
+      <property name="edit_labels">false|true</property>
+      <property name="show_selection_always">false|true</property>
+      <property name="owner_data">false|true</property>
+      <property name="simple_bind"></property>
+      <property name="table_bind"></property>
+      <property name="index2_bind"></property>
+      <property name="enable_bind"></property>
+      <property name="visible_bind"></property>
+      <property name="data">
+        <header>
+          <item label="Title1" width="100"/>
+          <item label="Title2" width="100"/>
+          <item label="Title3" width="100"/>
+        </header>
+        <image_list>var,new,kmas</image_list>
+        <content>0,item11,item12,item13,1,item21,item22,item23</content>
+      </property>
+      <property name="onClick"></property>
+      <property name="onDoubleClick"></property>
+      <property name="onHeaderClick"></property>
+      <property name="handle_bind"></property>
+    </widget>
+    <widget type="clock">
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">68</property>
+      <property name="height">72</property>
+      <property name="border">false|true</property>
+      <property name="visible">true|false</property>
+      <property name="adjust">fixed</property>
+      <property name="style">blue|sliver</property>
+    </widget> 
+    <widget type="toolbar">
+      <property name="id">auto</property>
+      <property name="menupath">toolbar\n0</property>
+      <property name="dock">bottom|top</property>
+      <property name="newline">no|yes</property>
+      <property name="show">yes|no</property>
+      <property name="radio_group"></property>
+      <property name="javascript"></property>
+      <property name="js_lib">/js/class/widget_wrap.js</property>
+      <property name="visible_bind"></property>
+      <property name="name"></property>
+    </widget>
+    <widget type="toolbar_item">
+      <property name="label">tb_item</property>
+      <property name="bitmap">nil</property>
+      <property name="on_toolbar">yes|no</property>
+      <property name="on_menubar">yes|no</property>
+      <property name="tip">toolbar item tip information</property>
+      <property name="help">toolbar item help information</property>
+      <property name="check_mode">false|true</property>
+      <property name="is_check">false|true</property>
+      <property name="onClick"></property>
+    </widget>
+    <widget type="toolbar_separator"/>
+    <widget type="headerbar">
+      <property name="title">Header Bar Title</property>
+      <property name="detail">some detail description</property>
+      <property name="bitmap">kmas.bmp</property>
+      <property name="bitmap_align">left|right</property>
+      <property name="id">auto</property>
+      <property name="id_alias">nil</property>
+      <property name="width">180</property>
+      <property name="height">30</property>
+      <property name="visible">true|false</property>
+      <property name="adjust">horizontal</property>
+      <property name="enable_bind"></property>
+      <property name="visible_bind"></property>
+    </widget>
+  </template>
+</kul_pkg>
+
+

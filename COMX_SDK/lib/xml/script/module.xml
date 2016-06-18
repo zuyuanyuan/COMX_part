@@ -1,0 +1,9 @@
+<?xml version  = "1.0"?>
+<module_list>
+  <debug>
+    <item>xml_stream_d.kpi</item> 
+  </debug>
+  <release>
+		<item>xml_stream.kpi</item> 
+	</release>
+</module_list>

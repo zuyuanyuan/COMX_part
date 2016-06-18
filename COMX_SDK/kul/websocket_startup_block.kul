@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui_block" name="websocket_startup_block" xmlns="http://www.kingmesh.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kingmesh.com kul.xsd">
+    <property name="id">0xdd765632-0xfed9-0x4d8f-0xac-0x5c-0x14-0xd9-0x23-0xcf-0x8a-0x9d</property>
+    <widget type="hbox">
+        <property name="margin">2</property>
+        <property name="adjust">auto</property>
+        <widget type="bitmap">
+            <property name="id_alias">nil</property>
+            <property name="width">16</property>
+            <property name="height">15</property>
+            <property name="fit_origin_size">false</property>
+            <property name="transparent_background">false</property>
+            <property name="background_color">256,256,256</property>
+            <property name="bkcolor">white</property>
+            <property name="border">false</property>
+            <property name="gray">false</property>
+            <property name="visible">true</property>
+            <property name="adjust">fixed</property>
+            <property name="picture">wait.gif</property>
+            <property name="simple_bind">#varBitmap</property>
+            <property name="handle_bind" />
+            <property name="onLButtonDown" />
+            <property name="onLButtonUp" />
+            <property name="onMButtonDown" />
+            <property name="onMButtonUp" />
+            <property name="onRButtonDown" />
+            <property name="onRButtonUp" />
+            <property name="onMouseMove" />
+            <property name="onResize" />
+            <property name="autoPlay">false</property>
+            <property name="playMode">zoom</property>
+        </widget>
+        <widget type="label">
+            <property name="id_alias">nil</property>
+            <property name="width">19</property>
+            <property name="auto_width">true</property>
+            <property name="height">8</property>
+            <property name="border">false</property>
+            <property name="text">Application is Starting, Wait a Moment Please...</property>
+            <property name="align">left</property>
+            <property name="gray">false</property>
+            <property name="visible">true</property>
+            <property name="adjust">fixed</property>
+            <property name="handle_bind" />
+            <property name="visible_bind" />
+        </widget>
+    </widget>
+</kul_pkg>

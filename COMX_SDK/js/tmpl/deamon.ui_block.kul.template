@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui_block" name="ui_block" xmlns="http://www.kingmesh.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kingmesh.com kul.xsd">
+    <property name="id">0x11607d9f-0xaf58-0x4cae-0xa6-0x7b-0x4f-0xf7-0xf7-0x1a-0xe0-0xbd</property>
+    <widget type="vbox">
+        <widget type="hbox">
+            <widget type="label">
+                <property name="width">30</property>
+                <property name="auto_width">false</property>
+                <property name="text">端口号：</property>
+                <property name="align">right</property>
+                <property name="handle_bind">#varHdr</property>
+            </widget>
+            <widget type="edit" name="text">
+                <property name="align">center</property>
+                <property name="adjust">horizontal</property>
+                <property name="readonly">true</property>
+                <property name="simple_bind">#varPort</property>
+            </widget>
+            <widget type="label">
+                <property name="width">30</property>
+                <property name="auto_width">false</property>
+                <property name="text">连接数：</property>
+                <property name="align">right</property>
+            </widget>
+            <widget type="edit" name="text">
+                <property name="align">center</property>
+                <property name="adjust">horizontal</property>
+                <property name="readonly">true</property>
+                <property name="simple_bind">#varConnectNum</property>
+            </widget>
+        </widget>
+        <widget type="hbox">
+            <widget type="label">
+                <property name="width">30</property>
+                <property name="auto_width">false</property>
+                <property name="text">名称：</property>
+                <property name="align">right</property>
+            </widget>
+            <widget type="edit" name="text">
+                <property name="align">center</property>
+                <property name="adjust">horizontal</property>
+                <property name="readonly">true</property>
+                <property name="simple_bind">#varName</property>
+            </widget>
+        </widget>
+        <widget type="hbox">
+            <widget type="space" />
+            <widget type="pushbutton">
+                <property name="label">隐藏</property>
+                <property name="bitmap">hide</property>
+                <property name="width">70</property>
+                <property name="onClick">#evtHide</property>
+            </widget>
+            <widget type="pushbutton">
+                <property name="label">终止服务</property>
+                <property name="bitmap">outdoor</property>
+                <property name="width">70</property>
+                <property name="onClick">#evtExit</property>
+            </widget>
+        </widget>
+    </widget>
+</kul_pkg>

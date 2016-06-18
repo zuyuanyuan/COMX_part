@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui" name="kul_execute" xmlns="http://www.kingmesh.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kingmesh.com kul.xsd">
+    <property name="id">0xd793ca7f-0x6331-0x48e3-0xa2-0x40-0x22-0x56-0x65-0xff-0x1a-0x58</property>
+    <widget type="form" name="kul_editor_execute_pane">
+        <property name="id">0xa5b43ef4-0x7f7a-0x4992-0x8c-0x0e-0xbe-0x77-0x1c-0xa8-0x2a-0x0e</property>
+        <property name="title">Execute KUL Form</property>
+        <property name="titlebar">true</property>
+        <property name="maximum_box">false</property>
+        <property name="minimum_box">false</property>
+        <property name="border">true</property>
+        <property name="bkcolor">white</property>
+        <property name="resize">false</property>
+        <property name="center">center</property>
+        <property name="toolwindow">true</property>
+        <property name="icon">nil</property>
+        <property name="width">auto</property>
+        <property name="height">auto</property>
+        <property name="font">Microsoft Sans Serif</property>
+        <property name="font_size">10</property>
+        <property name="margin">1</property>
+        <property name="style">popup</property>
+        <property name="show">normal</property>
+        <property name="embed">false</property>
+        <property name="app_window">false</property>
+        <property name="attachment">none</property>
+        <property name="attachment_size">5</property>
+        <property name="javascript">kul_editor_execute_pane.js</property>
+        <property name="js_lib">/js/class/widget_wrap.js</property>
+        <property name="default_hot_key">901,ctrl_shift,g;902,ctrl_shift,b;903,ctrl_shift,n;904,ctrl_shift,e;905,ctrl_shift,d</property>
+        <property name="hot_key">1001,ctrl,q</property>
+        <property name="onHotKey">OnHotKey(id);</property>
+        <property name="alpha">255</property>
+        <widget type="vbox">
+            <property name="margin">1</property>
+            <property name="adjust">auto</property>
+            <widget type="hbox">
+                <property name="margin">1</property>
+                <property name="adjust">auto</property>
+                <widget type="label">
+                    <property name="id">1116</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">19</property>
+                    <property name="auto_width">true</property>
+                    <property name="height">8</property>
+                    <property name="border">false</property>
+                    <property name="text">Unit List:</property>
+                    <property name="align">left</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="handle_bind" />
+                    <property name="visible_bind" />
+                </widget>
+                <widget type="combobox">
+                    <property name="id">1117</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">64</property>
+                    <property name="height">12</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="type">list</property>
+                    <property name="sort">false</property>
+                    <property name="data">item1, item2, item3</property>
+                    <property name="simple_bind">unit_name</property>
+                    <property name="list_bind">unit_list</property>
+                    <property name="index1_bind">unit_index</property>
+                    <property name="enable_bind" />
+                    <property name="visible_bind" />
+                    <property name="onChange">OnUnitChange();</property>
+                    <property name="handle_bind" />
+                </widget>
+            </widget>
+            <widget type="separator">
+                <property name="id">1118</property>
+                <property name="id_alias">nil</property>
+                <property name="gray">false</property>
+                <property name="visible">true</property>
+                <property name="margin">2</property>
+            </widget>
+            <widget type="hbox">
+                <property name="margin">1</property>
+                <property name="adjust">auto</property>
+                <widget type="checkbutton">
+                    <property name="label">Run Desktop</property>
+                    <property name="bitmap">nil</property>
+                    <property name="id">1541</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">50</property>
+                    <property name="height">10</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="push_like">false</property>
+                    <property name="auto">true</property>
+                    <property name="check">false</property>
+                    <property name="simple_bind">is_run_kdesktop</property>
+                    <property name="valid_bind" />
+                    <property name="enable_bind">is_run_kdesktop_option_enable</property>
+                    <property name="visible_bind" />
+                    <property name="onClick">OnCheckRunDesktop();</property>
+                    <property name="handle_bind" />
+                </widget>
+                <widget type="checkbutton">
+                    <property name="label">Is Default</property>
+                    <property name="bitmap">nil</property>
+                    <property name="id">1560</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">38</property>
+                    <property name="height">10</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="push_like">false</property>
+                    <property name="auto">true</property>
+                    <property name="check">false</property>
+                    <property name="simple_bind">is_default</property>
+                    <property name="valid_bind" />
+                    <property name="enable_bind">is_default_option_enable</property>
+                    <property name="visible_bind" />
+                    <property name="onClick" />
+                    <property name="handle_bind" />
+                </widget>
+            </widget>
+            <widget type="hbox">
+                <property name="margin">1</property>
+                <property name="adjust">auto</property>
+                <widget type="space">
+                    <property name="size">auto</property>
+                </widget>
+                <widget type="pushbutton">
+                    <property name="label">Run</property>
+                    <property name="bitmap">execute.bmp</property>
+                    <property name="id">1119</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">50</property>
+                    <property name="height">14</property>
+                    <property name="default">true</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="bitmap_align">left</property>
+                    <property name="flat">false</property>
+                    <property name="shadow">true</property>
+                    <property name="shadow_type">soft</property>
+                    <property name="color">auto</property>
+                    <property name="can_check">false</property>
+                    <property name="onClick">OnOkay();</property>
+                    <property name="enable_bind" />
+                    <property name="simple_bind" />
+                    <property name="valid_bind" />
+                    <property name="visible_bind" />
+                    <property name="handle_bind" />
+                </widget>
+                <widget type="pushbutton">
+                    <property name="label">Close</property>
+                    <property name="bitmap">close.bmp</property>
+                    <property name="id">1120</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">50</property>
+                    <property name="height">14</property>
+                    <property name="default">false</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="bitmap_align">left</property>
+                    <property name="flat">false</property>
+                    <property name="shadow">true</property>
+                    <property name="shadow_type">soft</property>
+                    <property name="color">auto</property>
+                    <property name="can_check">false</property>
+                    <property name="onClick">OnClose();</property>
+                    <property name="enable_bind" />
+                    <property name="simple_bind" />
+                    <property name="valid_bind" />
+                    <property name="visible_bind" />
+                    <property name="handle_bind" />
+                </widget>
+            </widget>
+        </widget>
+    </widget>
+</kul_pkg>

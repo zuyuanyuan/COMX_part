@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui" name="distribute_additional" xmlns="http://www.kingmesh.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kingmesh.com kul.xsd">
+    <property name="id">0xc83e5676-0x149a-0x4982-0xba-0x3f-0x78-0x0c-0xfc-0xe8-0x8b-0x86</property>
+    <widget type="form" name="distribute_additional_pane">
+        <property name="id">0x5354b753-0x6807-0x41a9-0x92-0x38-0xf6-0x2f-0x42-0xd8-0x22-0x50</property>
+        <property name="title">Additional Options</property>
+        <property name="titlebar">true</property>
+        <property name="maximum_box">false</property>
+        <property name="minimum_box">false</property>
+        <property name="close_box">false</property>
+        <property name="border">true</property>
+        <property name="bkcolor">gray</property>
+        <property name="resize">false</property>
+        <property name="center">center</property>
+        <property name="toolwindow">true</property>
+        <property name="icon">nil</property>
+        <property name="width">auto</property>
+        <property name="height">auto</property>
+        <property name="font">Microsoft Sans Serif</property>
+        <property name="font_size">10</property>
+        <property name="margin">1</property>
+        <property name="style">popup</property>
+        <property name="show">normal</property>
+        <property name="embed">false</property>
+        <property name="app_window">false</property>
+        <property name="attachment">none</property>
+        <property name="attachment_size">5</property>
+        <property name="javascript">distribute_additional_pane.js</property>
+        <property name="js_lib">/js/class/widget_wrap.js;/js/socket.io/socket.io.js</property>
+        <property name="default_hot_key">901,ctrl_shift,g;902,ctrl_shift,b;903,ctrl_shift,n;904,ctrl_shift,e;905,ctrl_shift,d</property>
+        <property name="hot_key" />
+        <property name="onHotKey" />
+        <property name="alpha">255</property>
+        <property name="topmost">false</property>
+        <widget type="vbox">
+            <property name="margin">1</property>
+            <property name="adjust">auto</property>
+            <widget type="list">
+                <property name="id_alias">nil</property>
+                <property name="width">180</property>
+                <property name="height">90</property>
+                <property name="gray">false</property>
+                <property name="visible">true</property>
+                <property name="adjust">auto</property>
+                <property name="type">report</property>
+                <property name="align">top</property>
+                <property name="sort">none</property>
+                <property name="single_selection">true</property>
+                <property name="auto_arrange">false</property>
+                <property name="no_label_wrap">false</property>
+                <property name="edit_labels">false</property>
+                <property name="show_selection_always">false</property>
+                <property name="owner_data">false</property>
+                <property name="simple_bind" />
+                <property name="table_bind">list</property>
+                <property name="index2_bind">list_index</property>
+                <property name="enable_bind" />
+                <property name="visible_bind" />
+                <property name="data">
+                    <header>
+                        <item label="Type" width="100" />
+                        <item label="Name" width="400" />
+                    </header>
+                    <image_list>file,folder</image_list>
+                    <content></content>
+                </property>
+                <property name="onClick" />
+                <property name="onDoubleClick" />
+                <property name="onHeaderClick" />
+                <property name="handle_bind" />
+            </widget>
+            <widget type="hbox">
+                <property name="margin">0</property>
+                <property name="adjust">auto</property>
+                <widget type="checkbutton">
+                    <property name="label">Create Shortcut in Desktop</property>
+                    <property name="bitmap">nil</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">50</property>
+                    <property name="height">10</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">horizontal</property>
+                    <property name="push_like">false</property>
+                    <property name="auto">true</property>
+                    <property name="check">false</property>
+                    <property name="simple_bind">create_shortcut</property>
+                    <property name="valid_bind" />
+                    <property name="enable_bind">create_shortcut_enable</property>
+                    <property name="visible_bind" />
+                    <property name="onClick" />
+                    <property name="handle_bind" />
+                </widget>
+                <widget type="checkbutton">
+                    <property name="label">Disable COMX Support</property>
+                    <property name="simple_bind">disable_comx_support</property>
+                    <property name="adjust">horizontal</property>
+                    <property name="onClick"></property>
+                </widget>
+            </widget>
+            <widget type="separator">
+                <property name="id_alias">nil</property>
+                <property name="gray">false</property>
+                <property name="visible">true</property>
+                <property name="margin">2</property>
+            </widget>
+            <widget type="hbox">
+                <property name="margin">1</property>
+                <property name="adjust">auto</property>
+                <widget type="pushbutton">
+                    <property name="label">Add File...</property>
+                    <property name="bitmap">file48</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">60</property>
+                    <property name="height">14</property>
+                    <property name="default">false</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="bitmap_align">left</property>
+                    <property name="flat">false</property>
+                    <property name="shadow">false</property>
+                    <property name="shadow_type">soft</property>
+                    <property name="color">auto</property>
+                    <property name="can_check">false</property>
+                    <property name="onClick">OnAddFile();</property>
+                    <property name="enable_bind" />
+                    <property name="simple_bind" />
+                    <property name="valid_bind" />
+                    <property name="visible_bind" />
+                    <property name="handle_bind" />
+                    <property name="tip" />
+                </widget>
+                <widget type="pushbutton">
+                    <property name="label">Add Folder...</property>
+                    <property name="bitmap">folder48</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">60</property>
+                    <property name="height">14</property>
+                    <property name="default">false</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="bitmap_align">left</property>
+                    <property name="flat">false</property>
+                    <property name="shadow">false</property>
+                    <property name="shadow_type">soft</property>
+                    <property name="color">auto</property>
+                    <property name="can_check">false</property>
+                    <property name="onClick">AddFolder()</property>
+                    <property name="enable_bind" />
+                    <property name="simple_bind" />
+                    <property name="valid_bind" />
+                    <property name="visible_bind" />
+                    <property name="handle_bind" />
+                    <property name="tip" />
+                </widget>
+                <widget type="pushbutton">
+                    <property name="label">Remove Item...</property>
+                    <property name="bitmap">delete48</property>
+                    <property name="width">60</property>
+                    <property name="onClick">RemoveItem();</property>
+                </widget>
+                <widget type="pushbutton">
+                    <property name="label">Okay</property>
+                    <property name="bitmap">ok48</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">60</property>
+                    <property name="height">14</property>
+                    <property name="default">false</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="bitmap_align">left</property>
+                    <property name="flat">false</property>
+                    <property name="shadow">false</property>
+                    <property name="shadow_type">soft</property>
+                    <property name="color">auto</property>
+                    <property name="can_check">false</property>
+                    <property name="onClick">pane.Close();</property>
+                    <property name="enable_bind" />
+                    <property name="simple_bind" />
+                    <property name="valid_bind" />
+                    <property name="visible_bind" />
+                    <property name="handle_bind" />
+                    <property name="tip" />
+                </widget>
+            </widget>
+        </widget>
+    </widget>
+</kul_pkg>

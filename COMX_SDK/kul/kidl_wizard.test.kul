@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui" name="kidl_wizard">
+    <property name="id">0xd0c23cf5-0xf9c1-0x4fbb-0x85-0x28-0x75-0xe8-0x56-0x1e-0xba-0x63</property>
+    <widget type="form" name="kidl_wizard_startup_pane">
+        <property name="id">0x877974b8-0x5586-0x41ac-0xbe-0xf6-0xe0-0xc3-0xe0-0xf5-0xc7-0xce</property>
+        <property name="title">COMX|Component Wizard Startup Page</property>
+        <property name="center">center</property>
+        <property name="toolwindow">false</property>
+        <property name="icon">kmas</property>
+        <property name="margin">0</property>
+        <property name="app_window">true</property>
+        <property name="javascript">kidl_wizard_startup.js</property>
+        <widget type="hbox">
+            <property name="margin">0</property>
+            <widget type="hbox">
+                <property name="margin">0</property>
+                <widget type="bitmap">
+                    <property name="id">1034</property>
+                    <property name="width">70</property>
+                    <property name="height">110</property>
+                    <property name="adjust">vertical</property>
+                    <property name="picture">toolkit.bmp</property>
+                </widget>
+            </widget>
+            <widget type="separator">
+                <property name="id">1035</property>
+                <property name="margin">0</property>
+            </widget>
+            <widget type="vbox">
+                <property name="margin">2</property>
+                <widget type="hbox">
+                    <widget type="space" />
+                    <widget type="label">
+                        <property name="id">1025</property>
+                        <property name="text">Select an Unit Used to Put Project:</property>
+                        <property name="align">right</property>
+                    </widget>
+                    <widget type="combobox">
+                        <property name="id">1026</property>
+                        <property name="width">90</property>
+                        <property name="type">list</property>
+                        <property name="data">comx_sdk, demo, onestep_ui</property>
+                        <property name="simple_bind">unit_name</property>
+                        <property name="list_bind">unit_list</property>
+                        <property name="onChange">OnUnitChange();</property>
+                    </widget>
+                </widget>
+                <widget type="hbox">
+                    <widget type="space" />
+                    <widget type="label">
+                        <property name="id">1027</property>
+                        <property name="text">Subcategory (just valid in comx unit):</property>
+                    </widget>
+                    <widget type="combobox">
+                        <property name="id">1028</property>
+                        <property name="width">90</property>
+                        <property name="type">list</property>
+                        <property name="data">acis, base, fem, gl, math, mesh, post_ui, prototype, public, ui, utils, xml</property>
+                        <property name="enable_bind">is_sub_category_enable</property>
+                    </widget>
+                </widget>
+                <widget type="hbox">
+                    <widget type="space" />
+                    <widget type="label">
+                        <property name="id">1029</property>
+                        <property name="text">Component to be Modified or Created:</property>
+                    </widget>
+                    <widget type="combobox">
+                        <property name="id">1030</property>
+                        <property name="width">90</property>
+                        <property name="data">demo_serialize, demo_gui</property>
+                        <property name="simple_bind">default_proj_name</property>
+                    </widget>
+                </widget>
+                <widget type="space" />
+                <widget type="separator">
+                    <property name="id">1031</property>
+                    <property name="margin">1</property>
+                </widget>
+                <widget type="hbox">
+                    <widget type="space" />
+                    <widget type="pushbutton">
+                        <property name="label">Okay</property>
+                        <property name="bitmap">ok.bmp</property>
+                        <property name="id">1032</property>
+                    </widget>
+                    <widget type="pushbutton">
+                        <property name="label">Cancel</property>
+                        <property name="bitmap">cancel.bmp</property>
+                        <property name="id">1033</property>
+                        <property name="onClick">pane.Close();</property>
+                    </widget>
+                </widget>
+            </widget>
+        </widget>
+    </widget>
+    <widget type="form" name="kidl_wizard_pane">
+        <property name="id">0x42721960-0x659e-0x490c-0x92-0xa8-0x33-0x66-0xc8-0x11-0xa3-0xe7</property>
+        <property name="title">COMX|KIDL Development Wizard[2011].</property>
+        <property name="maximum_box">true</property>
+        <property name="minimum_box">true</property>
+        <property name="resize">true</property>
+        <property name="toolwindow">false</property>
+        <property name="icon">kmas</property>
+        <property name="margin">0</property>
+        <property name="show">maximize</property>
+        <property name="app_window">true</property>
+        <property name="javascript">kidl_wizard.js</property>
+        <widget type="vbox">
+            <widget type="pushbutton">
+                <property name="id">1037</property>
+            </widget>
+            <widget type="pushbutton">
+                <property name="id">1038</property>
+            </widget>
+            <widget type="pushbutton">
+                <property name="label">Three.Btn</property>
+                <property name="id">1039</property>
+                <property name="enable_bind">three_btn_enable</property>
+            </widget>
+            <widget type="stack">
+              <widget type="list">
+                <property name="id">1040</property>
+              </widget>
+              <widget type="combobox">
+                <property name="id">1041</property>
+              </widget>
+              <widget type="listbox">
+                <property name="id">1042</property>
+              </widget>
+            </widget>
+        </widget>
+    </widget>
+</kul_pkg>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui_block" name="kul_edit_search_block" xmlns="http://www.kingmesh.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kingmesh.com kul.xsd">
+    <property name="id">0xb85a74fa-0x5ad5-0x43d2-0x88-0x21-0xf3-0x79-0xd4-0x63-0x04-0x2d</property>
+    <widget type="stack">
+        <property name="adjust">auto</property>
+        <property name="index1_bind"></property>
+        <property name="border">group</property>
+        <property name="label">Search Pane</property>
+        <widget type="hbox">
+            <property name="margin">1</property>
+            <property name="adjust">auto</property>
+            <widget type="vbox">
+                <property name="margin">1</property>
+                <property name="adjust">auto</property>
+                <widget type="hbox">
+                    <property name="margin">1</property>
+                    <property name="adjust">auto</property>
+                    <widget type="label">
+                        <property name="id_alias">nil</property>
+                        <property name="width">19</property>
+                        <property name="auto_width">true</property>
+                        <property name="height">8</property>
+                        <property name="border">false</property>
+                        <property name="text">Search For:</property>
+                        <property name="align">left</property>
+                        <property name="gray">false</property>
+                        <property name="visible">true</property>
+                        <property name="adjust">fixed</property>
+                        <property name="handle_bind" />
+                        <property name="visible_bind" />
+                    </widget>
+                    <widget type="combobox">
+                        <property name="id_alias">nil</property>
+                        <property name="width">100</property>
+                        <property name="height">12</property>
+                        <property name="gray">false</property>
+                        <property name="visible">true</property>
+                        <property name="adjust">fixed</property>
+                        <property name="type">down</property>
+                        <property name="sort">false</property>
+                        <property name="data"></property>
+                        <property name="simple_bind">#varSearchContent</property>
+                        <property name="list_bind">#varSearchHistory</property>
+                        <property name="index1_bind" />
+                        <property name="enable_bind" />
+                        <property name="visible_bind" />
+                        <property name="onChange" />
+                        <property name="handle_bind">#varSearchHdr</property>
+                    </widget>
+                </widget>
+                <widget type="hbox">
+                    <property name="margin">1</property>
+                    <property name="adjust">auto</property>
+                    <widget type="vbox">
+                        <property name="margin">1</property>
+                        <property name="adjust">auto</property>
+                        <widget type="checkbutton">
+                            <property name="label">Whole Word</property>
+                            <property name="bitmap">nil</property>
+                            <property name="id_alias">nil</property>
+                            <property name="width">39</property>
+                            <property name="height">10</property>
+                            <property name="gray">false</property>
+                            <property name="visible">true</property>
+                            <property name="adjust">horizontal</property>
+                            <property name="push_like">false</property>
+                            <property name="auto">true</property>
+                            <property name="check">false</property>
+                            <property name="simple_bind" />
+                            <property name="valid_bind">#varIsWholeWord</property>
+                            <property name="enable_bind" />
+                            <property name="visible_bind" />
+                            <property name="onClick" />
+                            <property name="handle_bind" />
+                        </widget>
+                        <widget type="checkbutton">
+                            <property name="label">Match Case</property>
+                            <property name="bitmap">nil</property>
+                            <property name="id_alias">nil</property>
+                            <property name="width">39</property>
+                            <property name="height">10</property>
+                            <property name="gray">false</property>
+                            <property name="visible">true</property>
+                            <property name="adjust">horizontal</property>
+                            <property name="push_like">false</property>
+                            <property name="auto">true</property>
+                            <property name="check">false</property>
+                            <property name="simple_bind" />
+                            <property name="valid_bind">#varIsMatchCase</property>
+                            <property name="enable_bind" />
+                            <property name="visible_bind" />
+                            <property name="onClick" />
+                            <property name="handle_bind" />
+                        </widget>
+                        <widget type="checkbutton">
+                            <property name="label">Regex</property>
+                            <property name="bitmap">nil</property>
+                            <property name="id_alias">nil</property>
+                            <property name="width">39</property>
+                            <property name="height">10</property>
+                            <property name="gray">false</property>
+                            <property name="visible">true</property>
+                            <property name="adjust">horizontal</property>
+                            <property name="push_like">false</property>
+                            <property name="auto">true</property>
+                            <property name="check">false</property>
+                            <property name="simple_bind" />
+                            <property name="valid_bind">#varIsRegex</property>
+                            <property name="enable_bind" />
+                            <property name="visible_bind" />
+                            <property name="onClick">#evtOnCheckRegex</property>
+                            <property name="handle_bind" />
+                        </widget>
+                    </widget>
+                    <widget type="stack">
+                        <property name="margin">3</property>
+                        <property name="adjust">fixed</property>
+                        <property name="index1_bind" />
+                        <property name="border">group</property>
+                        <property name="label">Direction</property>
+                        <widget type="vbox">
+                            <property name="margin">1</property>
+                            <property name="adjust">auto</property>
+                            <widget type="radiobutton">
+                                <property name="label">Up</property>
+                                <property name="bitmap">nil</property>
+                                <property name="id_alias">nil</property>
+                                <property name="width">59</property>
+                                <property name="height">10</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">fixed</property>
+                                <property name="push_like">false</property>
+                                <property name="auto">true</property>
+                                <property name="group_id">1</property>
+                                <property name="default_group_item">false</property>
+                                <property name="enable_bind">#varUpRadioEnable</property>
+                                <property name="visible_bind" />
+                                <property name="onClick">#evtOnUpRadioClick</property>
+                                <property name="handle_bind" />
+                            </widget>
+                            <widget type="radiobutton">
+                                <property name="label">Down</property>
+                                <property name="bitmap">nil</property>
+                                <property name="id_alias">nil</property>
+                                <property name="width">59</property>
+                                <property name="height">10</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">fixed</property>
+                                <property name="push_like">false</property>
+                                <property name="auto">true</property>
+                                <property name="group_id">1</property>
+                                <property name="default_group_item">true</property>
+                                <property name="enable_bind">#varDownRadioEnable</property>
+                                <property name="visible_bind" />
+                                <property name="onClick">#evtOnDownRadioClick</property>
+                                <property name="handle_bind" />
+                            </widget>
+                        </widget>
+                    </widget>
+                </widget>
+            </widget>
+            <widget type="vbox">
+                <property name="margin">1</property>
+                <property name="adjust">auto</property>
+                <widget type="pushbutton">
+                    <property name="label">Search</property>
+                    <property name="bitmap">find</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">50</property>
+                    <property name="height">14</property>
+                    <property name="default">true</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="bitmap_align">left</property>
+                    <property name="flat">false</property>
+                    <property name="shadow">true</property>
+                    <property name="shadow_type">simple</property>
+                    <property name="color">auto</property>
+                    <property name="can_check">false</property>
+                    <property name="onClick">#evtOnFind</property>
+                    <property name="enable_bind" />
+                    <property name="simple_bind">#varFindBtn</property>
+                    <property name="valid_bind" />
+                    <property name="visible_bind" />
+                    <property name="handle_bind" />
+                </widget>
+                <widget type="pushbutton">
+                    <property name="label">Close</property>
+                    <property name="bitmap">outdoor1</property>
+                    <property name="id_alias">nil</property>
+                    <property name="width">50</property>
+                    <property name="height">14</property>
+                    <property name="default">false</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="bitmap_align">left</property>
+                    <property name="flat">false</property>
+                    <property name="shadow">true</property>
+                    <property name="shadow_type">simple</property>
+                    <property name="color">auto</property>
+                    <property name="can_check">false</property>
+                    <property name="onClick">#evtOnClose</property>
+                    <property name="enable_bind" />
+                    <property name="simple_bind" />
+                    <property name="valid_bind" />
+                    <property name="visible_bind" />
+                    <property name="handle_bind" />
+                </widget>
+                <widget type="space">
+                    <property name="size">auto</property>
+                </widget>
+            </widget>
+        </widget>
+    </widget>
+</kul_pkg>

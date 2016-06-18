@@ -1,0 +1,158 @@
+
+//System Pre-define functions Start
+
+function OnInitializeData()
+{
+    StartNodeJSService();
+    ConnectToNodeJS();
+}
+
+function OnInitializePost()
+{
+}
+
+function OnAnimate()
+{
+}
+
+function OnCloseForm()
+{
+    var json_cmd = {"method" : "exit"};
+    
+    if(!is_closed)
+    {
+        iosocket.send(JSON.stringify(json_cmd));
+    }
+}
+
+//System Pre-define functions End
+
+
+//WebSocket functions Start
+
+var iosocket;
+
+var debug_mode = true;
+var is_closed  = true;
+
+function StartNodeJSService()
+{
+    if(comx.gf.websocket_connect_valid == undefined)
+    {
+        comx.gf.websocket_port = comx.shell.GenerateWebsocketPort();
+        var unit_env = unit.name.toUpperCase();
+
+        var cmd = comx.sys.GetEnvironmentVariables("COMX_SDK") + "nodejs\\node.exe " + 
+            comx.sys.GetEnvironmentVariables(unit_env) + "js\\websocket.js " + comx.gf.websocket_port;
+        comx.shell.run(cmd , !debug_mode);
+
+        comx.gf.websocket_connect_valid = true;
+    }
+    else
+    {
+        comx.ui.InformationBox("This Form is MainWindow, Please don't Use it as Popup Sub-Dialog");
+        pane.Close();
+    }
+}
+
+function sleep(n)
+{
+    var start=new Date().getTime();
+    while(true) if(new Date().getTime()-start>n) break;
+}
+
+function ConnectToNodeJS()
+{
+    if(comx.gf.websocket_port == "801")
+    {
+        sleep(1000);
+    }
+    else
+    {
+        sleep(100);
+    }
+
+    iosocket = io.connect("ws://localhost:" + comx.gf.websocket_port);
+	    
+    if(!iosocket)
+    {
+        comx.ui.InformationBox("WebSocket Service Failed, Please Try to Restart Program!");
+        pane.Close();
+        return;
+    }
+/*	    
+    var cnt = 0;
+    while(!iosocket)
+    {
+        sleep(500);
+        iosocket = io.connect("ws://localhost:" + comx.gf.websocket_port);
+
+        if(!iosocket)
+        {
+            cnt++;
+            iosocket = false;
+        }
+    }
+*/
+    iosocket.on('connect', function(con_var){
+        iosocket = con_var;
+        is_closed = false;
+    });
+    
+    iosocket.on('disconnect', function(){
+        is_closed = true;
+    });
+    
+    iosocket.on('message', function(data){
+        OnWebSocketMessage(data);
+    });
+
+    //comx.ui.InformationBox(cnt);
+}
+
+function ConnectToNodeJS()
+{
+    iosocket = io.connect("ws://localhost:" + comx.gf.websocket_port);
+    
+    if(!iosocket)
+    {
+        return;
+    }
+    
+    iosocket.on('connect', function(con_var){
+        iosocket = con_var;
+        is_closed = false;
+    });
+    
+    iosocket.on('disconnect', function(){
+        is_closed = true;
+    });
+    
+    iosocket.on('message', function(data){
+        OnWebSocketMessage(data);
+    });
+}
+
+/*
+function OnDisconnect()
+{
+    if(typeof(iosocket) == 'object' && is_closed != true)
+    {
+	iosocket.dispose();
+    }
+}
+*/
+
+function OnWebSocketMessage(data)
+{
+}
+
+function PostWebSocketMessage(data)
+{
+    if(is_closed == false && typeof(iosocket) == 'object')
+    {
+        iosocket.emit(data);
+    }
+}
+
+//WebSocket functions End

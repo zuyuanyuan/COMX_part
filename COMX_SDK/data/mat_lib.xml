@@ -1,0 +1,483 @@
+<?xml version  = "1.0"?>	
+<Material_lib>	
+
+		<MaterialGroup MaterialGroupName="RST1405_0.9">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="0.9"/>
+			<MatGroupParaYS yielding_stress="212.5"/>
+			<MatGroupParaHI hardening_index="0.207"/>
+			<MatGroupParaHF hardening_factor="570.867"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.602"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>
+		
+		<MaterialGroup MaterialGroupName="RST1405_1.2">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="1.2"/>
+			<MatGroupParaYS yielding_stress="163.5"/>
+			<MatGroupParaHI hardening_index="0.213"/>
+			<MatGroupParaHF hardening_factor="481.632"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.82"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="RST1405_1.5">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="1.5"/>
+			<MatGroupParaYS yielding_stress="191"/>
+			<MatGroupParaHI hardening_index="0.211"/>
+			<MatGroupParaHF hardening_factor="551.304"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.44"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>		
+
+		<MaterialGroup MaterialGroupName="SPCEN_0.9">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="0.9"/>
+			<MatGroupParaYS yielding_stress="166.0"/>
+			<MatGroupParaHI hardening_index="0.225"/>
+			<MatGroupParaHF hardening_factor="555.655"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.992"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+		
+		<MaterialGroup MaterialGroupName="SPCEN_1.0">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="1.0"/>
+			<MatGroupParaYS yielding_stress="179.5"/>
+			<MatGroupParaHI hardening_index="0.221"/>
+			<MatGroupParaHF hardening_factor="509.517"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.836"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>
+			
+		<MaterialGroup MaterialGroupName="SPCEN_1.2">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="1.2"/>
+			<MatGroupParaYS yielding_stress="182.5"/>
+			<MatGroupParaHI hardening_index="0.213"/>
+			<MatGroupParaHF hardening_factor="559.001"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.84"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+		
+		<MaterialGroup MaterialGroupName="SPCEN_1.5">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="1.5"/>
+			<MatGroupParaYS yielding_stress="184"/>
+			<MatGroupParaHI hardening_index="0.202"/>
+			<MatGroupParaHF hardening_factor="516.989"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="2.021"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>
+		
+		<MaterialGroup MaterialGroupName="ST14_ZF_0.9">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="0.9"/>
+			<MatGroupParaYS yielding_stress="165"/>
+			<MatGroupParaHI hardening_index="0.22"/>
+			<MatGroupParaHF hardening_factor="512.898"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.65"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="ST14_ZF_1.2">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="1.2"/>
+			<MatGroupParaYS yielding_stress="164"/>
+			<MatGroupParaHI hardening_index="0.225"/>
+			<MatGroupParaHF hardening_factor="518.518"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.75"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="ST14_ZF_1.5">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="1.5"/>
+			<MatGroupParaYS yielding_stress="185.5"/>
+			<MatGroupParaHI hardening_index="0.198"/>
+			<MatGroupParaHF hardening_factor="525.766"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.43"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="08AL_ZF_0.8">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="0.8"/>
+			<MatGroupParaYS yielding_stress="155"/>
+			<MatGroupParaHI hardening_index="0.238"/>
+			<MatGroupParaHF hardening_factor="557.935"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.62"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="08AL_ZF_1.0">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="1.0"/>
+			<MatGroupParaYS yielding_stress="173"/>
+			<MatGroupParaHI hardening_index="0.216"/>
+			<MatGroupParaHF hardening_factor="514.967"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.745"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="08AL_ZF_1.2">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="1.2"/>
+			<MatGroupParaYS yielding_stress="157"/>
+			<MatGroupParaHI hardening_index="0.232"/>
+			<MatGroupParaHF hardening_factor="568.153"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.587"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="08AL_ZF_1.5">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="1.5"/>
+			<MatGroupParaYS yielding_stress="190"/>
+			<MatGroupParaHI hardening_index="0.194"/>
+			<MatGroupParaHF hardening_factor="503.992"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.44"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="08AL_ZF_2.0">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="2.0"/>
+			<MatGroupParaYS yielding_stress="185"/>
+			<MatGroupParaHI hardening_index="0.194"/>
+			<MatGroupParaHF hardening_factor="507.33"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.589"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="ST14_HF_1.0">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="1.0"/>
+			<MatGroupParaYS yielding_stress="180"/>
+			<MatGroupParaHI hardening_index="0.216"/>
+			<MatGroupParaHF hardening_factor="485.589"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.838"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="ST14_HF_1.5">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="1.5"/>
+			<MatGroupParaYS yielding_stress="198"/>
+			<MatGroupParaHI hardening_index="0.202"/>
+			<MatGroupParaHF hardening_factor="513.946"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.46"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="ST14_HF_2.0">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="2.0"/>
+			<MatGroupParaYS yielding_stress="198"/>
+			<MatGroupParaHI hardening_index="0.197"/>
+			<MatGroupParaHF hardening_factor="506.466"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.547"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="ST14_F_0.8">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="0.8"/>
+			<MatGroupParaYS yielding_stress="155"/>
+			<MatGroupParaHI hardening_index="0.227"/>
+			<MatGroupParaHF hardening_factor="549.053"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.63"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="ST14_F_1.0">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="1.0"/>
+			<MatGroupParaYS yielding_stress="183"/>
+			<MatGroupParaHI hardening_index="0.213"/>
+			<MatGroupParaHF hardening_factor="524.635"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.44"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="ST14_F_1.2">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="1.2"/>
+			<MatGroupParaYS yielding_stress="166"/>
+			<MatGroupParaHI hardening_index="0.213"/>
+			<MatGroupParaHF hardening_factor="579.678"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.346"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="ST14_Z_0.8">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="0.8"/>
+			<MatGroupParaYS yielding_stress="236"/>
+			<MatGroupParaHI hardening_index="0.212"/>
+			<MatGroupParaHF hardening_factor="594.238"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.244"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>
+				
+		<MaterialGroup MaterialGroupName="ST14_Z_1.5">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="1.5"/>
+			<MatGroupParaYS yielding_stress="223.5"/>
+			<MatGroupParaHI hardening_index="0.185"/>
+			<MatGroupParaHF hardening_factor="534.317"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.35"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>
+		
+		<MaterialGroup MaterialGroupName="WP340_0.9">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="0.9"/>
+			<MatGroupParaYS yielding_stress="273.5"/>
+			<MatGroupParaHI hardening_index="0.177"/>
+			<MatGroupParaHF hardening_factor="587.874"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.61"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="WP390_1.0">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="1.0"/>
+			<MatGroupParaYS yielding_stress="290.5"/>
+			<MatGroupParaHI hardening_index="0.191"/>
+			<MatGroupParaHF hardening_factor="650.133"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.4"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="KTUX_0.8">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="0.8"/>
+			<MatGroupParaYS yielding_stress="148.5"/>
+			<MatGroupParaHI hardening_index="0.225"/>
+			<MatGroupParaHF hardening_factor="521.146"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="2.33"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+		
+		<MaterialGroup MaterialGroupName="ST13_0.7">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="0.7"/>
+			<MatGroupParaYS yielding_stress="102"/>
+			<MatGroupParaHI hardening_index="0.24"/>
+			<MatGroupParaHF hardening_factor="540.734"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.64"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="ST13_0.9">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="0.9"/>
+			<MatGroupParaYS yielding_stress="152"/>
+			<MatGroupParaHI hardening_index="0.24"/>
+			<MatGroupParaHF hardening_factor="515.667"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.64"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="ST14_0.9">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="0.9"/>
+			<MatGroupParaYS yielding_stress="167"/>
+			<MatGroupParaHI hardening_index="0.22"/>
+			<MatGroupParaHF hardening_factor="521.591"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="1.55"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+	
+		<MaterialGroup MaterialGroupName="IF_0.8">		
+			<MatGroupParaEM elastic_modules = "200000.0"/>
+			<MatGroupParaD density="7.8"/>
+			<MatGroupParaPR poisson_ratio="0.3"/>
+			<MatGroupParaT thickness ="0.8"/>
+			<MatGroupParaYS yielding_stress="125"/>
+			<MatGroupParaHI hardening_index="0.28"/>
+			<MatGroupParaHF hardening_factor="527.228"/>	
+			<MatGroupParaFC fracture_criteria="0.6"/>		
+			<MatGroupParaR anisophy_coefficient="2.22"/>
+			<MatGroupParaR0 R0="0.0"/>
+			<MatGroupParaR45 R45="0.0"/>
+			<MatGroupParaR90 R90="0.0"/>
+			<MatGroupParaDC deformation_capacity="0.5"/>	
+		</MaterialGroup>	
+</Material_lib>

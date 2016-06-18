@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui" name="kul_editor_search_dlg_pkg" xmlns="http://www.kingmesh.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kingmesh.com kul.xsd">
+    <property name="id">0x76f7c005-0x583e-0x4e0a-0x94-0xd1-0x5c-0x9c-0xf9-0x0d-0x97-0x72</property>
+    <widget type="form" name="kul_editor_search_dlg_pane">
+        <property name="id">0xeb3d74cc-0xee2e-0x47c3-0x9c-0xaa-0xb2-0x0f-0x64-0x70-0xfd-0xa7</property>
+        <property name="title">Search</property>
+        <property name="titlebar">false</property>
+        <property name="maximum_box">false</property>
+        <property name="minimum_box">false</property>
+        <property name="border">false</property>
+        <property name="bkcolor">white</property>
+        <property name="resize">false</property>
+        <property name="center">center</property>
+        <property name="toolwindow">true</property>
+        <property name="icon">nil</property>
+        <property name="width">auto</property>
+        <property name="height">auto</property>
+        <property name="font">Microsoft Sans Serif</property>
+        <property name="font_size">10</property>
+        <property name="margin">1</property>
+        <property name="style">popup</property>
+        <property name="show">normal</property>
+        <property name="embed">false</property>
+        <property name="app_window">false</property>
+        <property name="attachment">right_bottom</property>
+        <property name="attachment_size">55</property>
+        <property name="javascript">kul_editor_search_dlg_pane.js</property>
+        <property name="js_lib">/js/class/widget_wrap.js</property>
+        <property name="default_hot_key">901,ctrl_shift,g;902,ctrl_shift,b;903,ctrl_shift,n;904,ctrl_shift,e;905,ctrl_shift,d;1001,ctrl,q;1002,ctrl,f</property>
+        <property name="hot_key" />
+        <property name="onHotKey">OnHotKey(id);</property>
+        <property name="alpha">255</property>
+        <widget type="block" refname="kul_edit_search_block" refid="0xb85a74fa-0x5ad5-0x43d2-0x88-0x21-0xf3-0x79-0xd4-0x63-0x04-0x2d">
+            <event name="#evtOnCheckRegex">OnCheckRegex();</event>
+            <event name="#evtOnClose">pane.Close();</event>
+            <event name="#evtOnDownRadioClick">OnDownRadioClick();</event>
+            <event name="#evtOnFind">OnFind();</event>
+            <event name="#evtOnUpRadioClick">OnUpRadioClick();</event>
+            <binding name="#varDownRadioEnable">down_radio_enable</binding>
+            <binding name="#varFindBtn">btn_find</binding>
+            <binding name="#varIsMatchCase">is_match_case</binding>
+            <binding name="#varIsRegex">is_regex</binding>
+            <binding name="#varIsWholeWord">is_whole_word</binding>
+            <binding name="#varSearchContent">search_key_word</binding>
+            <binding name="#varSearchHdr">search_hdr</binding>
+            <binding name="#varSearchHistory">search_history_list</binding>
+            <binding name="#varUpRadioEnable">up_radio_enable</binding>
+        </widget>
+    </widget>
+</kul_pkg>

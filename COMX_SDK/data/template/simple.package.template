@@ -1,0 +1,20 @@
+<package clsname="CLSID_IDemoPackage" clsid="0x77c018c0-0x71bf-0x4b0b-0xaa-0xeb-0x88-0x45-0x9c-0xd6-0x0-0xf2">
+  <uiconfig title="KMAS|Demo Application Ver1.0" max="yes" lockbar="yes" enable_view2d="no" enable_console="no">
+    <toolbar name="Common" dock="top" hide="no" newline="yes"></toolbar>
+    <toolbar name="Transform" dock="top" hide="no" newline="no"></toolbar>
+    <toolbar name="Stdview" dock="top" hide="no" newline="no"></toolbar>
+    <toolbar name="Ui:Appearance" dock="top" hide="no" newline="no"></toolbar>
+    <toolbarInitList>
+    </toolbarInitList>
+  </uiconfig>
+  <functions>
+    <addPropertys>
+    </addPropertys>
+    <educePropertys>
+    </educePropertys>
+    <addServices>
+    </addServices>
+    <addConnects>
+    </addConnects>
+  </functions>
+</package>

@@ -1,0 +1,10 @@
+<script_cfg>
+  <include_paths>
+    <path>"Y:\nxcocadframework\include\"</path>
+  </include_paths>
+  <module_paths>
+    <path>"Y:\nxcocadframework\uiplugin\"</path>
+    <path>"Y:\nxcocadframework\module\"</path>
+  </module_paths>
+  <script_path>"Y:\nxcocadframework\script\"</script_path>
+</script_cfg>

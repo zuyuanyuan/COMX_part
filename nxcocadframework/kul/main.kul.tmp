@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui" name="main" xmlns="http://www.kingmesh.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kingmesh.com kul.xsd">
+<property name="id">0x34221fdf-0xaac3-0x4546-0x99-0xec-0x13-0x7a-0x93-0x59-0x6e-0x99</property>
+<widget type="form" name="main_pane">
+<property name="id">0x254f8b38-0x4934-0x44bf-0x9d-0xcc-0x06-0xcd-0x35-0xb0-0x0a-0x8a</property>
+<property name="title">COMX Websocket守护进程</property>
+<property name="titlebar">true</property>
+<property name="maximum_box">true</property>
+<property name="minimum_box">true</property>
+<property name="close_box">true</property>
+<property name="border">true</property>
+<property name="bkcolor">gray</property>
+<property name="resize">true</property>
+<property name="center">center</property>
+<property name="toolwindow">false</property>
+<property name="icon">kmas</property>
+<property name="width">auto</property>
+<property name="height">auto</property>
+<property name="font">Microsoft Sans Serif</property>
+<property name="font_size">10</property>
+<property name="margin">1</property>
+<property name="style">popup</property>
+<property name="show">minimize</property>
+<property name="embed">false</property>
+<property name="app_window">true</property>
+<property name="attachment">none</property>
+<property name="attachment_size">5</property>
+<property name="javascript">main_pane.js</property>
+<property name="js_lib">/js/class/widget_wrap.js;/js/socket.io/socket.io.js</property>
+<property name="default_hot_key">901,ctrl_shift,g;902,ctrl_shift,b;903,ctrl_shift,n;904,ctrl_shift,e;905,ctrl_shift,d</property>
+<property name="hot_key"/>
+<property name="onHotKey"/>
+<property name="alpha">255</property>
+<property name="topmost">false</property>
+<property name="is_service">false</property>
+<widget type="block" refname="ui_block" refid="0x37b9f72c-0x064a-0x4a8b-0x9f-0x6c-0x82-0xc4-0xb5-0x31-0x2e-0xf5">
+<event name="#evtExit">OnExit();</event>
+<event name="#evtHide">OnHide();</event>
+<binding name="#varConnectNum">connect_num</binding>
+<binding name="#varHdr">hdr</binding>
+<binding name="#varName">name</binding>
+<binding name="#varPort">port_no</binding>
+</widget>
+</widget>
+</kul_pkg>

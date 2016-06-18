@@ -1,0 +1,23 @@
+<config>
+  <path>
+    <home_path>"y:\comx_sdk\"</home_path>
+    <root_path>"y:\comx_sdk\"</root_path>
+    <script_paths>
+      <item>"/lib/base/script/"</item>
+      <item>"/lib/gl/script/"</item>
+      <item>"/lib/utils/script/"</item>
+      <item>"~/script/"</item>
+    </script_paths>
+    <data_paths>
+      <item>"~/data/"</item>
+    </data_paths>
+    <module_path>
+      <item>"/lib/base/"</item>
+      <item>"/lib/gl/"</item>
+      <item>"/lib/utils/"</item>
+      <item>"~/uiplugin/"</item>
+      <item>"~/module/"</item>
+    </module_path>
+  </path>
+  <package>"package.xml"</package>
+</config>

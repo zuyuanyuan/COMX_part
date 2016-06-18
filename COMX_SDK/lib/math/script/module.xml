@@ -1,0 +1,9 @@
+<?xml version  = "1.0"?>
+<module_list>
+  <debug>
+    <item>math_sparse_matrix_d.kpi</item> 
+  </debug>
+  <release>
+		<item>math_sparse_matrix.kpi</item> 
+	</release>
+</module_list>

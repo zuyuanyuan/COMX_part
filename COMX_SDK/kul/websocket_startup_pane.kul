@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui" name="websocket_startup_pane" xmlns="http://www.kingmesh.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kingmesh.com kul.xsd">
+    <property name="id">0xb7fb6506-0x153e-0x4954-0xb8-0xd4-0x3c-0x9b-0xd8-0xd0-0xf7-0x2e</property>
+    <widget type="form" name="websocket_startup_pane_pane">
+        <property name="id">0xe3a9309d-0x3dd1-0x4424-0x91-0xe1-0x94-0xb7-0xd3-0xc9-0x30-0xd2</property>
+        <property name="title">Form</property>
+        <property name="titlebar">false</property>
+        <property name="maximum_box">false</property>
+        <property name="minimum_box">false</property>
+        <property name="close_box">false</property>
+        <property name="border">true</property>
+        <property name="bkcolor">white</property>
+        <property name="resize">false</property>
+        <property name="center">center</property>
+        <property name="toolwindow">true</property>
+        <property name="icon">nil</property>
+        <property name="width">auto</property>
+        <property name="height">auto</property>
+        <property name="font">Microsoft Sans Serif</property>
+        <property name="font_size">11</property>
+        <property name="margin">0</property>
+        <property name="style">popup</property>
+        <property name="show">normal</property>
+        <property name="embed">false</property>
+        <property name="app_window">false</property>
+        <property name="attachment">none</property>
+        <property name="attachment_size">5</property>
+        <property name="javascript">websocket_startup_pane_pane.js</property>
+        <property name="js_lib">/js/class/widget_wrap.js;/js/socket.io/socket.io.js</property>
+        <property name="default_hot_key">901,ctrl_shift,g;902,ctrl_shift,b;903,ctrl_shift,n;904,ctrl_shift,e;905,ctrl_shift,d</property>
+        <property name="hot_key" />
+        <property name="onHotKey" />
+        <property name="alpha">255</property>
+        <property name="topmost">true</property>
+        <widget type="block" refname="websocket_startup_block" refid="0xdd765632-0xfed9-0x4d8f-0xac-0x5c-0x14-0xd9-0x23-0xcf-0x8a-0x9d">
+            <binding name="#varBitmap">prog_val</binding>
+        </widget>
+    </widget>
+</kul_pkg>

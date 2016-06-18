@@ -1,0 +1,36 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// Import external javascript module by reqire function.
+
+var websocket = require('socket.io/comx.websocket.js');
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//System Pre-define functions 
+
+function OnInitializeData(sandbox)
+{
+    if(!sandbox)
+    {
+	    alert('Sandbox Form can\'t be Executed Alone!');
+	    pane.Close();
+		return;
+    }
+    websocket.BeginSandbox(sandbox.port, sandbox.id, function(){
+    	//some init codes here.	
+    });
+}
+
+function OnInitializePost()
+{
+}
+
+function OnAnimate()
+{
+}
+
+function OnCloseForm()
+{
+    websocket.EndSandbox();
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// Input your javascript codes here.

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="entry" name="NXCOCADFramework" xmlns="http://www.kingmesh.com">
+    <pkgid name="main">
+        <location>main.kul</location>
+        <value>0x34221fdf-0xaac3-0x4546-0x99-0xec-0x13-0x7a-0x93-0x59-0x6e-0x99</value>
+    </pkgid>
+    <blockid name="ui_block">
+        <location>ui_block.kul</location>
+        <value>0x37b9f72c-0x064a-0x4a8b-0x9f-0x6c-0x82-0xc4-0xb5-0x31-0x2e-0xf5</value>
+    </blockid>
+    <formid name="main_pane">
+        <location>main.kul</location>
+        <value>0x254f8b38-0x4934-0x44bf-0x9d-0xcc-0x06-0xcd-0x35-0xb0-0x0a-0x8a</value>
+    </formid>
+</kul_pkg>

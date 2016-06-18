@@ -1,0 +1,52 @@
+<?xml version  = "1.0"?>
+<module_list>
+  <debug>
+    <item>fem_frame_d.kpi</item>
+    <item>fem_cons_normal_d.kpi</item>
+    <item>fem_core_d.kpi</item> 
+    <item>fem_display_normal_d.kpi</item>
+    
+    <item>fem_ele_center_point_display_d.kpi</item>
+
+    <item>fem_post_d.kpi</item> 
+    <item>fem_render_d.kpi</item> 
+    <item>fem_serialize_d.kpi</item> 
+    <item>fem_surface_extendable_d.kpi</item> 
+    <item>fem_offset_d.kpi</item>
+    <item>guass_curvature_d.kpi</item>
+
+    <item>fem_post_ex_d.kpi</item>
+    <item>fem_frame_d.kpi</item> 
+    
+    <item>fem_flc_library_d.kpi</item>       
+    
+    <item>fem_mapping_d.kpi</item>
+    
+    <item>fem_core1d_d.kpi</item>
+    <item>fem_info_d.kpi</item>
+  </debug>
+  <release>
+    <item>fem_cons_normal.kpi</item>
+    <item>fem_core.kpi</item> 
+    <item>fem_display_normal.kpi</item>
+
+    <item>fem_ele_center_point_display.kpi</item>
+
+    <item>fem_post.kpi</item> 
+    <item>fem_render.kpi</item> 
+    <item>fem_serialize.kpi</item> 
+    <item>fem_surface_extendable.kpi</item> 
+    <item>fem_offset.kpi</item>
+    <item>guass_curvature.kpi</item>
+
+    <item>fem_post_ex.kpi</item>
+    <item>fem_frame.kpi</item>   
+    
+    <item>fem_flc_library.kpi</item>   
+
+		<item>fem_mapping.kpi</item>
+		<item>fem_core1d.kpi</item>
+		
+	<item>fem_info.kpi</item>
+  </release>
+</module_list>

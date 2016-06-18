@@ -1,0 +1,9 @@
+<?xml version  = "1.0"?>
+<module_list>
+  <debug>
+    <item>mesh_generate1d_d.kpi</item> 
+  </debug>
+  <release>
+		<item>mesh_generate1d.kpi</item> 
+	</release>
+</module_list>

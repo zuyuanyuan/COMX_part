@@ -1,0 +1,10 @@
+<module_list>
+<debug>
+<item>comx_console_d.kpi</item>
+<item>comx_storage_d.kpi</item>
+</debug>
+<release>
+<item>comx_console.kpi</item>
+<item>comx_storage.kpi</item>
+</release>
+</module_list>

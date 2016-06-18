@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui_block" name="kul_editor_file_dlg" xmlns="http://www.kingmesh.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kingmesh.com kul.xsd">
+    <property name="id">0x7724928f-0x4bf2-0x4633-0x94-0xd6-0x75-0x59-0xf0-0xc1-0xd8-0x87</property>
+    <widget type="vbox">
+        <property name="margin">0</property>
+        <property name="adjust">auto</property>
+        <widget type="hbox">
+            <property name="margin">2</property>
+            <property name="adjust">auto</property>
+            <widget type="stack">
+                <property name="margin">3</property>
+                <property name="adjust">auto</property>
+                <property name="index1_bind" />
+                <property name="border">group</property>
+                <property name="label">Category</property>
+                <widget type="list">
+                    <property name="id_alias">nil</property>
+                    <property name="width">60</property>
+                    <property name="height">90</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">vertical</property>
+                    <property name="type">icon</property>
+                    <property name="align">top</property>
+                    <property name="sort">none</property>
+                    <property name="single_selection">true</property>
+                    <property name="auto_arrange">true</property>
+                    <property name="no_label_wrap">false</property>
+                    <property name="edit_labels">false</property>
+                    <property name="show_selection_always">false</property>
+                    <property name="owner_data">false</property>
+                    <property name="simple_bind">#varCategoryVal</property>
+                    <property name="table_bind">#varCategoryTable</property>
+                    <property name="index2_bind">#varCategoryIndex</property>
+                    <property name="enable_bind" />
+                    <property name="visible_bind" />
+                    <property name="data">
+                        <header>
+                            <item label="Title1" width="100" />
+                        </header>
+                        <image_list>development1,package1,kmas</image_list>
+                        <content>0,comx_sdk</content>
+                    </property>
+                    <property name="onClick">#evtCategoryClick</property>
+                    <property name="onDoubleClick" />
+                    <property name="onHeaderClick" />
+                    <property name="handle_bind">#varCategoryHdr</property>
+                </widget>
+            </widget>
+            <widget type="vbox">
+                <property name="margin">1</property>
+                <property name="adjust">auto</property>
+                <widget type="hbox">
+                    <property name="margin">1</property>
+                    <property name="adjust">auto</property>
+                    <widget type="label">
+                        <property name="id_alias">nil</property>
+                        <property name="width">19</property>
+                        <property name="auto_width">true</property>
+                        <property name="height">8</property>
+                        <property name="border">false</property>
+                        <property name="text">Current Unit Name:</property>
+                        <property name="align">right</property>
+                        <property name="gray">false</property>
+                        <property name="visible">true</property>
+                        <property name="adjust">fixed</property>
+                        <property name="handle_bind" />
+                        <property name="visible_bind" />
+                    </widget>
+                    <widget type="edit" name="text">
+                        <property name="id_alias">nil</property>
+                        <property name="width">40</property>
+                        <property name="height">12</property>
+                        <property name="gray">false</property>
+                        <property name="visible">true</property>
+                        <property name="align">center</property>
+                        <property name="multiline">false</property>
+                        <property name="password">false</property>
+                        <property name="adjust">horizontal</property>
+                        <property name="wrap">true</property>
+                        <property name="data" />
+                        <property name="readonly">true</property>
+                        <property name="valid_check">false</property>
+                        <property name="valid_okay">.*</property>
+                        <property name="valid_warning">.*</property>
+                        <property name="simple_bind">#varCurrentUnitName</property>
+                        <property name="valid_bind" />
+                        <property name="enable_bind" />
+                        <property name="visible_bind" />
+                        <property name="onChange" />
+                        <property name="handle_bind" />
+                    </widget>
+                </widget>
+                <widget type="list">
+                    <property name="id_alias">nil</property>
+                    <property name="width">280</property>
+                    <property name="height">180</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="type">report</property>
+                    <property name="align">top</property>
+                    <property name="sort">none</property>
+                    <property name="single_selection">true</property>
+                    <property name="auto_arrange">false</property>
+                    <property name="no_label_wrap">false</property>
+                    <property name="edit_labels">false</property>
+                    <property name="show_selection_always">false</property>
+                    <property name="owner_data">false</property>
+                    <property name="simple_bind">#varFileListVal</property>
+                    <property name="table_bind">#varFileListTable</property>
+                    <property name="index2_bind">#varFileListIndex</property>
+                    <property name="enable_bind" />
+                    <property name="visible_bind" />
+                    <property name="data">
+                        <header>
+                            <item label="Package Name" width="150" />
+                            <item label="Is Block" width="80" />
+                            <item label="KUL File Location" width="360" />
+                        </header>
+                        <image_list>xml_file,javascript,error</image_list>
+                        <content></content>
+                    </property>
+                    <property name="onClick">#evtFileListClick</property>
+                    <property name="onDoubleClick">#evtFileDbClick</property>
+                    <property name="onHeaderClick" />
+                    <property name="handle_bind" />
+                </widget>
+            </widget>
+        </widget>
+        <widget type="hbox">
+            <property name="margin">1</property>
+            <property name="adjust">auto</property>
+            <widget type="space">
+                <property name="size">2</property>
+            </widget>
+            <widget type="checkbutton">
+                <property name="label">Auto Load Javascript File</property>
+                <property name="bitmap">nil</property>
+                <property name="id_alias">nil</property>
+                <property name="width">90</property>
+                <property name="height">10</property>
+                <property name="gray">false</property>
+                <property name="visible">true</property>
+                <property name="adjust">fixed</property>
+                <property name="push_like">false</property>
+                <property name="auto">true</property>
+                <property name="check">false</property>
+                <property name="simple_bind">#varIsAutoLoadJS</property>
+                <property name="valid_bind" />
+                <property name="enable_bind">#varIsAutoLoadEnable</property>
+                <property name="visible_bind" />
+                <property name="onClick" />
+                <property name="handle_bind" />
+            </widget>
+
+            <widget type="bitmap">
+                <property name="id_alias">nil</property>
+                <property name="width">80</property>
+                <property name="height">10</property>
+                <property name="fit_origin_size">false</property>
+                <property name="transparent_background">true</property>
+                <property name="background_color">255,255,255</property>
+                <property name="bkcolor">white</property>
+                <property name="border">false</property>
+                <property name="gray">false</property>
+                <property name="visible">true</property>
+                <property name="adjust">horizontal</property>
+                <property name="picture">nil.bmp</property>
+                <property name="simple_bind">#varProg</property>
+                <property name="handle_bind" />
+                <property name="onLButtonDown" />
+                <property name="onLButtonUp" />
+                <property name="onMButtonDown" />
+                <property name="onMButtonUp" />
+                <property name="onRButtonDown" />
+                <property name="onRButtonUp" />
+                <property name="onMouseMove" />
+                <property name="onResize" />
+            </widget>
+            <widget type="pushbutton">
+                <property name="label">Open</property>
+                <property name="bitmap">open</property>
+                <property name="id_alias">nil</property>
+                <property name="width">50</property>
+                <property name="height">14</property>
+                <property name="default">true</property>
+                <property name="gray">false</property>
+                <property name="visible">true</property>
+                <property name="adjust">fixed</property>
+                <property name="bitmap_align">left</property>
+                <property name="flat">false</property>
+                <property name="shadow">true</property>
+                <property name="shadow_type">soft</property>
+                <property name="color">auto</property>
+                <property name="can_check">false</property>
+                <property name="onClick">#evtOpen</property>
+                <property name="enable_bind" />
+                <property name="simple_bind" />
+                <property name="valid_bind" />
+                <property name="visible_bind" />
+                <property name="handle_bind" />
+            </widget>
+            <widget type="pushbutton">
+                <property name="label">Close</property>
+                <property name="bitmap">close</property>
+                <property name="id_alias">nil</property>
+                <property name="width">50</property>
+                <property name="height">14</property>
+                <property name="default">false</property>
+                <property name="gray">false</property>
+                <property name="visible">true</property>
+                <property name="adjust">fixed</property>
+                <property name="bitmap_align">left</property>
+                <property name="flat">false</property>
+                <property name="shadow">true</property>
+                <property name="shadow_type">soft</property>
+                <property name="color">auto</property>
+                <property name="can_check">false</property>
+                <property name="onClick">#evtClose</property>
+                <property name="enable_bind" />
+                <property name="simple_bind" />
+                <property name="valid_bind" />
+                <property name="visible_bind" />
+                <property name="handle_bind" />
+            </widget>
+        </widget>
+    </widget>
+</kul_pkg>

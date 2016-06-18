@@ -1,0 +1,10 @@
+<?xml version  = "1.0"?>
+<script_cfg>
+	<include_paths>
+		<path>"y:/comx_sdk/include/utils/"</path>
+	</include_paths>
+	<module_paths>
+		<path>"y:/comx_sdk/lib/utils/"</path>
+	</module_paths>
+	<script_path>"y:/comx_sdk/lib/utils/script/"</script_path>
+</script_cfg>

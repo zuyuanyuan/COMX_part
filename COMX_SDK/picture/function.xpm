@@ -1,0 +1,29 @@
+/* XPM */
+static char *freeimage[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 6 1",
+/* colors */
+"  c #ffffff",
+". c #000000",
+"X c #ff00ff",
+"o c #800080",
+"O c #808080",
+"+ c #c0c0c0",
+/* pixels */
+"                ",
+"                ",
+"                ",
+"           .    ",
+"          .X.   ",
+"         .XoX.  ",
+"        .XoXoX. ",
+" OO OO  ..XoXoX.",
+"        .X.XoX..",
+"  +O+OO .oX.X.o.",
+"         .oX.oo.",
+"   O+OOO  .o.o. ",
+"           ...  ",
+"            .   ",
+"                ",
+"                "
+};

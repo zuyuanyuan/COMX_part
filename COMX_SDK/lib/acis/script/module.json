@@ -1,0 +1,1 @@
+{"module_list":{"debug":[{"item":["acis_core_d.kpi","acis_render_d.kpi","acis_serialize_d.kpi","acis_function_wrap_d.kpi","brep_interface_wrap_d.kpi"]}],"release":[{"item":["acis_core.kpi","acis_render.kpi","acis_serialize.kpi","acis_function_wrap.kpi","brep_interface_wrap.kpi"]}]}}

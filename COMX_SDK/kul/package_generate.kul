@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui" name="pkg_generate" xmlns="http://www.kingmesh.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kingmesh.com kul.xsd">
+    <property name="id">0x92ef8143-0x921f-0x46d1-0x8d-0xb2-0xb6-0xff-0x8f-0x2d-0xef-0x2e</property>
+    <widget type="form" name="pkg_generate_pane">
+        <property name="id">0xed9baa90-0x8569-0x4db2-0x9f-0x8f-0x84-0xe0-0x58-0x0a-0xeb-0x59</property>
+        <property name="title">COMX|Plugin Package Create Tool</property>
+        <property name="minimum_box">true</property>
+        <property name="center">center</property>
+        <property name="toolwindow">false</property>
+        <property name="icon">kmas</property>
+        <property name="font_size">10</property>
+        <property name="margin">0</property>
+        <property name="app_window">true</property>
+        <property name="javascript">pkg_generate_pane.js</property>
+        <widget type="vbox">
+            <property name="margin">0</property>
+            <widget type="stack">
+                <property name="margin">0</property>
+                <property name="adjust">auto</property>
+                <property name="index1_bind">cur_step</property>
+                <property name="id">1506</property>
+                <property name="border">none</property>
+                <widget type="vbox">
+                    <property name="margin">0</property>
+                    <widget type="headerbar">
+                        <property name="title">Step-1</property>
+                        <property name="detail">please select a source unit from following list</property>
+                        <property name="bitmap">plugin.bmp</property>
+                        <property name="bitmap_align">right</property>
+                        <property name="id">1825</property>
+                    </widget>
+                    <widget type="separator">
+                        <property name="id">1812</property>
+                        <property name="margin">0</property>
+                    </widget>
+                    <widget type="vbox">
+                        <property name="margin">3</property>
+                        <widget type="listbox">
+                            <property name="id">1562</property>
+                            <property name="height">60</property>
+                            <property name="adjust">auto</property>
+                            <property name="simple_bind">unit_name</property>
+                            <property name="list_bind">unit_list</property>
+                        </widget>
+                    </widget>
+                </widget>
+                <widget type="vbox">
+                    <property name="margin">0</property>
+                    <widget type="headerbar">
+                        <property name="title">Step-2</property>
+                        <property name="detail">please select kul files from following list</property>
+                        <property name="bitmap">plugin.bmp</property>
+                        <property name="bitmap_align">right</property>
+                        <property name="id">1850</property>
+                    </widget>
+                    <widget type="separator">
+                        <property name="id">1702</property>
+                        <property name="margin">0</property>
+                    </widget>
+                    <widget type="hbox">
+                        <property name="margin">2</property>
+                        <widget type="listbox">
+                            <property name="id">1565</property>
+                            <property name="adjust">vertical</property>
+                            <property name="simple_bind">src_kul</property>
+                            <property name="list_bind">src_kul_list</property>
+                        </widget>
+                        <widget type="vbox">
+                            <property name="margin">3</property>
+                            <widget type="space" />
+                            <widget type="pushbutton">
+                                <property name="label">==&gt;</property>
+                                <property name="id">1566</property>
+                                <property name="width">24</property>
+                                <property name="height">12</property>
+                                <property name="shadow_type">hard</property>
+                                <property name="onClick">OnAppendKUL();</property>
+                                <property name="enable_bind">kul_append_btn_flag</property>
+                            </widget>
+                            <widget type="pushbutton">
+                                <property name="label">&lt;==</property>
+                                <property name="id">1567</property>
+                                <property name="width">24</property>
+                                <property name="height">12</property>
+                                <property name="shadow_type">hard</property>
+                                <property name="onClick">OnRemoveKUL();</property>
+                                <property name="enable_bind">kul_remove_btn_enable_flag</property>
+                            </widget>
+                            <widget type="space" />
+                        </widget>
+                        <widget type="listbox">
+                            <property name="id">1568</property>
+                            <property name="height">60</property>
+                            <property name="adjust">vertical</property>
+                            <property name="simple_bind">tar_kul</property>
+                            <property name="list_bind">selected_kul_list</property>
+                            <property name="index1_bind">tar_kul_index</property>
+                        </widget>
+                    </widget>
+                </widget>
+                <widget type="vbox">
+                    <property name="margin">0</property>
+                    <widget type="headerbar">
+                        <property name="title">Step-3</property>
+                        <property name="detail">please select JS.Ext files from following list</property>
+                        <property name="bitmap">plugin.bmp</property>
+                        <property name="bitmap_align">right</property>
+                        <property name="id">1851</property>
+                    </widget>
+                    <widget type="separator">
+                        <property name="id">1704</property>
+                        <property name="margin">0</property>
+                    </widget>
+                    <widget type="hbox">
+                        <property name="margin">2</property>
+                        <widget type="listbox">
+                            <property name="id">1705</property>
+                            <property name="adjust">vertical</property>
+                            <property name="simple_bind">src_js_ext</property>
+                            <property name="list_bind">src_js_ext_list</property>
+                        </widget>
+                        <widget type="vbox">
+                            <property name="margin">3</property>
+                            <widget type="space" />
+                            <widget type="pushbutton">
+                                <property name="label">==&gt;</property>
+                                <property name="id">1706</property>
+                                <property name="width">24</property>
+                                <property name="height">12</property>
+                                <property name="shadow_type">hard</property>
+                                <property name="onClick">OnAppendJsExt();</property>
+                                <property name="enable_bind">js_ext_append_btn_flag</property>
+                            </widget>
+                            <widget type="pushbutton">
+                                <property name="label">&lt;==</property>
+                                <property name="id">1707</property>
+                                <property name="width">24</property>
+                                <property name="height">12</property>
+                                <property name="shadow_type">hard</property>
+                                <property name="onClick">OnRemoveJsExt();</property>
+                                <property name="enable_bind">js_ext_remove_btn_enable_flag</property>
+                            </widget>
+                            <widget type="space" />
+                        </widget>
+                        <widget type="listbox">
+                            <property name="id">1708</property>
+                            <property name="height">60</property>
+                            <property name="adjust">vertical</property>
+                            <property name="simple_bind">tar_js_ext</property>
+                            <property name="list_bind">selected_js_ext_list</property>
+                            <property name="index1_bind">tar_js_ext_index</property>
+                        </widget>
+                    </widget>
+                </widget>
+                <widget type="vbox">
+                    <property name="margin">0</property>
+                    <widget type="headerbar">
+                        <property name="title">Step-4</property>
+                        <property name="detail">please select kpi files from following list</property>
+                        <property name="bitmap">plugin.bmp</property>
+                        <property name="bitmap_align">right</property>
+                        <property name="id">1852</property>
+                    </widget>
+                    <widget type="separator">
+                        <property name="id">1710</property>
+                        <property name="margin">0</property>
+                    </widget>
+                    <widget type="hbox">
+                        <property name="margin">2</property>
+                        <widget type="listbox">
+                            <property name="id">1711</property>
+                            <property name="adjust">vertical</property>
+                            <property name="simple_bind">src_module</property>
+                            <property name="list_bind">src_module_list</property>
+                        </widget>
+                        <widget type="vbox">
+                            <property name="margin">3</property>
+                            <widget type="space" />
+                            <widget type="pushbutton">
+                                <property name="label">==&gt;</property>
+                                <property name="id">1712</property>
+                                <property name="width">24</property>
+                                <property name="height">12</property>
+                                <property name="shadow_type">hard</property>
+                                <property name="onClick">OnAppendModule();</property>
+                                <property name="enable_bind">module_append_btn_flag</property>
+                            </widget>
+                            <widget type="pushbutton">
+                                <property name="label">&lt;==</property>
+                                <property name="id">1713</property>
+                                <property name="width">24</property>
+                                <property name="height">12</property>
+                                <property name="shadow_type">hard</property>
+                                <property name="onClick">OnRemoveModule();</property>
+                                <property name="enable_bind">module_remove_btn_enable_flag</property>
+                            </widget>
+                            <widget type="space" />
+                        </widget>
+                        <widget type="listbox">
+                            <property name="id">1714</property>
+                            <property name="height">60</property>
+                            <property name="adjust">vertical</property>
+                            <property name="simple_bind">tar_module</property>
+                            <property name="list_bind">selected_module_list</property>
+                            <property name="index1_bind">tar_module_index</property>
+                        </widget>
+                    </widget>
+                </widget>
+                <widget type="vbox">
+                    <property name="margin">0</property>
+                    <widget type="headerbar">
+                        <property name="title">Step-5</property>
+                        <property name="detail">please select include files from following list</property>
+                        <property name="bitmap">plugin.bmp</property>
+                        <property name="bitmap_align">right</property>
+                        <property name="id">1853</property>
+                    </widget>
+                    <widget type="separator">
+                        <property name="id">1716</property>
+                        <property name="margin">0</property>
+                    </widget>
+                    <widget type="hbox">
+                        <property name="margin">2</property>
+                        <widget type="listbox">
+                            <property name="id">1717</property>
+                            <property name="adjust">vertical</property>
+                            <property name="simple_bind">src_include</property>
+                            <property name="list_bind">src_include_list</property>
+                        </widget>
+                        <widget type="vbox">
+                            <property name="margin">3</property>
+                            <widget type="space" />
+                            <widget type="pushbutton">
+                                <property name="label">==&gt;</property>
+                                <property name="id">1718</property>
+                                <property name="width">24</property>
+                                <property name="height">12</property>
+                                <property name="shadow_type">hard</property>
+                                <property name="onClick">OnAppendInclude();</property>
+                                <property name="enable_bind">include_append_btn_flag</property>
+                            </widget>
+                            <widget type="pushbutton">
+                                <property name="label">&lt;==</property>
+                                <property name="id">1719</property>
+                                <property name="width">24</property>
+                                <property name="height">12</property>
+                                <property name="shadow_type">hard</property>
+                                <property name="onClick">OnRemoveInclude();</property>
+                                <property name="enable_bind">include_remove_btn_enable_flag</property>
+                            </widget>
+                            <widget type="space" />
+                        </widget>
+                        <widget type="listbox">
+                            <property name="id">1720</property>
+                            <property name="height">60</property>
+                            <property name="adjust">vertical</property>
+                            <property name="simple_bind">tar_include</property>
+                            <property name="list_bind">selected_include_list</property>
+                            <property name="index1_bind">tar_include_index</property>
+                        </widget>
+                    </widget>
+                </widget>
+                <widget type="vbox">
+                    <property name="margin">0</property>
+                    <widget type="headerbar">
+                        <property name="title">Step-6</property>
+                        <property name="detail">please select picture files from following list</property>
+                        <property name="bitmap">plugin.bmp</property>
+                        <property name="bitmap_align">right</property>
+                        <property name="id">1854</property>
+                    </widget>
+                    <widget type="separator">
+                        <property name="id">1722</property>
+                        <property name="margin">0</property>
+                    </widget>
+                    <widget type="hbox">
+                        <property name="margin">2</property>
+                        <widget type="listbox">
+                            <property name="id">1723</property>
+                            <property name="adjust">vertical</property>
+                            <property name="simple_bind">src_picture</property>
+                            <property name="list_bind">src_picture_list</property>
+                        </widget>
+                        <widget type="vbox">
+                            <property name="margin">3</property>
+                            <widget type="space" />
+                            <widget type="pushbutton">
+                                <property name="label">==&gt;</property>
+                                <property name="id">1724</property>
+                                <property name="width">24</property>
+                                <property name="height">12</property>
+                                <property name="shadow_type">hard</property>
+                                <property name="onClick">OnAppendPicture();</property>
+                                <property name="enable_bind">picture_append_btn_flag</property>
+                            </widget>
+                            <widget type="pushbutton">
+                                <property name="label">&lt;==</property>
+                                <property name="id">1725</property>
+                                <property name="width">24</property>
+                                <property name="height">12</property>
+                                <property name="shadow_type">hard</property>
+                                <property name="onClick">OnRemovePicture();</property>
+                                <property name="enable_bind">picture_remove_btn_enable_flag</property>
+                            </widget>
+                            <widget type="space" />
+                        </widget>
+                        <widget type="listbox">
+                            <property name="id">1726</property>
+                            <property name="height">60</property>
+                            <property name="adjust">vertical</property>
+                            <property name="simple_bind">tar_picture</property>
+                            <property name="list_bind">selected_picture_list</property>
+                            <property name="index1_bind">tar_picture_index</property>
+                        </widget>
+                    </widget>
+                </widget>
+                <widget type="vbox">
+                    <property name="margin">0</property>
+                    <widget type="headerbar">
+                        <property name="title">Step-7</property>
+                        <property name="detail">please select clsid items from following list</property>
+                        <property name="bitmap">plugin.bmp</property>
+                        <property name="bitmap_align">right</property>
+                        <property name="id">1855</property>
+                    </widget>
+                    <widget type="separator">
+                        <property name="id">1728</property>
+                        <property name="margin">0</property>
+                    </widget>
+                    <widget type="hbox">
+                        <property name="margin">2</property>
+                        <widget type="listbox">
+                            <property name="id">1729</property>
+                            <property name="adjust">vertical</property>
+                            <property name="simple_bind">src_clsid</property>
+                            <property name="list_bind">src_clsid_list</property>
+                        </widget>
+                        <widget type="vbox">
+                            <property name="margin">3</property>
+                            <widget type="space" />
+                            <widget type="pushbutton">
+                                <property name="label">==&gt;</property>
+                                <property name="id">1730</property>
+                                <property name="width">24</property>
+                                <property name="height">12</property>
+                                <property name="shadow_type">hard</property>
+                                <property name="onClick">OnAppendClsid();</property>
+                                <property name="enable_bind">clsid_append_btn_flag</property>
+                            </widget>
+                            <widget type="pushbutton">
+                                <property name="label">&lt;==</property>
+                                <property name="id">1731</property>
+                                <property name="width">24</property>
+                                <property name="height">12</property>
+                                <property name="shadow_type">hard</property>
+                                <property name="onClick">OnRemoveClsid();</property>
+                                <property name="enable_bind">clsid_remove_btn_enable_flag</property>
+                            </widget>
+                            <widget type="space" />
+                        </widget>
+                        <widget type="listbox">
+                            <property name="id">1732</property>
+                            <property name="height">60</property>
+                            <property name="adjust">vertical</property>
+                            <property name="simple_bind">tar_clsid</property>
+                            <property name="list_bind">selected_clsid_list</property>
+                            <property name="index1_bind">tar_clsid_index</property>
+                        </widget>
+                    </widget>
+                </widget>
+                <widget type="vbox">
+                    <property name="margin">0</property>
+                    <widget type="headerbar">
+                        <property name="title">Step-8</property>
+                        <property name="detail">please select iid items from following list</property>
+                        <property name="bitmap">plugin.bmp</property>
+                        <property name="bitmap_align">right</property>
+                        <property name="id">1856</property>
+                    </widget>
+                    <widget type="separator">
+                        <property name="id">1734</property>
+                        <property name="margin">0</property>
+                    </widget>
+                    <widget type="hbox">
+                        <property name="margin">2</property>
+                        <widget type="listbox">
+                            <property name="id">1735</property>
+                            <property name="adjust">vertical</property>
+                            <property name="simple_bind">src_iid</property>
+                            <property name="list_bind">src_iid_list</property>
+                        </widget>
+                        <widget type="vbox">
+                            <property name="margin">3</property>
+                            <widget type="space" />
+                            <widget type="pushbutton">
+                                <property name="label">==&gt;</property>
+                                <property name="id">1736</property>
+                                <property name="width">24</property>
+                                <property name="height">12</property>
+                                <property name="shadow_type">hard</property>
+                                <property name="onClick">OnAppendIid();</property>
+                                <property name="enable_bind">iid_append_btn_flag</property>
+                            </widget>
+                            <widget type="pushbutton">
+                                <property name="label">&lt;==</property>
+                                <property name="id">1737</property>
+                                <property name="width">24</property>
+                                <property name="height">12</property>
+                                <property name="shadow_type">hard</property>
+                                <property name="onClick">OnRemoveIid();</property>
+                                <property name="enable_bind">iid_remove_btn_enable_flag</property>
+                            </widget>
+                            <widget type="space" />
+                        </widget>
+                        <widget type="listbox">
+                            <property name="id">1738</property>
+                            <property name="height">60</property>
+                            <property name="adjust">vertical</property>
+                            <property name="simple_bind">tar_iid</property>
+                            <property name="list_bind">selected_iid_list</property>
+                            <property name="index1_bind">tar_iid_index</property>
+                        </widget>
+                    </widget>
+                </widget>
+                <widget type="vbox">
+                    <property name="margin">0</property>
+                    <widget type="headerbar">
+                        <property name="title">Step-9</property>
+                        <property name="detail">please select data files from following list</property>
+                        <property name="bitmap">plugin.bmp</property>
+                        <property name="bitmap_align">right</property>
+                        <property name="id">1857</property>
+                    </widget>
+                    <widget type="separator">
+                        <property name="id">1740</property>
+                        <property name="margin">0</property>
+                    </widget>
+                    <widget type="hbox">
+                        <property name="margin">2</property>
+                        <widget type="listbox">
+                            <property name="id">1741</property>
+                            <property name="adjust">vertical</property>
+                            <property name="simple_bind">src_data</property>
+                            <property name="list_bind">src_data_list</property>
+                        </widget>
+                        <widget type="vbox">
+                            <property name="margin">3</property>
+                            <widget type="space" />
+                            <widget type="pushbutton">
+                                <property name="label">==&gt;</property>
+                                <property name="id">1742</property>
+                                <property name="width">24</property>
+                                <property name="height">12</property>
+                                <property name="shadow_type">hard</property>
+                                <property name="onClick">OnAppendData();</property>
+                                <property name="enable_bind">data_append_btn_flag</property>
+                            </widget>
+                            <widget type="pushbutton">
+                                <property name="label">&lt;==</property>
+                                <property name="id">1743</property>
+                                <property name="width">24</property>
+                                <property name="height">12</property>
+                                <property name="shadow_type">hard</property>
+                                <property name="onClick">OnRemoveData();</property>
+                                <property name="enable_bind">data_remove_btn_enable_flag</property>
+                            </widget>
+                            <widget type="space" />
+                        </widget>
+                        <widget type="listbox">
+                            <property name="id">1744</property>
+                            <property name="height">80</property>
+                            <property name="adjust">vertical</property>
+                            <property name="simple_bind">tar_data</property>
+                            <property name="list_bind">selected_data_list</property>
+                            <property name="index1_bind">tar_data_index</property>
+                        </widget>
+                    </widget>
+                </widget>
+                <widget type="vbox">
+                    <property name="margin">0</property>
+                    <widget type="headerbar">
+                        <property name="title">Step-10</property>
+                        <property name="detail">please input target package file path</property>
+                        <property name="bitmap">plugin.bmp</property>
+                        <property name="bitmap_align">right</property>
+                        <property name="id">1954</property>
+                    </widget>
+                    <widget type="separator">
+                        <property name="id">1955</property>
+                        <property name="margin">0</property>
+                    </widget>
+                    <widget type="vbox">
+                        <widget type="hbox">
+                            <widget type="edit" name="text">
+                                <property name="id">1957</property>
+                                <property name="adjust">horizontal</property>
+                                <property name="readonly">true</property>
+                                <property name="simple_bind">pkg_fpath</property>
+                            </widget>
+                            <widget type="pushbutton">
+                                <property name="label" />
+                                <property name="bitmap">save.bmp</property>
+                                <property name="id">1958</property>
+                                <property name="width">14</property>
+                                <property name="shadow">true</property>
+                                <property name="shadow_type">metal</property>
+                                <property name="onClick">OnSelectPackageName();</property>
+                            </widget>
+                        </widget>
+                        <widget type="hprogbar">
+                            <property name="id">1959</property>
+                            <property name="adjust">horizontal</property>
+                            <property name="simple_bind">progbar_val</property>
+                            <property name="visible_bind">progbar_visible</property>
+                        </widget>
+                        <widget type="space" />
+                    </widget>
+                </widget>
+            </widget>
+            <widget type="separator">
+                <property name="id">1821</property>
+                <property name="margin">1</property>
+            </widget>
+            <widget type="hbox">
+                <property name="margin">2</property>
+                <property name="adjust">horizontal</property>
+                <widget type="hbox">
+                    <property name="margin">0</property>
+                    <widget type="space" />
+                    <widget type="pushbutton">
+                        <property name="label">Back</property>
+                        <property name="bitmap">back.bmp</property>
+                        <property name="id">1509</property>
+                        <property name="width">42</property>
+                        <property name="shadow_type">hard</property>
+                        <property name="onClick">OnBack();</property>
+                        <property name="enable_bind">back_btn_enable</property>
+                    </widget>
+                    <widget type="pushbutton">
+                        <property name="label">Next</property>
+                        <property name="bitmap">next.bmp</property>
+                        <property name="id">1510</property>
+                        <property name="width">42</property>
+                        <property name="shadow_type">hard</property>
+                        <property name="onClick">OnNext();</property>
+                        <property name="enable_bind">next_btn_enable</property>
+                    </widget>
+                    <widget type="pushbutton">
+                        <property name="label">Package</property>
+                        <property name="bitmap">package.bmp</property>
+                        <property name="id">1511</property>
+                        <property name="width">46</property>
+                        <property name="shadow_type">hard</property>
+                        <property name="onClick">OnGeneratePackage();</property>
+                        <property name="enable_bind">create_btn_enable</property>
+                    </widget>
+                    <widget type="pushbutton">
+                        <property name="label">Close</property>
+                        <property name="bitmap">close.bmp</property>
+                        <property name="id">1563</property>
+                        <property name="width">46</property>
+                        <property name="shadow_type">hard</property>
+                        <property name="onClick">pane.Close();</property>
+                    </widget>
+                </widget>
+            </widget>
+            <widget type="space">
+                <property name="size">1</property>
+            </widget>
+        </widget>
+    </widget>
+    <widget type="form" name="pkg_mgr_entry">
+        <property name="id">0xa9b9f10e-0xd947-0x4b1d-0x9d-0x42-0x65-0x21-0x83-0x46-0x70-0x49</property>
+        <property name="title">COMX|Package Toolkit</property>
+        <property name="center">center</property>
+        <property name="toolwindow">false</property>
+        <property name="icon">kmas</property>
+        <property name="font_size">10</property>
+        <property name="app_window">true</property>
+        <property name="javascript">pkg_mgr_entry.js</property>
+        <widget type="vbox">
+            <widget type="pushbutton">
+                <property name="label">Create Package</property>
+                <property name="bitmap">package.bmp</property>
+                <property name="id">1960</property>
+                <property name="width">120</property>
+                <property name="onClick">OnCreate();</property>
+            </widget>
+            <widget type="pushbutton">
+                <property name="label">Install Package</property>
+                <property name="bitmap">setup.bmp</property>
+                <property name="id">1961</property>
+                <property name="width">120</property>
+                <property name="onClick">OnInstall();</property>
+            </widget>
+        </widget>
+    </widget>
+    <widget type="form" name="pkg_install_toolkit">
+        <property name="id">0xd2c848e3-0xb906-0x425e-0x9a-0xa9-0x50-0x94-0xda-0x11-0x26-0x35</property>
+        <property name="title">COMX|Package Install Tool</property>
+        <property name="center">center</property>
+        <property name="toolwindow">false</property>
+        <property name="icon">kmas</property>
+        <property name="font_size">10</property>
+        <property name="margin">0</property>
+        <property name="app_window">true</property>
+        <property name="javascript">pkg_install_toolkit.js</property>
+        <widget type="vbox">
+            <property name="margin">0</property>
+            <widget type="stack">
+                <property name="margin">0</property>
+                <property name="adjust">horizontal</property>
+                <property name="index1_bind">stack_index</property>
+                <property name="id">2010</property>
+                <property name="border">none</property>
+                <widget type="vbox">
+                    <property name="margin">0</property>
+                    <widget type="headerbar">
+                        <property name="title">Step-1</property>
+                        <property name="detail">please select target unit name</property>
+                        <property name="bitmap">setup.bmp</property>
+                        <property name="bitmap_align">right</property>
+                        <property name="id">2036</property>
+                    </widget>
+                    <widget type="separator">
+                        <property name="id">2037</property>
+                        <property name="margin">0</property>
+                    </widget>
+                    <widget type="vbox">
+                        <property name="margin">3</property>
+                        <widget type="listbox">
+                            <property name="id">2038</property>
+                            <property name="height">70</property>
+                            <property name="adjust">auto</property>
+                            <property name="simple_bind">unit_name</property>
+                            <property name="list_bind">unit_list</property>
+                        </widget>
+                    </widget>
+                </widget>
+                <widget type="vbox">
+                    <property name="margin">0</property>
+                    <widget type="headerbar">
+                        <property name="title">Step-2</property>
+                        <property name="detail">please select package file name</property>
+                        <property name="bitmap">setup.bmp</property>
+                        <property name="bitmap_align">right</property>
+                        <property name="id">2087</property>
+                    </widget>
+                    <widget type="separator">
+                        <property name="id">2088</property>
+                        <property name="margin">0</property>
+                    </widget>
+                    <widget type="vbox">
+                        <property name="margin">2</property>
+                        <widget type="hbox">
+                            <property name="margin">0</property>
+                            <widget type="edit" name="text">
+                                <property name="id">2089</property>
+                                <property name="adjust">horizontal</property>
+                                <property name="readonly">true</property>
+                                <property name="simple_bind">pkg_fpath</property>
+                            </widget>
+                            <widget type="pushbutton">
+                                <property name="label" />
+                                <property name="bitmap">open.bmp</property>
+                                <property name="id">2090</property>
+                                <property name="width">14</property>
+                                <property name="shadow">true</property>
+                                <property name="shadow_type">metal</property>
+                                <property name="onClick">OnOpenPkg();</property>
+                            </widget>
+                        </widget>
+                        <widget type="list">
+                            <property name="id">2091</property>
+                            <property name="height">80</property>
+                            <property name="adjust">auto</property>
+                            <property name="type">report</property>
+                            <property name="table_bind">conflict_table</property>
+                            <property name="data">
+                                <header>
+                                    <item label="Filename" width="300" />
+                                    <item label="Status" width="95" />
+                                </header>
+                                <image_list>pass,block</image_list>
+                                <content>0,abc.kul,okay,1,test.kul,conflict</content>
+                            </property>
+                        </widget>
+                    </widget>
+                </widget>
+            </widget>
+            <widget type="separator">
+                <property name="id">2013</property>
+            </widget>
+            <widget type="hbox">
+                <widget type="pushbutton">
+                    <property name="label">Back</property>
+                    <property name="bitmap">back.bmp</property>
+                    <property name="id">2014</property>
+                    <property name="onClick">OnBack();</property>
+                    <property name="enable_bind">back_btn_enable</property>
+                </widget>
+                <widget type="pushbutton">
+                    <property name="label">Next</property>
+                    <property name="bitmap">next.bmp</property>
+                    <property name="id">2015</property>
+                    <property name="onClick">OnNext();</property>
+                    <property name="enable_bind">next_btn_enable</property>
+                </widget>
+                <widget type="pushbutton">
+                    <property name="label">Install</property>
+                    <property name="bitmap">setup.bmp</property>
+                    <property name="id">2016</property>
+                    <property name="onClick">OnInstall();</property>
+                    <property name="enable_bind">install_btn_enable</property>
+                </widget>
+                <widget type="pushbutton">
+                    <property name="label">Close</property>
+                    <property name="bitmap">close.bmp</property>
+                    <property name="id">2017</property>
+                    <property name="onClick">pane.Close();</property>
+                </widget>
+            </widget>
+        </widget>
+    </widget>
+</kul_pkg>

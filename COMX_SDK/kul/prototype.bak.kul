@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui" name="prototype">
+    <property name="id">0x61b1e081-0x40f7-0x4df0-0x8f-0xa5-0xde-0xc9-0x97-0xe0-0x59-0x28</property>
+    <widget type="form" name="prototype_dialog">
+        <property name="id">0x31252479-0x890a-0x45de-0xbd-0x93-0x29-0x8e-0x19-0xc6-0xc4-0x35</property>
+        <property name="title">This is a test kul form</property>
+        <property name="titlebar">false</property>
+        <property name="maximum_box">true</property>
+        <property name="minimum_box">false</property>
+        <property name="resize">true</property>
+        <property name="icon">kmas</property>
+        <property name="style">child</property>
+        <property name="show">max</property>
+        <property name="toolwindow">true</property>
+        <property name="embed">true</property>
+        <property name="border">true</property>
+        <widget type="vbox">
+            <widget type="hbox">
+                <property name="margin">0</property>
+                <widget type="edit" name="text">
+                    <property name="id">2049</property>
+                    <property name="width">200</property>
+                    <property name="height">60</property>
+                    <property name="multiline">true</property>
+                    <property name="adjust">auto</property>
+                </widget>
+            </widget>
+            <widget type="hbox">
+                <property name="adjust">horizontal</property>
+                <widget type="pushbutton" name="okay">
+                    <property name="label">Okay1</property>
+                    <property name="id">2050</property>
+                    <property name="adjust">auto</property>
+                </widget>
+                <widget type="space" />
+                <widget type="pushbutton" name="cancel">
+                    <property name="label">Cancel1</property>
+                    <property name="id">2051</property>
+                </widget>
+            </widget>
+            <widget type="hbox">
+                <property name="adjust">horizontal</property>
+                <widget type="space" />
+                <widget type="pushbutton" name="okay">
+                    <property name="label">Okay2</property>
+                    <property name="id">2052</property>
+                    <property name="default">true</property>
+                </widget>
+                <widget type="pushbutton" name="cancel">
+                    <property name="label">Cancel2</property>
+                    <property name="id">2048</property>
+                </widget>
+            </widget>
+        </widget>
+    </widget>
+</kul_pkg>

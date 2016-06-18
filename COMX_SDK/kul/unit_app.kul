@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui" name="unit_app">
+    <property name="id">0x323aa923-0x60bf-0x4eed-0x87-0xe9-0xb0-0xaf-0x8a-0x1b-0xf5-0xdd</property>
+    <widget type="form" name="unit_app_form">
+        <property name="id">0xd4d5768f-0x1d58-0x411d-0x89-0x68-0x9b-0x1c-0x28-0x91-0x7b-0x82</property>
+        <property name="title">KMAS|Unit Application Version 1.0</property>
+        <property name="titlebar">true</property>
+        <property name="maximum_box">false</property>
+        <property name="minimum_box">false</property>
+        <property name="border">true</property>
+        <property name="resize">false</property>
+        <property name="center">none</property>
+        <property name="toolwindow">false</property>
+        <property name="icon">nil</property>
+        <property name="width">auto</property>
+        <property name="height">auto</property>
+        <property name="font">Microsoft Sans Serif</property>
+        <property name="font_size">8</property>
+        <property name="margin">1</property>
+        <property name="style">popup</property>
+        <property name="show">normal</property>
+        <property name="embed">false</property>
+        <widget type="vbox">
+            <property name="margin">3</property>
+            <property name="adjust">auto</property>
+            <widget type="hbox">
+                <property name="margin">1</property>
+                <property name="adjust">horizontal</property>
+                <widget type="label">
+                    <property name="id">1025</property>
+                    <property name="width">19</property>
+                    <property name="auto_width">true</property>
+                    <property name="height">8</property>
+                    <property name="border">false</property>
+                    <property name="text">Unit Name: </property>
+                    <property name="align">left</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                </widget>
+                <widget type="combobox">
+                    <property name="id">1026</property>
+                    <property name="width">100</property>
+                    <property name="height">15</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="type">list</property>
+                    <property name="sort">false</property>
+                    <property name="data">onestep_ui, morping, mesher</property>
+                </widget>
+                <widget type="space">
+                    <property name="size">5</property>
+                </widget>
+                <widget type="pushbutton">
+                    <property name="label">Refresh Unit List</property>
+                    <property name="bitmap">nil</property>
+                    <property name="id">1027</property>
+                    <property name="width">90</property>
+                    <property name="height">14</property>
+                    <property name="default">false</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="bitmap_align">left</property>
+                    <property name="flat">false</property>
+                </widget>
+                <widget type="pushbutton">
+                    <property name="label">Explorer Unit ...</property>
+                    <property name="bitmap">nil</property>
+                    <property name="id">1028</property>
+                    <property name="width">90</property>
+                    <property name="height">14</property>
+                    <property name="default">false</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="bitmap_align">left</property>
+                    <property name="flat">false</property>
+                </widget>
+                <widget type="space">
+                    <property name="size">5</property>
+                </widget>
+                <widget type="pushbutton">
+                    <property name="label">!</property>
+                    <property name="bitmap">nil</property>
+                    <property name="id">1029</property>
+                    <property name="width">15</property>
+                    <property name="height">14</property>
+                    <property name="default">false</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="bitmap_align">left</property>
+                    <property name="flat">false</property>
+                </widget>
+            </widget>
+            <widget type="edit">
+                <property name="id">1030</property>
+                <property name="width">300</property>
+                <property name="height">120</property>
+                <property name="gray">false</property>
+                <property name="visible">true</property>
+                <property name="align">left</property>
+                <property name="multiline">true</property>
+                <property name="password">false</property>
+                <property name="adjust">auto</property>
+                <property name="wrap">true</property>
+                <property name="data" />
+            </widget>
+            <widget type="separator">
+                <property name="id">1031</property>
+                <property name="gray">false</property>
+                <property name="visible">true</property>
+                <property name="margin">2</property>
+            </widget>
+            <widget type="hbox">
+                <property name="margin">1</property>
+                <property name="adjust">horizontal</property>
+                <widget type="space">
+                    <property name="size">auto</property>
+                </widget>
+                <widget type="pushbutton">
+                    <property name="label">Create</property>
+                    <property name="bitmap">nil</property>
+                    <property name="id">1032</property>
+                    <property name="width">50</property>
+                    <property name="height">14</property>
+                    <property name="default">false</property>
+                    <property name="gray">true</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="bitmap_align">left</property>
+                    <property name="flat">false</property>
+                </widget>
+                <widget type="pushbutton">
+                    <property name="label">Update</property>
+                    <property name="bitmap">nil</property>
+                    <property name="id">1033</property>
+                    <property name="width">50</property>
+                    <property name="height">14</property>
+                    <property name="default">false</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="bitmap_align">left</property>
+                    <property name="flat">false</property>
+                </widget>
+                <widget type="pushbutton">
+                    <property name="label">Distribute</property>
+                    <property name="bitmap">nil</property>
+                    <property name="id">1034</property>
+                    <property name="width">50</property>
+                    <property name="height">14</property>
+                    <property name="default">false</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="bitmap_align">left</property>
+                    <property name="flat">false</property>
+                </widget>
+                <widget type="space">
+                    <property name="size">5</property>
+                </widget>
+                <widget type="pushbutton">
+                    <property name="label">关闭</property>
+                    <property name="bitmap">nil</property>
+                    <property name="id">1000</property>
+                    <property name="width">50</property>
+                    <property name="height">14</property>
+                    <property name="default">false</property>
+                    <property name="gray">false</property>
+                    <property name="visible">true</property>
+                    <property name="adjust">fixed</property>
+                    <property name="bitmap_align">left</property>
+                    <property name="flat">false</property>
+                </widget>
+            </widget>
+        </widget>
+    </widget>
+</kul_pkg>

@@ -1,0 +1,12 @@
+<module_list>
+<debug>
+<item>plugin_dlg_post_player_d.uiplugin</item>
+<item>toolbar_post_d.uiplugin</item>
+<item>toolbar_springback_post_d.uiplugin</item>
+</debug>
+<release>
+<item>plugin_dlg_post_player.uiplugin</item>
+<item>toolbar_post.uiplugin</item>
+<item>toolbar_springback_post.uiplugin</item>
+</release>
+</module_list>

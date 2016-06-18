@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui" name="constains">
+    <property name="id">0xfe6b4637-0x20fa-0x4af3-0x9b-0x2a-0xb7-0x73-0x47-0x6f-0x39-0x33</property>
+    <widget type="form" name="constains_form">
+        <property name="id">0x45e9b5bd-0x57ba-0x4f8f-0x9e-0xf3-0xf0-0xe2-0xf0-0x71-0x11-0x8c</property>
+        <property name="titlebar">true</property>
+        <property name="resize">true</property>
+        <property name="style">popup</property>
+        <property name="embed">true</property>
+        <property name="margin">2</property>
+        <property name="maximum_box">true</property>
+        <widget type="vbox">
+            <property name="margin">0</property>
+            <widget type="hbox">
+                <property name="margin">0</property>
+                <widget type="pushbutton" name="btn1">
+                    <property name="id">1025</property>
+                    <property name="adjust">auto</property>
+                    <property name="bitmap">kmas.bmp</property>
+                </widget>
+                <widget type="pushbutton" name="btn2">
+                    <property name="id">1026</property>
+                    <property name="adjust">auto</property>
+                </widget>
+                <widget type="pushbutton" name="btn3">
+                    <property name="id">1027</property>
+                    <property name="label">test</property>
+                    <property name="adjust">auto</property>
+                </widget>
+            </widget>
+            <widget type="hbox">
+                <property name="margin">0</property>
+                <widget type="pushbutton" name="btn5">
+                    <property name="id">1029</property>
+                    <property name="adjust">auto</property>
+                </widget>
+                <widget type="pushbutton" name="btn6">
+                    <property name="id">1030</property>
+                    <property name="adjust">auto</property>
+                </widget>
+                <widget type="pushbutton" name="btn7">
+                    <property name="id">1031</property>
+                    <property name="adjust">auto</property>
+                </widget>
+                <widget type="pushbutton" name="btn8">
+                    <property name="id">1032</property>
+                    <property name="adjust">auto</property>
+                </widget>
+            </widget>
+            <widget type="hbox">
+                <property name="margin">0</property>
+                <widget type="pushbutton" name="btn9">
+                    <property name="id">1033</property>
+                    <property name="adjust">auto</property>
+                </widget>
+                <widget type="pushbutton" name="btn10">
+                    <property name="id">1034</property>
+                    <property name="adjust">auto</property>
+                </widget>
+                <widget type="pushbutton" name="btn11">
+                    <property name="id">1035</property>
+                    <property name="adjust">auto</property>
+                </widget>
+                <widget type="pushbutton" name="btn12">
+                    <property name="id">1036</property>
+                    <property name="adjust">auto</property>
+                </widget>
+            </widget>
+            <widget type="hbox">
+                <property name="margin">0</property>
+                <widget type="pushbutton" name="btn13">
+                    <property name="id">1037</property>
+                    <property name="adjust">auto</property>
+                </widget>
+                <widget type="pushbutton" name="btn14">
+                    <property name="id">1038</property>
+                    <property name="adjust">auto</property>
+                </widget>
+                <widget type="pushbutton" name="btn15">
+                    <property name="id">1039</property>
+                    <property name="adjust">auto</property>
+                </widget>
+                <widget type="pushbutton" name="btn16">
+                    <property name="id">1040</property>
+                    <property name="adjust">auto</property>
+                </widget>
+            </widget>
+            <widget type="hbox">
+                <property name="margin">0</property>
+                <widget type="pushbutton" name="btn13">
+                    <property name="id">1041</property>
+                    <property name="adjust">auto</property>
+                </widget>
+                <widget type="pushbutton" name="btn14">
+                    <property name="id">1042</property>
+                    <property name="adjust">auto</property>
+                </widget>
+                <widget type="pushbutton" name="btn15">
+                    <property name="id">1043</property>
+                    <property name="adjust">auto</property>
+                </widget>
+                <widget type="pushbutton" name="btn16">
+                    <property name="id">1044</property>
+                    <property name="adjust">auto</property>
+                </widget>
+            </widget>
+        </widget>
+    </widget>
+</kul_pkg>

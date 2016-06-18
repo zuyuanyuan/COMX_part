@@ -1,0 +1,41 @@
+<?xml version  = "1.0"?>
+<Auto_completion>
+	<normal_show>
+		<keyword data="Create">
+			<addword>CreateBitmap</addword>
+			<addword>CreateDC</addword>
+			<addword>CreateHandle</addword>
+			<addword>CreateWindow</addword>
+			<addword>CreateWindowEx</addword>
+		</keyword>
+		<keyword data="comx">
+			<addword>comx21321</addword>
+			<addword>comx1123</addword>
+			<addword>comx12312</addword>
+			<addword>comx454</addword>
+			<addword>comxsdfsd</addword>
+		</keyword>
+	</normal_show>
+
+	<point_show>
+		<keyword data="file">
+			<addword>close</addword>
+			<addword>close1</addword>
+			<addword>close2</addword>
+			<addword>close3</addword>
+			<addword>close4</addword>
+			<addword>close5</addword>
+		</keyword>
+  
+		<keyword data="Create">
+			<addword>csdagtas</addword>
+			<addword>sdf1</addword>
+			<addword>cfdafsd</addword>
+			<addword>clodsfds3</addword>
+			<addword>close4</addword>
+			<addword>close5</addword>
+		</keyword>
+	</point_show>
+	
+
+</Auto_completion>

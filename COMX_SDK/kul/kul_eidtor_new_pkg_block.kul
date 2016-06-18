@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="gb2312"?>
+<kul_pkg type="ui_block" name="kul_editor_new_pkg_block" xmlns="http://www.kingmesh.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kingmesh.com kul.xsd">
+    <property name="id">0xc11d9871-0xaffb-0x4988-0xb5-0x3a-0x45-0x24-0x17-0x13-0x9d-0x92</property>
+    <widget type="vbox">
+        <property name="margin">0</property>
+        <property name="adjust">auto</property>
+        <widget type="tabctrl">
+            <property name="fixed_width">false</property>
+            <property name="position">top</property>
+            <property name="gray">false</property>
+            <property name="bkcolor">white</property>
+            <property name="visible">true</property>
+            <property name="type">flat</property>
+            <property name="adjust">auto</property>
+            <property name="margin">0</property>
+            <property name="data">Form,form,Unit,package1,JS.Ext,addin,JS.Ext Method,func</property>
+            <property name="width">150</property>
+            <property name="height">50</property>
+            <property name="simple_bind" />
+            <property name="index1_bind">#varTabctrlIndex</property>
+            <property name="handle_bind" />
+            <property name="onSwitch">#evtTabctrlSwitch</property>
+            <widget type="vbox">
+                <property name="margin">1</property>
+                <property name="adjust">auto</property>
+                <widget type="hbox">
+                    <property name="margin">1</property>
+                    <property name="adjust">auto</property>
+                    <widget type="stack">
+                        <property name="margin">3</property>
+                        <property name="adjust">horizontal</property>
+                        <property name="index1_bind" />
+                        <property name="border">group</property>
+                        <property name="label">Package Locaction</property>
+                        <widget type="vbox">
+                            <property name="margin">1</property>
+                            <property name="adjust">auto</property>
+                            <widget type="hbox">
+                                <property name="margin">0</property>
+                                <property name="adjust">auto</property>
+                                <widget type="space">
+                                    <property name="size">auto</property>
+                                </widget>
+                                <widget type="label">
+                                    <property name="id_alias">nil</property>
+                                    <property name="width">19</property>
+                                    <property name="auto_width">true</property>
+                                    <property name="height">8</property>
+                                    <property name="border">false</property>
+                                    <property name="text">Current Unit Name:</property>
+                                    <property name="align">left</property>
+                                    <property name="gray">false</property>
+                                    <property name="visible">true</property>
+                                    <property name="adjust">fixed</property>
+                                    <property name="handle_bind" />
+                                    <property name="visible_bind" />
+                                </widget>
+                                <widget type="combobox">
+                                    <property name="id_alias">nil</property>
+                                    <property name="width">90</property>
+                                    <property name="height">12</property>
+                                    <property name="gray">false</property>
+                                    <property name="visible">true</property>
+                                    <property name="adjust">fixed</property>
+                                    <property name="type">drop</property>
+                                    <property name="sort">false</property>
+                                    <property name="data">item1, item2, item3</property>
+                                    <property name="simple_bind">#varUnitName</property>
+                                    <property name="list_bind">#varUnitNameList</property>
+                                    <property name="index1_bind">#varUnitNameIndex</property>
+                                    <property name="enable_bind" />
+                                    <property name="visible_bind" />
+                                    <property name="onChange">#evtUnitNameChanged</property>
+                                    <property name="handle_bind" />
+                                </widget>
+                            </widget>
+                            <widget type="hbox">
+                                <property name="margin">0</property>
+                                <property name="adjust">auto</property>
+                                <widget type="space">
+                                    <property name="size">auto</property>
+                                </widget>
+                                <widget type="stack">
+                                    <property name="margin">1</property>
+                                    <property name="adjust">fixed</property>
+                                    <property name="index1_bind">#varLabelIndex</property>
+                                    <property name="border">none</property>
+                                    <property name="label">Group Box</property>
+                                    <widget type="label">
+                                        <property name="id_alias">nil</property>
+                                        <property name="width">70</property>
+                                        <property name="auto_width">true</property>
+                                        <property name="height">8</property>
+                                        <property name="border">false</property>
+                                        <property name="text">New Package Name:</property>
+                                        <property name="align">right</property>
+                                        <property name="gray">false</property>
+                                        <property name="visible">true</property>
+                                        <property name="adjust">fixed</property>
+                                        <property name="handle_bind" />
+                                        <property name="visible_bind" />
+                                    </widget>
+                                    <widget type="label">
+                                        <property name="id_alias">nil</property>
+                                        <property name="width">40</property>
+                                        <property name="auto_width">true</property>
+                                        <property name="height">8</property>
+                                        <property name="border">false</property>
+                                        <property name="text">New Block Name:</property>
+                                        <property name="align">right</property>
+                                        <property name="gray">false</property>
+                                        <property name="visible">true</property>
+                                        <property name="adjust">horizontal</property>
+                                        <property name="handle_bind" />
+                                        <property name="visible_bind" />
+                                    </widget>
+                                </widget>
+                                <widget type="edit" name="text">
+                                    <property name="id_alias">nil</property>
+                                    <property name="width">90</property>
+                                    <property name="height">11</property>
+                                    <property name="gray">false</property>
+                                    <property name="visible">true</property>
+                                    <property name="align">center</property>
+                                    <property name="multiline">false</property>
+                                    <property name="password">false</property>
+                                    <property name="adjust">fixed</property>
+                                    <property name="wrap">true</property>
+                                    <property name="data" />
+                                    <property name="readonly">false</property>
+                                    <property name="valid_check">false</property>
+                                    <property name="valid_okay">.*</property>
+                                    <property name="valid_warning">.*</property>
+                                    <property name="simple_bind">#varPackageName</property>
+                                    <property name="valid_bind" />
+                                    <property name="enable_bind" />
+                                    <property name="visible_bind" />
+                                    <property name="onChange" />
+                                    <property name="handle_bind">#varPackageNameHdr</property>
+                                </widget>
+                            </widget>
+                        </widget>
+                    </widget>
+                </widget>
+                <widget type="hbox">
+                    <property name="margin">1</property>
+                    <property name="adjust">auto</property>
+                    <widget type="stack">
+                        <property name="margin">3</property>
+                        <property name="adjust">horizontal</property>
+                        <property name="index1_bind" />
+                        <property name="border">group</property>
+                        <property name="label">WebSocket API</property>
+                        <widget type="vbox">
+                            <property name="margin">1</property>
+                            <property name="adjust">auto</property>
+                            <widget type="checkbutton">
+                                <property name="label">API Support</property>
+                                <property name="bitmap">nil</property>
+                                <property name="id_alias">nil</property>
+                                <property name="width">90</property>
+                                <property name="height">10</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">fixed</property>
+                                <property name="push_like">false</property>
+                                <property name="auto">true</property>
+                                <property name="check">false</property>
+                                <property name="simple_bind">#varWebSocketCheck</property>
+                                <property name="valid_bind" />
+                                <property name="enable_bind">#varWebSocketEnable</property>
+                                <property name="visible_bind" />
+                                <property name="onClick">#evtOnWebSocketCheck</property>
+                                <property name="handle_bind" />
+                            </widget>
+                            <widget type="checkbutton">
+                                <property name="label">As Service(Main Window)</property>
+                                <property name="bitmap">nil</property>
+                                <property name="id_alias">nil</property>
+                                <property name="width">90</property>
+                                <property name="height">10</property>
+                                <property name="gray">true</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">fixed</property>
+                                <property name="push_like">false</property>
+                                <property name="auto">true</property>
+                                <property name="check">false</property>
+                                <property name="simple_bind">#varWebSocketServiceCheck</property>
+                                <property name="valid_bind" />
+                                <property name="enable_bind">#varWebSocketServiceEnable</property>
+                                <property name="visible_bind" />
+                                <property name="onClick">#evtOnWebSocketServiceCheck</property>
+                                <property name="handle_bind" />
+                            </widget>
+                            <widget type="checkbutton">
+                                <property name="label">Sandbox Form</property>
+                                <property name="bitmap">nil</property>
+                                <property name="id_alias">nil</property>
+                                <property name="width">90</property>
+                                <property name="height">10</property>
+                                <property name="gray">true</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">fixed</property>
+                                <property name="push_like">false</property>
+                                <property name="auto">true</property>
+                                <property name="check">false</property>
+                                <property name="simple_bind">#varWebSocketSandboxCheck</property>
+                                <property name="valid_bind" />
+                                <property name="enable_bind">#varWebSocketSandboxEnable</property>
+                                <property name="visible_bind" />
+                                <property name="onClick" />
+                                <property name="handle_bind" />
+                            </widget>
+                        </widget>
+                    </widget>
+                    <widget type="stack">
+                        <property name="margin">3</property>
+                        <property name="adjust">vertical</property>
+                        <property name="index1_bind" />
+                        <property name="border">group</property>
+                        <property name="label">Package UI Type</property>
+                        <widget type="vbox">
+                            <property name="margin">0</property>
+                            <property name="adjust">auto</property>
+                            <widget type="radiobutton">
+                                <property name="label">Popup Dialog</property>
+                                <property name="bitmap">nil</property>
+                                <property name="id_alias">nil</property>
+                                <property name="width">70</property>
+                                <property name="height">10</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">fixed</property>
+                                <property name="push_like">false</property>
+                                <property name="auto">true</property>
+                                <property name="group_id">1</property>
+                                <property name="default_group_item">true</property>
+                                <property name="enable_bind" />
+                                <property name="visible_bind" />
+                                <property name="onClick">#evtRadioPackage</property>
+                                <property name="handle_bind" />
+                            </widget>
+                            <widget type="radiobutton">
+                                <property name="label">Sub Block</property>
+                                <property name="bitmap">nil</property>
+                                <property name="id_alias">nil</property>
+                                <property name="width">70</property>
+                                <property name="height">10</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">fixed</property>
+                                <property name="push_like">false</property>
+                                <property name="auto">true</property>
+                                <property name="group_id">1</property>
+                                <property name="default_group_item">false</property>
+                                <property name="enable_bind" />
+                                <property name="visible_bind" />
+                                <property name="onClick">#evtRadioBlock</property>
+                                <property name="handle_bind" />
+                            </widget>
+                        </widget>
+                    </widget>
+                </widget>
+            </widget>
+            <widget type="vbox">
+                <property name="margin">1</property>
+                <property name="adjust">auto</property>
+                <widget type="stack">
+                    <property name="margin">4</property>
+                    <property name="adjust">auto</property>
+                    <property name="index1_bind" />
+                    <property name="border">group</property>
+                    <property name="label">Unit Options</property>
+                    <widget type="vbox">
+                        <widget type="hbox">
+                            <property name="margin">1</property>
+                            <property name="adjust">auto</property>
+                            <widget type="label">
+                                <property name="id_alias">nil</property>
+                                <property name="width">19</property>
+                                <property name="auto_width">true</property>
+                                <property name="height">8</property>
+                                <property name="border">false</property>
+                                <property name="text">New Unit Name:</property>
+                                <property name="align">left</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">fixed</property>
+                                <property name="handle_bind" />
+                                <property name="visible_bind" />
+                            </widget>
+                            <widget type="combobox">
+                                <property name="id_alias">nil</property>
+                                <property name="width">64</property>
+                                <property name="height">12</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">horizontal</property>
+                                <property name="type">down</property>
+                                <property name="sort">false</property>
+                                <property name="data" />
+                                <property name="simple_bind">#varPkgUnitName</property>
+                                <property name="list_bind">#varPkgUnitNameList</property>
+                                <property name="index1_bind" />
+                                <property name="enable_bind" />
+                                <property name="visible_bind" />
+                                <property name="onChange">#evtPkgUnitNameChanged</property>
+                                <property name="handle_bind">#varPkgComboboxHdr</property>
+                            </widget>
+                        </widget>
+                        <widget type="hbox">
+                            <widget type="checkbutton">
+                                <property name="label">Is Deamon Service</property>
+                                <property name="bitmap">nil</property>
+                                <property name="id_alias">nil</property>
+                                <property name="width">39</property>
+                                <property name="height">10</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">horizontal</property>
+                                <property name="push_like">false</property>
+                                <property name="auto">true</property>
+                                <property name="check">false</property>
+                                <property name="simple_bind">#varIsDeamonSerivce</property>
+                                <property name="valid_bind" />
+                                <property name="enable_bind" />
+                                <property name="visible_bind" />
+                                <property name="onClick">#evtCheckDeamonService</property>
+                                <property name="handle_bind" />
+                            </widget>
+                        </widget>
+                        <widget type="hbox">
+                            <widget type="label">
+                                <property name="align">left</property>
+                                <property name="text">Deamon Name:</property>
+                            </widget>
+                            <widget type="edit" name="text">
+                                <property name="align">left</property>
+                                <property name="readonly">false</property>
+                                <property name="simple_bind">#varDeamonComments</property>
+                                <property name="enable_bind">#varDeamonCommentsEanble</property>
+                                <property name="adjust">horizontal</property>
+                                <property name="onChange"></property>
+                            </widget>
+                        </widget>
+                    </widget>
+                </widget>
+                <widget type="stack">
+                    <property name="margin">3</property>
+                    <property name="adjust">horizontal</property>
+                    <property name="index1_bind" />
+                    <property name="border">group</property>
+                    <property name="label">Additional Options</property>
+                    <widget type="vbox">
+                        <property name="margin">1</property>
+                        <property name="adjust">auto</property>
+                        <widget type="radiobutton">
+                            <property name="label">Simple Mode(Support Glcanvas Only)</property>
+                            <property name="bitmap">nil</property>
+                            <property name="id_alias">nil</property>
+                            <property name="width">50</property>
+                            <property name="height">10</property>
+                            <property name="gray">false</property>
+                            <property name="visible">true</property>
+                            <property name="adjust">horizontal</property>
+                            <property name="push_like">false</property>
+                            <property name="auto">true</property>
+                            <property name="group_id">2</property>
+                            <property name="default_group_item">true</property>
+                            <property name="enable_bind" />
+                            <property name="visible_bind" />
+                            <property name="onClick">#evtSimpleModeClick</property>
+                            <property name="handle_bind" />
+                        </widget>
+                        <widget type="radiobutton">
+                            <property name="label">Full Mode(Support All COMX Component Sets)</property>
+                            <property name="bitmap">nil</property>
+                            <property name="id_alias">nil</property>
+                            <property name="width">50</property>
+                            <property name="height">10</property>
+                            <property name="gray">false</property>
+                            <property name="visible">true</property>
+                            <property name="adjust">horizontal</property>
+                            <property name="push_like">false</property>
+                            <property name="auto">true</property>
+                            <property name="group_id">2</property>
+                            <property name="default_group_item">false</property>
+                            <property name="enable_bind" />
+                            <property name="visible_bind" />
+                            <property name="onClick">#evtFullModeClick</property>
+                            <property name="handle_bind" />
+                        </widget>
+                    </widget>
+                </widget>
+                <widget type="space">
+                    <property name="size">auto</property>
+                </widget>
+                <widget type="hbox">
+                    <property name="margin">1</property>
+                    <property name="adjust">auto</property>
+                    <widget type="bitmap">
+                        <property name="id_alias">nil</property>
+                        <property name="width">14</property>
+                        <property name="height">14</property>
+                        <property name="fit_origin_size">false</property>
+                        <property name="transparent_background">false</property>
+                        <property name="background_color">255,255,255</property>
+                        <property name="bkcolor">gray</property>
+                        <property name="border">false</property>
+                        <property name="gray">false</property>
+                        <property name="visible">true</property>
+                        <property name="adjust">fixed</property>
+                        <property name="picture">warning2</property>
+                        <property name="simple_bind">#varNotifyBitmap</property>
+                        <property name="handle_bind" />
+                        <property name="onLButtonDown" />
+                        <property name="onLButtonUp" />
+                        <property name="onMButtonDown" />
+                        <property name="onMButtonUp" />
+                        <property name="onRButtonDown" />
+                        <property name="onRButtonUp" />
+                        <property name="onMouseMove" />
+                        <property name="onResize" />
+                        <property name="autoPlay">false</property>
+                        <property name="playMode">copy</property>
+                    </widget>
+                    <widget type="label">
+                        <property name="id_alias">nil</property>
+                        <property name="width">19</property>
+                        <property name="auto_width">true</property>
+                        <property name="height">8</property>
+                        <property name="border">false</property>
+                        <property name="text">Notify: run unit_reg.bat and restart Keditor!</property>
+                        <property name="align">left</property>
+                        <property name="gray">false</property>
+                        <property name="visible">true</property>
+                        <property name="adjust">fixed</property>
+                        <property name="handle_bind" />
+                        <property name="visible_bind">#varPkgNotifyHdr</property>
+                    </widget>
+                    <widget type="space">
+                        <property name="size">auto</property>
+                    </widget>
+                </widget>
+                <widget type="space">
+                    <property name="size">auto</property>
+                </widget>
+            </widget>
+            <widget type="vbox">
+                <property name="margin">1</property>
+                <property name="adjust">auto</property>
+                <widget type="stack">
+                    <property name="margin">3</property>
+                    <property name="adjust">auto</property>
+                    <property name="index1_bind" />
+                    <property name="border">group</property>
+                    <property name="label">Namespace Options</property>
+                    <widget type="vbox">
+                        <property name="margin">1</property>
+                        <property name="adjust">auto</property>
+                        <widget type="hbox">
+                            <property name="margin">1</property>
+                            <property name="adjust">auto</property>
+                            <widget type="label">
+                                <property name="id_alias">nil</property>
+                                <property name="width">55</property>
+                                <property name="auto_width">true</property>
+                                <property name="height">8</property>
+                                <property name="border">false</property>
+                                <property name="text">Unit:</property>
+                                <property name="align">right</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">fixed</property>
+                                <property name="handle_bind" />
+                                <property name="visible_bind" />
+                            </widget>
+                            <widget type="combobox">
+                                <property name="id_alias">nil</property>
+                                <property name="width">64</property>
+                                <property name="height">12</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">fixed</property>
+                                <property name="type">list</property>
+                                <property name="sort">false</property>
+                                <property name="data" />
+                                <property name="simple_bind">#varJSExtUnitName</property>
+                                <property name="list_bind">#varJSExtUnitList</property>
+                                <property name="index1_bind">#varJSExtUnitIndex</property>
+                                <property name="enable_bind" />
+                                <property name="visible_bind" />
+                                <property name="onChange" />
+                                <property name="handle_bind" />
+                            </widget>
+                            <widget type="space">
+                                <property name="size">auto</property>
+                            </widget>
+                            <widget type="label">
+                                <property name="id_alias">nil</property>
+                                <property name="width">55</property>
+                                <property name="auto_width">true</property>
+                                <property name="height">8</property>
+                                <property name="border">false</property>
+                                <property name="text">Function NS:</property>
+                                <property name="align">right</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">fixed</property>
+                                <property name="handle_bind" />
+                                <property name="visible_bind" />
+                            </widget>
+                            <widget type="edit" name="text">
+                                <property name="id_alias">nil</property>
+                                <property name="width">50</property>
+                                <property name="height">11</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="align">center</property>
+                                <property name="multiline">false</property>
+                                <property name="password">false</property>
+                                <property name="adjust">fixed</property>
+                                <property name="wrap">true</property>
+                                <property name="data" />
+                                <property name="readonly">false</property>
+                                <property name="valid_check">false</property>
+                                <property name="valid_okay">.*</property>
+                                <property name="valid_warning">.*</property>
+                                <property name="simple_bind">#varJSExtFunNS</property>
+                                <property name="valid_bind" />
+                                <property name="enable_bind" />
+                                <property name="visible_bind" />
+                                <property name="onChange" />
+                                <property name="handle_bind">#varJSExtFunNSHdr</property>
+                            </widget>
+                        </widget>
+                        <widget type="hbox">
+                            <property name="margin">1</property>
+                            <property name="adjust">auto</property>
+                            <widget type="space">
+                                <property name="size">3</property>
+                            </widget>
+                            <widget type="checkbutton">
+                                <property name="label">Use Unit as Top NS.</property>
+                                <property name="bitmap">nil</property>
+                                <property name="id_alias">nil</property>
+                                <property name="width">75</property>
+                                <property name="height">10</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">horizontal</property>
+                                <property name="push_like">false</property>
+                                <property name="auto">true</property>
+                                <property name="check">false</property>
+                                <property name="simple_bind">#varJSExtUseTopNS</property>
+                                <property name="valid_bind" />
+                                <property name="enable_bind" />
+                                <property name="visible_bind" />
+                                <property name="onClick">#evtJSExtUseTopNS</property>
+                                <property name="handle_bind" />
+                            </widget>
+                            <widget type="space">
+                                <property name="size">auto</property>
+                            </widget>
+                            <widget type="label">
+                                <property name="id_alias">nil</property>
+                                <property name="width">55</property>
+                                <property name="auto_width">true</property>
+                                <property name="height">8</property>
+                                <property name="border">false</property>
+                                <property name="text">Top NS:</property>
+                                <property name="align">right</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">fixed</property>
+                                <property name="handle_bind" />
+                                <property name="visible_bind" />
+                            </widget>
+                            <widget type="edit" name="text">
+                                <property name="id_alias">nil</property>
+                                <property name="width">50</property>
+                                <property name="height">11</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="align">center</property>
+                                <property name="multiline">false</property>
+                                <property name="password">false</property>
+                                <property name="adjust">fixed</property>
+                                <property name="wrap">true</property>
+                                <property name="data" />
+                                <property name="readonly">false</property>
+                                <property name="valid_check">false</property>
+                                <property name="valid_okay">.*</property>
+                                <property name="valid_warning">.*</property>
+                                <property name="simple_bind">#varJSExtTopNS</property>
+                                <property name="valid_bind" />
+                                <property name="enable_bind">#varJSExtTopNSEnable</property>
+                                <property name="visible_bind" />
+                                <property name="onChange" />
+                                <property name="handle_bind" />
+                            </widget>
+                        </widget>
+                    </widget>
+                </widget>
+                <widget type="stack">
+                    <property name="margin">3</property>
+                    <property name="adjust">horizontal</property>
+                    <property name="index1_bind" />
+                    <property name="border">group</property>
+                    <property name="label">Additional Options</property>
+                    <widget type="hbox">
+                        <property name="margin">1</property>
+                        <property name="adjust">auto</property>
+                        <widget type="checkbutton">
+                            <property name="label">Support COMX</property>
+                            <property name="bitmap">nil</property>
+                            <property name="id_alias">nil</property>
+                            <property name="width">80</property>
+                            <property name="height">10</property>
+                            <property name="gray">false</property>
+                            <property name="visible">true</property>
+                            <property name="adjust">fixed</property>
+                            <property name="push_like">false</property>
+                            <property name="auto">true</property>
+                            <property name="check">false</property>
+                            <property name="simple_bind">#varJSExtSupportCOMX</property>
+                            <property name="valid_bind" />
+                            <property name="enable_bind" />
+                            <property name="visible_bind" />
+                            <property name="onClick" />
+                            <property name="handle_bind" />
+                        </widget>
+                        <widget type="checkbutton">
+                            <property name="label">Support ACIS</property>
+                            <property name="bitmap">nil</property>
+                            <property name="id_alias">nil</property>
+                            <property name="width">80</property>
+                            <property name="height">10</property>
+                            <property name="gray">false</property>
+                            <property name="visible">true</property>
+                            <property name="adjust">fixed</property>
+                            <property name="push_like">false</property>
+                            <property name="auto">true</property>
+                            <property name="check">false</property>
+                            <property name="simple_bind">#varJSExtSuooportACIS</property>
+                            <property name="valid_bind" />
+                            <property name="enable_bind" />
+                            <property name="visible_bind" />
+                            <property name="onClick" />
+                            <property name="handle_bind" />
+                        </widget>
+                    </widget>
+                </widget>
+                <widget type="space">
+                    <property name="size">auto</property>
+                </widget>
+            </widget>
+            <widget type="vbox">
+                <property name="margin">1</property>
+                <property name="adjust">auto</property>
+                <widget type="stack">
+                    <property name="margin">3</property>
+                    <property name="adjust">auto</property>
+                    <property name="index1_bind" />
+                    <property name="border">group</property>
+                    <property name="label">Location Opitons</property>
+                    <widget type="vbox">
+                        <property name="margin">1</property>
+                        <property name="adjust">auto</property>
+                        <widget type="hbox">
+                            <property name="margin">1</property>
+                            <property name="adjust">auto</property>
+                            <widget type="label">
+                                <property name="id_alias">nil</property>
+                                <property name="width">60</property>
+                                <property name="auto_width">false</property>
+                                <property name="height">8</property>
+                                <property name="border">false</property>
+                                <property name="text">Select an Unit:</property>
+                                <property name="align">right</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">fixed</property>
+                                <property name="handle_bind" />
+                                <property name="visible_bind" />
+                            </widget>
+                            <widget type="combobox">
+                                <property name="id_alias">nil</property>
+                                <property name="width">64</property>
+                                <property name="height">12</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">horizontal</property>
+                                <property name="type">list</property>
+                                <property name="sort">false</property>
+                                <property name="data">item</property>
+                                <property name="simple_bind">#varJSExtMethodUnitName</property>
+                                <property name="list_bind">#varJSExtMethodUnitList</property>
+                                <property name="index1_bind">#varJSExtMethodUnitIndex</property>
+                                <property name="enable_bind" />
+                                <property name="visible_bind" />
+                                <property name="onChange">#evtJSExtMethodUnitChange</property>
+                                <property name="handle_bind" />
+                            </widget>
+                        </widget>
+                        <widget type="hbox">
+                            <property name="margin">1</property>
+                            <property name="adjust">auto</property>
+                            <widget type="label">
+                                <property name="id_alias">nil</property>
+                                <property name="width">60</property>
+                                <property name="auto_width">false</property>
+                                <property name="height">8</property>
+                                <property name="border">false</property>
+                                <property name="text">Select a Project:</property>
+                                <property name="align">right</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">fixed</property>
+                                <property name="handle_bind" />
+                                <property name="visible_bind" />
+                            </widget>
+                            <widget type="combobox">
+                                <property name="id_alias">nil</property>
+                                <property name="width">64</property>
+                                <property name="height">12</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">horizontal</property>
+                                <property name="type">list</property>
+                                <property name="sort">false</property>
+                                <property name="data" />
+                                <property name="simple_bind">#varJSExtMethodProjName</property>
+                                <property name="list_bind">#varJSExtMethodProjList</property>
+                                <property name="index1_bind" />
+                                <property name="enable_bind" />
+                                <property name="visible_bind" />
+                                <property name="onChange">#evtJSExtMethodProjChanged</property>
+                                <property name="handle_bind" />
+                            </widget>
+                            <widget type="pushbutton">
+                                <property name="label" />
+                                <property name="bitmap">open</property>
+                                <property name="id_alias">nil</property>
+                                <property name="width">16</property>
+                                <property name="height">14</property>
+                                <property name="default">false</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">fixed</property>
+                                <property name="bitmap_align">left</property>
+                                <property name="flat">false</property>
+                                <property name="shadow">true</property>
+                                <property name="shadow_type">simple</property>
+                                <property name="color">auto</property>
+                                <property name="can_check">false</property>
+                                <property name="onClick">#evtOpenJSExtVSProj</property>
+                                <property name="enable_bind" />
+                                <property name="simple_bind" />
+                                <property name="valid_bind" />
+                                <property name="visible_bind" />
+                                <property name="handle_bind" />
+                                <property name="tip">Open JS.Ext Visual Studio Project.</property>
+                            </widget>
+                        </widget>
+                    </widget>
+                </widget>
+                <widget type="stack">
+                    <property name="margin">3</property>
+                    <property name="adjust">auto</property>
+                    <property name="index1_bind" />
+                    <property name="border">group</property>
+                    <property name="label">Method Opitons</property>
+                    <widget type="vbox">
+                        <property name="margin">1</property>
+                        <property name="adjust">auto</property>
+                        <widget type="hbox">
+                            <property name="margin">1</property>
+                            <property name="adjust">auto</property>
+                            <widget type="label">
+                                <property name="id_alias">nil</property>
+                                <property name="width">60</property>
+                                <property name="auto_width">false</property>
+                                <property name="height">8</property>
+                                <property name="border">false</property>
+                                <property name="text">Input Method Name:</property>
+                                <property name="align">right</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">fixed</property>
+                                <property name="handle_bind" />
+                                <property name="visible_bind" />
+                            </widget>
+                            <widget type="combobox">
+                                <property name="id_alias">nil</property>
+                                <property name="width">64</property>
+                                <property name="height">12</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">horizontal</property>
+                                <property name="type">down</property>
+                                <property name="sort">false</property>
+                                <property name="data" />
+                                <property name="simple_bind">#varJSExtMethodName</property>
+                                <property name="list_bind">#varJSExtMethodList</property>
+                                <property name="index1_bind" />
+                                <property name="enable_bind" />
+                                <property name="visible_bind" />
+                                <property name="onChange" />
+                                <property name="handle_bind" />
+                            </widget>
+                        </widget>
+                        <widget type="hbox">
+                            <property name="margin">1</property>
+                            <property name="adjust">auto</property>
+                            <widget type="label">
+                                <property name="id_alias">nil</property>
+                                <property name="width">60</property>
+                                <property name="auto_width">false</property>
+                                <property name="height">8</property>
+                                <property name="border">false</property>
+                                <property name="text">Parameters Num:</property>
+                                <property name="align">right</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">fixed</property>
+                                <property name="handle_bind" />
+                                <property name="visible_bind" />
+                            </widget>
+                            <widget type="spin">
+                                <property name="id_alias">nil</property>
+                                <property name="width">51</property>
+                                <property name="height">11</property>
+                                <property name="associate_width">11</property>
+                                <property name="gray">false</property>
+                                <property name="visible">true</property>
+                                <property name="adjust">horizontal</property>
+                                <property name="data">0, 10, 0</property>
+                                <property name="readonly">false</property>
+                                <property name="simple_bind">#varJSExtMethodParaNum</property>
+                                <property name="range_bind" />
+                                <property name="enable_bind" />
+                                <property name="visible_bind" />
+                                <property name="onChange" />
+                                <property name="handle_bind" />
+                            </widget>
+                        </widget>
+                    </widget>
+                </widget>
+                <widget type="space">
+                    <property name="size">auto</property>
+                </widget>
+            </widget>
+        </widget>
+        <widget type="hbox">
+            <property name="margin">1</property>
+            <property name="adjust">auto</property>
+            <widget type="space">
+                <property name="size">1</property>
+            </widget>
+            <widget type="space">
+                <property name="size">auto</property>
+            </widget>
+            <widget type="pushbutton">
+                <property name="label">Okay</property>
+                <property name="bitmap">ok</property>
+                <property name="id_alias">nil</property>
+                <property name="width">50</property>
+                <property name="height">14</property>
+                <property name="default">true</property>
+                <property name="gray">false</property>
+                <property name="visible">true</property>
+                <property name="adjust">fixed</property>
+                <property name="bitmap_align">left</property>
+                <property name="flat">false</property>
+                <property name="shadow">true</property>
+                <property name="shadow_type">soft</property>
+                <property name="color">auto</property>
+                <property name="can_check">false</property>
+                <property name="onClick">#evtOkay</property>
+                <property name="enable_bind">#varOkayBtnEnable</property>
+                <property name="simple_bind" />
+                <property name="valid_bind" />
+                <property name="visible_bind" />
+                <property name="handle_bind" />
+                <property name="tip" />
+            </widget>
+            <widget type="pushbutton">
+                <property name="label">Close</property>
+                <property name="bitmap">close</property>
+                <property name="id_alias">nil</property>
+                <property name="width">50</property>
+                <property name="height">14</property>
+                <property name="default">false</property>
+                <property name="gray">false</property>
+                <property name="visible">true</property>
+                <property name="adjust">fixed</property>
+                <property name="bitmap_align">left</property>
+                <property name="flat">false</property>
+                <property name="shadow">true</property>
+                <property name="shadow_type">soft</property>
+                <property name="color">auto</property>
+                <property name="can_check">false</property>
+                <property name="onClick">#evtClose</property>
+                <property name="enable_bind">#varCloseBtnEnable</property>
+                <property name="simple_bind" />
+                <property name="valid_bind" />
+                <property name="visible_bind" />
+                <property name="handle_bind" />
+                <property name="tip" />
+            </widget>
+        </widget>
+    </widget>
+</kul_pkg>
